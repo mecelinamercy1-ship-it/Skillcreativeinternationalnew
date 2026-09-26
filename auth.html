@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Skilled-Creatives International Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{
+    --blue:#0A3D91;
+    --blue-deep:#072a66;
+    --ink:#0B0F1A;
+    --white:#FFFFFF;
+    --orange:#F2921D;
+    --cloud:#F5F7FB;
+    --slate:#5B6472;
+    --line:#E3E7EF;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;letter-spacing:-0.01em;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:500;}
+  section{padding:96px 0;}
+  @media(max-width:720px){section{padding:64px 0;}}
+
+  :focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* ===== Auth-specific ===== */
+  body{min-height:100vh;background:var(--cloud);}
+  .auth-shell{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;}
+  @media(max-width:900px){.auth-shell{grid-template-columns:1fr;}}
+
+  /* Left brand panel */
+  .auth-brand{background:radial-gradient(120% 100% at 15% 0%, #0d1830 0%, var(--ink) 55%, #060810 100%);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:44px;}
+  @media(max-width:900px){.auth-brand{display:none;}}
+  .auth-brand-bg{position:absolute;inset:0;opacity:.35;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 20% 20%, black, transparent 70%);}
+  .auth-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(10,61,145,0.55),transparent 65%);bottom:-220px;left:-160px;filter:blur(10px);}
+  .brand-logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:17px;position:relative;z-index:2;}
+  .logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--mono);font-size:12px;flex:none;}
+  .brand-copy{position:relative;z-index:2;max-width:380px;}
+  .brand-copy h2{font-size:clamp(24px,2.6vw,32px);margin-bottom:14px;}
+  .brand-copy p{color:#B9C2D6;font-size:15px;}
+  .brand-foot{position:relative;z-index:2;font-family:var(--mono);font-size:11.5px;color:#8791A8;}
+
+  /* Right form panel */
+  .auth-form-panel{display:flex;align-items:center;justify-content:center;padding:40px 24px;}
+  .auth-card{width:100%;max-width:420px;}
+  .auth-card-logo{display:none;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--blue);margin-bottom:28px;}
+  @media(max-width:900px){.auth-card-logo{display:flex;}}
+
+  .tabs{display:flex;background:#fff;border:1px solid var(--line);border-radius:11px;padding:4px;margin-bottom:28px;}
+  .tab{flex:1;text-align:center;padding:10px;border-radius:8px;font-size:13.5px;font-weight:600;font-family:var(--body);background:none;border:none;cursor:pointer;color:var(--slate);transition:background .2s,color .2s;}
+  .tab.active{background:var(--blue);color:#fff;}
+
+  .auth-view{display:none;}
+  .auth-view.active{display:block;}
+  .auth-view h1{font-size:24px;margin-bottom:6px;}
+  .auth-view .sub{color:var(--slate);font-size:14px;margin-bottom:26px;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  .field-input-wrap{position:relative;}
+  .field input{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);font-family:var(--body);font-size:16px;background:#fff;}
+  .field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,61,145,0.12);}
+  .field small{display:block;margin-top:6px;font-size:11.5px;color:var(--slate);}
+  .pw-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--slate);font-size:11.5px;font-family:var(--mono);font-weight:500;}
+  .pw-toggle:hover{color:var(--blue);}
+
+  .row-between{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;font-size:13px;}
+  .row-between label{display:flex;align-items:center;gap:7px;color:var(--slate);cursor:pointer;}
+  .link-btn{background:none;border:none;color:var(--blue);font-weight:600;font-size:13px;cursor:pointer;font-family:var(--body);padding:0;}
+  .link-btn:hover{text-decoration:underline;}
+
+  .btn{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:9px;font-size:14.5px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .2s;font-family:var(--body);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+  .btn-primary{background:var(--orange);color:#1a1200;box-shadow:0 6px 16px -6px rgba(242,146,29,0.6);}
+  .btn-primary:hover:not(:disabled){box-shadow:0 10px 22px -6px rgba(242,146,29,0.7);}
+
+  .spinner{width:15px;height:15px;border-radius:50%;border:2px solid rgba(0,0,0,0.2);border-top-color:#1a1200;animation:spin .7s linear infinite;display:none;}
+  .btn.loading .spinner{display:inline-block;}
+  .btn.loading .btn-label{opacity:.7;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .divider{display:flex;align-items:center;gap:12px;margin:22px 0;color:var(--slate);font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line);}
+
+  .switch-line{text-align:center;font-size:13.5px;color:var(--slate);margin-top:22px;}
+  .switch-line button{background:none;border:none;color:var(--blue);font-weight:600;cursor:pointer;font-family:var(--body);font-size:13.5px;}
+  .switch-line button:hover{text-decoration:underline;}
+
+  .alert{border-radius:10px;padding:12px 14px;font-size:13px;margin-bottom:18px;display:none;gap:8px;align-items:flex-start;}
+  .alert.show{display:flex;}
+  .alert.error{background:#FDECEC;color:#B42318;border:1px solid #F6C6C2;}
+  .alert.success{background:#E8F6EE;color:#0F6D3B;border:1px solid #BDE8CE;}
+  .alert svg{width:16px;height:16px;flex:none;margin-top:1px;}
+
+  .back-row{display:flex;align-items:center;gap:8px;margin-bottom:18px;}
+  .back-row button{background:none;border:none;cursor:pointer;color:var(--slate);font-size:13px;font-family:var(--body);display:flex;align-items:center;gap:6px;}
+  .back-row button:hover{color:var(--blue);}
+  .back-row svg{width:15px;height:15px;}
+</style>
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <!-- Brand panel -->
+  <div class="auth-brand">
+    <div class="auth-brand-bg"></div>
+    <div class="auth-glow"></div>
+    <div class="brand-logo"><span class="logo-mark">SC</span>Skilled-Creatives Intl.</div>
+    <div class="brand-copy">
+      <span class="eyebrow" style="color:var(--orange);">Student &amp; Vendor Access</span>Ui
+      <h2>One account for your programmes, marketplace and dashboard.</h2>
+      <p>Sign in to track your enrollment, manage your vendor listings, and access resources across every sector of Skilled-Creatives International.</p>
+    </div>
+    <div class="brand-foot">SKILLEDCREATIVEINTERNATIONAL.COM</div>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-form-panel">
+    <div class="auth-card">
+      <div class="auth-card-logo"><span class="logo-mark">SC</span>Skilled-Creatives Intl.</div>
+
+      <div class="alert error" id="errorAlert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span id="errorText"></span>
+      </div>
+      <div class="alert success" id="successAlert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+        <span id="successText"></span>
+      </div>
+
+      <!-- Tabs (login / signup) -->
+      <div class="tabs" id="authTabs">
+        <button class="tab active" data-view="login">Log In</button>
+        <button class="tab" data-view="signup">Sign Up</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="auth-view active" id="view-login">
+        <h1>Welcome back</h1>
+        <p class="sub">Log in to access your dashboard.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" placeholder="you@email.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <div class="field-input-wrap">
+              <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+              <button type="button" class="pw-toggle" data-target="login-password">SHOW</button>
+            </div>
+          </div>
+          <div class="row-between">
+            <label><input type="checkbox" id="login-remember"> Remember me</label>
+            <button type="button" class="link-btn" id="toForgot">Forgot password?</button>
+          </div>
+          <button type="submit" class="btn btn-primary" id="loginBtn">
+            <span class="spinner"></span><span class="btn-label">Log In</span>
+          </button>
+        </form>
+        <p class="switch-line">Don't have an account? <button type="button" data-view="signup">Sign up</button></p>
+      </div>
+
+      <!-- SIGNUP -->
+      <div class="auth-view" id="view-signup">
+        <h1>Create your account</h1>
+        <p class="sub">Join to enroll in programmes, list on the marketplace and more.</p>
+        <form id="signupForm">
+          <div class="field">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="you@email.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="signup-password">Password</label>
+            <div class="field-input-wrap">
+              <input type="password" id="signup-password" placeholder="••••••••" required minlength="8" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-target="signup-password">SHOW</button>
+            </div>
+            <small>At least 8 characters.</small>
+          </div>
+          <button type="submit" class="btn btn-primary" id="signupBtn">
+            <span class="spinner"></span><span class="btn-label">Create Account</span>
+          </button>
+        </form>
+        <p class="switch-line">Already have an account? <button type="button" data-view="login">Log in</button></p>
+      </div>
+
+      <!-- FORGOT PASSWORD -->
+      <div class="auth-view" id="view-forgot">
+        <div class="back-row">
+          <button type="button" id="backToLogin">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Back to log in
+          </button>
+        </div>
+        <h1>Reset your password</h1>
+        <p class="sub">Enter your email and we'll send you a reset link.</p>
+        <form id="forgotForm">
+          <div class="field">
+            <label for="forgot-email">Email</label>
+            <input type="email" id="forgot-email" placeholder="you@email.com" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn btn-primary" id="forgotBtn">
+            <span class="spinner"></span><span class="btn-label">Send Reset Link</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Load Supabase first. Do not add async to this script. -->
+<script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  crossorigin="anonymous">
+</script>
+
+<script>
+(() => {
+  'use strict';
+
+  document.addEventListener('DOMContentLoaded', initialiseAuth);
+
+  function initialiseAuth() {
+    /* =========================================================
+       SUPABASE CONFIG
+       ========================================================= */
+    const SUPABASE_URL =
+      'https://aezepgnnykxqitzhhmen.supabase.co';
+
+    const SUPABASE_ANON_KEY =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlemVwZ25ueWt4cWl0emhobWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MDUwNTYsImV4cCI6MjEwMzE4MTA1Nn0.Ds9Vhp0ula5JxH5mZ-YVoEWQji2bNXuuzGYo_lInwDI';
+
+    // These URLs remain in the same folder as auth.html.
+    const PASSWORD_RESET_REDIRECT =
+      new URL('./reset-password.html', window.location.href).href;
+
+    // Change index.html to dashboard.html when your dashboard is ready.
+    const POST_AUTH_REDIRECT =
+      new URL('./index.html', window.location.href).href;
+
+    /* =========================================================
+       DOM HELPERS
+       ========================================================= */
+    const byId = id => document.getElementById(id);
+
+    const errorAlert = byId('errorAlert');
+    const errorText = byId('errorText');
+    const successAlert = byId('successAlert');
+    const successText = byId('successText');
+
+    function clearAlerts() {
+      errorAlert?.classList.remove('show');
+      successAlert?.classList.remove('show');
+    }
+
+    function showError(message) {
+      clearAlerts();
+
+      if (errorText) {
+        errorText.textContent = message;
+      }
+
+      if (errorAlert) {
+        errorAlert.classList.add('show');
+        errorAlert.setAttribute('role', 'alert');
+      }
+
+      console.error(message);
+    }
+
+    function showSuccess(message) {
+      clearAlerts();
+
+      if (successText) {
+        successText.textContent = message;
+      }
+
+      if (successAlert) {
+        successAlert.classList.add('show');
+        successAlert.setAttribute('role', 'status');
+      }
+    }
+
+    function setLoading(button, loading) {
+      if (!button) return;
+
+      button.disabled = loading;
+      button.classList.toggle('loading', loading);
+      button.setAttribute('aria-busy', String(loading));
+    }
+
+    function getInputValue(id, trim = false) {
+      const input = byId(id);
+
+      if (!input) {
+        throw new Error(`Page setup error: #${id} is missing.`);
+      }
+
+      return trim ? input.value.trim() : input.value;
+    }
+
+    function getFriendlyError(error, fallback) {
+      const message = error?.message || fallback;
+      const lowerMessage = message.toLowerCase();
+
+      if (
+        lowerMessage.includes('failed to fetch') ||
+        lowerMessage.includes('networkerror')
+      ) {
+        return 'Could not connect to Supabase. Check your internet connection and Supabase URL.';
+      }
+
+      if (lowerMessage.includes('invalid login credentials')) {
+        return 'The email or password you entered is incorrect.';
+      }
+
+      if (lowerMessage.includes('email not confirmed')) {
+        return 'Please confirm your email address before logging in.';
+      }
+
+      if (lowerMessage.includes('password should be')) {
+        return 'Your password does not meet the required security rules.';
+      }
+
+      if (lowerMessage.includes('rate limit')) {
+        return 'Too many attempts. Please wait a few minutes and try again.';
+      }
+
+      return message;
+    }
+
+    /* =========================================================
+       INITIALISE SUPABASE
+       ========================================================= */
+    if (
+      !window.supabase ||
+      typeof window.supabase.createClient !== 'function'
+    ) {
+      showError(
+        'Supabase could not load. Check the CDN script, internet connection, and script order.'
+      );
+      return;
+    }
+
+    let supabaseClient;
+
+    try {
+      supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY,
+        {
+          auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true
+          }
+        }
+      );
+    } catch (error) {
+      showError(
+        getFriendlyError(error, 'Could not initialise logo.')
+      );
+      return;
+    }
+
+    /* =========================================================
+       VIEW SWITCHING
+       ========================================================= */
+    const views = ['login', 'signup', 'forgot'];
+
+    function showView(viewName) {
+      if (!views.includes(viewName)) return;
+
+      clearAlerts();
+
+      views.forEach(view => {
+        byId(`view-${view}`)?.classList.toggle(
+          'active',
+          view === viewName
+        );
+      });
+
+      const authTabs = byId('authTabs');
+
+      if (authTabs) {
+        authTabs.style.display =
+          viewName === 'forgot' ? 'none' : 'flex';
+      }
+
+      document.querySelectorAll('#authTabs .tab').forEach(tab => {
+        tab.classList.toggle(
+          'active',
+          tab.dataset.view === viewName
+        );
+      });
+
+      window.requestAnimationFrame(() => {
+        byId(`view-${viewName}`)
+          ?.querySelector('input')
+          ?.focus();
+      });
+    }
+
+    document.addEventListener('click', event => {
+      const target =
+        event.target instanceof Element
+          ? event.target.closest(
+              '[data-view], #toForgot, #backToLogin, .pw-toggle'
+            )
+          : null;
+
+      if (!target) return;
+
+      // Password visibility buttons
+      if (target.classList.contains('pw-toggle')) {
+        event.preventDefault();
+
+        const input = byId(target.dataset.target);
+
+        if (!(input instanceof HTMLInputElement)) {
+          showError('Password input could not be found.');
+          return;
+        }
+
+        const showPassword = input.type === 'password';
+
+        input.type = showPassword ? 'text' : 'password';
+        target.textContent = showPassword ? 'HIDE' : 'SHOW';
+        target.setAttribute(
+          'aria-label',
+          showPassword ? 'Hide password' : 'Show password'
+        );
+
+        return;
+      }
+
+      let requestedView = target.dataset.view;
+
+      if (target.id === 'toForgot') {
+        requestedView = 'forgot';
+      }
+
+      if (target.id === 'backToLogin') {
+        requestedView = 'login';
+      }
+
+      if (views.includes(requestedView)) {
+        event.preventDefault();
+        showView(requestedView);
+      }
+    });
+
+    /* =========================================================
+       LOGIN
+       ========================================================= */
+    const loginForm = byId('loginForm');
+
+    loginForm?.addEventListener('submit', async event => {
+      event.preventDefault();
+      clearAlerts();
+
+      const button = byId('loginBtn');
+      setLoading(button, true);
+
+      try {
+        const email = getInputValue('login-email', true);
+        const password = getInputValue('login-password');
+
+        if (!email || !password) {
+          throw new Error('Enter your email and password.');
+        }
+
+        const { error } =
+          await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+          });
+
+        if (error) throw error;
+
+        showSuccess('Login successful — redirecting...');
+
+        window.setTimeout(() => {
+          window.location.assign(POST_AUTH_REDIRECT);
+        }, 700);
+      } catch (error) {
+        showError(
+          getFriendlyError(
+            error,
+            'Could not log in. Please check your details.'
+          )
+        );
+      } finally {
+        setLoading(button, false);
+      }
+    });
+
+    /* =========================================================
+       SIGN UP
+       ========================================================= */
+    const signupForm = byId('signupForm');
+
+    signupForm?.addEventListener('submit', async event => {
+      event.preventDefault();
+      clearAlerts();
+
+      const button = byId('signupBtn');
+      setLoading(button, true);
+
+      try {
+        const fullName = getInputValue('signup-name', true);
+        const email = getInputValue('signup-email', true);
+        const password = getInputValue('signup-password');
+
+        const confirmPasswordInput =
+          byId('signup-confirm-password');
+
+        if (!fullName || !email || !password) {
+          throw new Error('Complete all the sign-up fields.');
+        }
+
+        if (password.length < 8) {
+          throw new Error(
+            'Password must be at least 8 characters.'
+          );
+        }
+
+        if (
+          confirmPasswordInput &&
+          confirmPasswordInput.value !== password
+        ) {
+          throw new Error('The passwords do not match.');
+        }
+
+        const { data, error } =
+          await supabaseClient.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                full_name: fullName
+              },
+              emailRedirectTo: POST_AUTH_REDIRECT
+            }
+          });
+
+        if (error) throw error;
+
+        if (data.session) {
+          showSuccess('Account created — redirecting...');
+
+          window.setTimeout(() => {
+            window.location.assign(POST_AUTH_REDIRECT);
+          }, 700);
+        } else {
+          showSuccess(
+            'Account created! Check your email to confirm your account before logging in.'
+          );
+
+          signupForm.reset();
+        }
+      } catch (error) {
+        showError(
+          getFriendlyError(
+            error,
+            'Could not create your account.'
+          )
+        );
+      } finally {
+        setLoading(button, false);
+      }
+    });
+
+    /* =========================================================
+       FORGOT PASSWORD
+       ========================================================= */
+    const forgotForm = byId('forgotForm');
+
+    forgotForm?.addEventListener('submit', async event => {
+      event.preventDefault();
+      clearAlerts();
+
+      const button = byId('forgotBtn');
+      setLoading(button, true);
+
+      try {
+        if (window.location.protocol === 'file:') {
+          throw new Error(
+            'Open this page using VS Code Live Server. Password-reset links cannot use a file:// address.'
+          );
+        }
+
+        const email = getInputValue('forgot-email', true);
+
+        if (!email) {
+          throw new Error('Enter your email address.');
+        }
+
+        const { error } =
+          await supabaseClient.auth.resetPasswordForEmail(
+            email,
+            {
+              redirectTo: PASSWORD_RESET_REDIRECT
+            }
+          );
+
+        if (error) throw error;
+
+        showSuccess(
+          'Reset link sent. Check your inbox and spam folder.'
+        );
+
+        forgotForm.reset();
+      } catch (error) {
+        showError(
+          getFriendlyError(
+            error,
+            'Could not send the password-reset link.'
+          )
+        );
+      } finally {
+        setLoading(button, false);
+      }
+    });
+
+    /* =========================================================
+       HANDLE ERRORS RETURNED FROM EMAIL LINKS
+       ========================================================= */
+    const queryParameters =
+      new URLSearchParams(window.location.search);
+
+    const hashParameters =
+      new URLSearchParams(window.location.hash.slice(1));
+
+    const redirectError =
+      queryParameters.get('error_description') ||
+      hashParameters.get('error_description');
+
+    if (redirectError) {
+      showError(redirectError);
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

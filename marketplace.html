@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A3D91" />
+<title>Marketplace · Skilled-Creatives Intl.</title>
+<meta name="description" content="Shop products from Skilled-Creatives International Limited. Pay securely with Paystack." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css?v=10" />
+<style>
+  /* The marketplace has no sidebar, so the shared layout rules are relaxed. */
+  .main{ margin-left:0 !important; }
+  .topbar{ padding-left:14px !important; }
+  .shop-hero{
+    background:linear-gradient(135deg,var(--blue-deep),var(--blue) 60%,#1256B8);
+    color:#fff; border-radius:var(--radius-lg);
+    padding:28px 22px; margin-bottom:22px;
+  }
+  .shop-hero h1{ color:#fff; font-size:1.7rem; }
+  .shop-hero p{ color:rgba(255,255,255,.85); margin-top:8px; max-width:52ch; font-size:.94rem; }
+  .shop-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media (min-width:700px){ .shop-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (min-width:1100px){ .shop-grid{ grid-template-columns:repeat(4,1fr); } }
+  .p-card{
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--radius-lg); overflow:hidden; display:flex; flex-direction:column;
+    box-shadow:var(--shadow-1); transition:transform var(--t), box-shadow var(--t);
+  }
+  .p-card:hover{ transform:translateY(-2px); box-shadow:var(--shadow-2); }
+.p-card__img{
+  position:relative;
+  aspect-ratio:1/1;
+  background:var(--bg);
+  overflow:hidden;                /* clip anything that overflows */
+  display:grid; place-items:center;
+  color:var(--muted);
+}
+.p-card__img img{
+  position:absolute; inset:0;     /* fill the box exactly, ignore intrinsic size */
+  width:100%; height:100%;
+  object-fit:cover;
+}
+
+  .p-card__body{ padding:12px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .p-card__name{ font-weight:600; font-size:.92rem; line-height:1.35; }
+  .p-card__price{ font-family:"Space Grotesk"; font-weight:600; font-size:1.05rem; }
+  .p-card__was{ color:var(--muted); text-decoration:line-through; font-size:.82rem; margin-left:6px; font-weight:400; }
+  .p-card__meta{ font-family:"IBM Plex Mono"; font-size:.72rem; color:var(--muted); }
+  .p-card .btn{ margin-top:auto; }
+  .shop-foot{
+    margin-top:44px; padding-top:22px; border-top:1px solid var(--border);
+    color:var(--muted); font-size:.84rem; text-align:center;
+  }
+</style>
+</head>
+
+<body>
+
+<div id="boot" class="boot" role="status" aria-live="polite">
+  <div class="boot__mark">SC</div>
+  <p class="boot__text">Loading the marketplace…</p>
+</div>
+
+<div id="connBanner" class="conn-banner" hidden>
+  <i data-lucide="wifi-off"></i>
+  <span id="connBannerText">Products could not be loaded.</span>
+  <button class="conn-banner__close" type="button" aria-label="Dismiss"><i data-lucide="x"></i></button>
+</div>
+
+<header class="topbar">
+  <div class="topbar__left">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">
+        <img src="assets/logo.png" alt="" onerror="this.remove()" />
+        <span class="brand__fallback">SC</span>
+      </span>
+      <span class="brand__text"><strong>Skilled-Creatives</strong><small>Marketplace</small></span>
+    </a>
+  </div>
+  <div class="topbar__right">
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch theme">
+      <i data-lucide="moon" id="themeIcon"></i>
+    </button>
+    <a class="btn btn--sm" href="dashboard.html"><i data-lucide="layout-dashboard"></i> My dashboard</a>
+  </div>
+</header>
+
+<main id="main" class="main" tabindex="-1">
+
+  <div class="shop-hero">
+    <h1>Marketplace</h1>
+    <p>Products from Skilled-Creatives International. Pay securely with Paystack, then we confirm your order on WhatsApp and arrange delivery.</p>
+  </div>
+
+  <div class="toolbar">
+    <div class="field field--search">
+      <i data-lucide="search"></i>
+      <input id="shopSearch" type="search" placeholder="Search products" aria-label="Search products" />
+    </div>
+    <div class="chips" id="shopFilters" role="tablist" aria-label="Product categories"></div>
+  </div>
+
+  <div id="shopGrid" class="shop-grid"></div>
+
+  <p class="shop-foot">
+    Skilled-Creatives International Limited · Payments processed by Paystack
+  </p>
+</main>
+
+<div id="modalRoot" class="modal-root" hidden>
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal__head">
+      <h2 id="modalTitle"></h2>
+      <button class="icon-btn" type="button" data-close-modal aria-label="Close"><i data-lucide="x"></i></button>
+    </header>
+    <div id="modalBody" class="modal__body"></div>
+  </div>
+</div>
+
+<div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="marketplace.js?v=1" defer></script>
+</body>
+</html>

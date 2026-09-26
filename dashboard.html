@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A3D91" />
+<title>Dashboard · Skilled-Creatives Intl.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css?v=10" />
+</head>
+
+<body>
+
+<div id="boot" class="boot" role="status" aria-live="polite">
+  <div class="boot__mark">SC</div>
+  <p class="boot__text">Loading your dashboard…</p>
+</div>
+
+<div id="connBanner" class="conn-banner" hidden>
+  <i data-lucide="wifi-off"></i>
+  <span id="connBannerText">Some data could not be loaded. Showing what we have.</span>
+  <button class="conn-banner__close" type="button" aria-label="Dismiss"><i data-lucide="x"></i></button>
+</div>
+
+<!-- ============ TOP NAVBAR ============ -->
+<header class="topbar">
+  <div class="topbar__left">
+    <button id="menuBtn" class="icon-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="sidebar">
+      <i data-lucide="menu"></i>
+    </button>
+    <a class="brand" href="#overview" aria-label="Skilled-Creatives Intl. home">
+      <span class="brand__mark">
+        <img id="brandLogo" src="assets/logo.png" alt="" onerror="this.remove()" />
+        <span class="brand__fallback">SC</span>
+      </span>
+    
+    </a>
+  </div>
+
+  <div class="topbar__search">
+    <i data-lucide="search"></i>
+    <input id="globalSearch" type="search" placeholder="Search courses, help…" aria-label="Search" />
+  </div>
+
+  <div class="topbar__right">
+    <button id="searchBtnMobile" class="icon-btn only-mobile" type="button" aria-label="Search">
+      <i data-lucide="search"></i>
+    </button>
+    <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch theme">
+      <i data-lucide="moon" id="themeIcon"></i>
+    </button>
+
+    <div class="dropdown">
+      <button id="notifBtn" class="icon-btn" type="button" aria-label="Notifications" aria-expanded="false" aria-haspopup="true">
+        <i data-lucide="bell"></i>
+        <span id="notifDot" class="dot" hidden></span>
+      </button>
+      <div id="notifMenu" class="menu menu--notif" role="menu" hidden>
+        <div class="menu__head">
+          <span>Notifications</span>
+          <button id="markAllRead" class="link-btn" type="button">Mark all as read</button>
+        </div>
+        <div id="notifList" class="notif-list"></div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button id="userBtn" class="user-btn" type="button" aria-expanded="false" aria-haspopup="true">
+        <span class="avatar avatar--sm" id="navAvatar">SC</span>
+        <span class="user-btn__name" id="navUserName">Member</span>
+        <i data-lucide="chevron-down" class="user-btn__caret"></i>
+      </button>
+      <div id="userMenu" class="menu" role="menu" hidden>
+        <a class="menu__item" href="#settings" data-nav="settings"><i data-lucide="user"></i> My profile</a>
+        <a class="menu__item" href="#settings" data-nav="settings"><i data-lucide="settings"></i> Settings</a>
+        <a class="menu__item" href="marketplace.html"><i data-lucide="store"></i> Marketplace</a>
+        <a class="menu__item" href="#support" data-nav="support"><i data-lucide="circle-help"></i> Help &amp; support</a>
+        <hr class="menu__sep" />
+        <button class="menu__item menu__item--danger" type="button" data-action="signout"><i data-lucide="log-out"></i> Sign out</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="overlay" class="overlay" hidden></div>
+
+<aside id="sidebar" class="sidebar" aria-label="Main navigation">
+  <div class="sidebar__head">
+    <a class="brand brand--sidebar" href="#overview">
+      <span class="brand__mark">
+        <img src="assets/logo.png" alt="" onerror="this.remove()" />
+        <span class="brand__fallback">SC</span>
+      </span>
+      <span class="brand__text"><strong>Skilled-Creatives</strong><small>Intl.</small></span>
+    </a>
+    <button id="closeSidebar" class="icon-btn only-mobile" type="button" aria-label="Close menu">
+      <i data-lucide="x"></i>
+    </button>
+  </div>
+
+  <nav class="nav">
+    <p class="nav__label">Dashboard</p>
+    <a class="nav__item is-active" href="#overview" data-nav="overview"><i data-lucide="layout-dashboard"></i><span>Overview</span></a>
+    <a class="nav__item" href="#courses"   data-nav="courses"><i data-lucide="graduation-cap"></i><span>Courses</span></a>
+    <a class="nav__item" href="#community" data-nav="community"><i data-lucide="users"></i><span>Community</span></a>
+    <a class="nav__item" href="marketplace.html"><i data-lucide="store"></i><span>Marketplace</span></a>
+
+    <hr class="nav__sep" />
+    <p class="nav__label">Account</p>
+    <a class="nav__item" href="#settings" data-nav="settings"><i data-lucide="settings"></i><span>Settings</span></a>
+    <a class="nav__item" href="#support"  data-nav="support"><i data-lucide="circle-help"></i><span>Help &amp; support</span></a>
+
+    <hr class="nav__sep" />
+    <button class="nav__item nav__item--danger" type="button" data-action="signout">
+      <i data-lucide="log-out"></i><span>Sign out</span>
+    </button>
+  </nav>
+
+  <div class="sidebar__foot">
+    <div class="mini-profile">
+      <span class="avatar" id="sideAvatar">SC</span>
+      <div class="mini-profile__meta">
+        <strong id="sideName">Member</strong>
+        <small id="sideEmail">—</small>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ============ MAIN ============ -->
+<main id="main" class="main" tabindex="-1">
+
+  <!-- OVERVIEW -->
+  <section class="page is-active" id="page-overview">
+    <header class="page__head">
+      <div>
+        <p class="crumb">Dashboard</p>
+        <h1 id="greeting">Welcome back</h1>
+        <p class="page__sub">Your courses and everything you have unlocked so far.</p>
+      </div>
+      <a class="btn btn--primary" href="#courses" data-nav="courses"><i data-lucide="compass"></i> Explore courses</a>
+    </header>
+
+    <div class="stats" id="overviewStats"></div>
+
+    <div class="split">
+      <div>
+        <div class="section-head">
+          <h2>Continue learning</h2>
+          <a class="link-btn" href="#courses" data-nav="courses">View all</a>
+        </div>
+        <div id="continueLearning" class="course-grid"></div>
+      </div>
+      <div>
+        <div class="section-head"><h2>Recent activity</h2></div>
+        <div id="activityFeed" class="timeline"></div>
+      </div>
+    </div>
+
+    <div class="section-head"><h2>Quick actions</h2></div>
+    <div class="quick-actions">
+      <a class="quick" href="#courses" data-nav="courses"><i data-lucide="graduation-cap"></i><span>Explore courses</span></a>
+      <button class="quick" type="button" data-action="join-whatsapp"><i data-lucide="message-circle"></i><span>Join community</span></button>
+      <a class="quick" href="marketplace.html"><i data-lucide="store"></i><span>Shop marketplace</span></a>
+      <a class="quick" href="#settings" data-nav="settings"><i data-lucide="user-round-cog"></i><span>Update profile</span></a>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="page" id="page-courses" hidden>
+    <header class="page__head">
+      <div>
+        <p class="crumb">Dashboard · Courses</p>
+        <h1>Courses</h1>
+        <p class="page__sub">Buy once, download the material and keep it.</p>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="field field--search">
+        <i data-lucide="search"></i>
+        <input id="courseSearch" type="search" placeholder="Search courses" aria-label="Search courses" />
+      </div>
+      <div class="chips" id="courseFilters" role="tablist" aria-label="Course categories">
+        <button class="chip is-active" data-cat="All" role="tab" aria-selected="true">All</button>
+        <button class="chip" data-cat="AI" role="tab" aria-selected="false">AI</button>
+        <button class="chip" data-cat="Technology" role="tab" aria-selected="false">Technology</button>
+        <button class="chip" data-cat="Business" role="tab" aria-selected="false">Business</button>
+        <button class="chip" data-cat="Digital Skills" role="tab" aria-selected="false">Digital Skills</button>
+        <button class="chip" data-cat="Design" role="tab" aria-selected="false">Design</button>
+        <button class="chip" data-cat="Marketing" role="tab" aria-selected="false">Marketing</button>
+      </div>
+    </div>
+
+    <div id="courseGrid" class="course-grid course-grid--catalogue"></div>
+
+    <div class="section-head section-head--spaced">
+      <h2>My courses</h2>
+      <div class="tabs" id="myCourseTabs">
+        <button class="tab is-active" data-tab="all">All</button>
+        <button class="tab" data-tab="in_progress">In progress</button>
+        <button class="tab" data-tab="completed">Completed</button>
+      </div>
+    </div>
+    <div id="myCourses" class="table-wrap"></div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="page" id="page-community" hidden>
+    <header class="page__head">
+      <div>
+        <p class="crumb">Dashboard · Community</p>
+        <h1>Community</h1>
+        <p class="page__sub">Connect, learn and grow with other members.</p>
+      </div>
+    </header>
+
+    <div class="stats" id="communityStats"></div>
+
+    <div class="cta-card">
+      <div class="cta-card__body">
+        <h2>Join our WhatsApp community</h2>
+        <p>Meet other members, get updates first, hear about opportunities and take part in the discussions that happen every day.</p>
+        <button class="btn btn--accent" type="button" data-action="join-whatsapp">
+          <i data-lucide="message-circle"></i> Join WhatsApp community
+        </button>
+      </div>
+      <div class="cta-card__art" aria-hidden="true"><i data-lucide="users-round"></i></div>
+    </div>
+
+    <div class="section-head"><h2>Explore the community</h2></div>
+    <div class="tabs tabs--pill" id="postTabs">
+      <button class="tab is-active" data-kind="all">Everything</button>
+      <button class="tab" data-kind="announcement">Announcements</button>
+      <button class="tab" data-kind="event">Events</button>
+      <button class="tab" data-kind="discussion">Discussions</button>
+      <button class="tab" data-kind="opportunity">Opportunities</button>
+    </div>
+    <div id="communityPosts" class="post-grid"></div>
+
+    <div class="section-head section-head--spaced"><h2>About Skilled-Creatives International</h2></div>
+    <div class="about">
+      <p class="about__lead">
+        Skilled-Creatives International Limited connects people to the skills, products and
+        opportunities that build real income. Our work runs across technology education,
+        renewable energy, organic products, fashion and lifestyle, a marketplace,
+        and support for innovation and entrepreneurship.
+      </p>
+      <div class="card-row">
+        <article class="mini-card">
+          <i data-lucide="target"></i><h3>Our aim</h3>
+          <p>To empower individuals and businesses through practical education, technology, innovation and sustainable opportunities.</p>
+        </article>
+        <article class="mini-card">
+          <i data-lucide="rocket"></i><h3>Mission</h3>
+          <p>Teach skills people can earn from, and give them the products and network to earn with.</p>
+        </article>
+        <article class="mini-card">
+          <i data-lucide="eye"></i><h3>Vision</h3>
+          <p>A generation of skilled Nigerians building businesses that last, at home and beyond.</p>
+        </article>
+      </div>
+      <div class="counters" id="aboutCounters"></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="page" id="page-settings" hidden>
+    <header class="page__head">
+      <div>
+        <p class="crumb">Dashboard · Settings</p>
+        <h1>Settings</h1>
+        <p class="page__sub">Your details, security and how the dashboard behaves.</p>
+      </div>
+    </header>
+
+    <div class="tabs tabs--pill" id="settingsTabs">
+      <button class="tab is-active" data-stab="profile">Profile</button>
+      <button class="tab" data-stab="account">Account</button>
+      <button class="tab" data-stab="security">Security</button>
+      <button class="tab" data-stab="notifications">Notifications</button>
+      <button class="tab" data-stab="appearance">Appearance</button>
+    </div>
+    <div id="settingsBody"></div>
+  </section>
+
+  <!-- HELP & SUPPORT -->
+  <section class="page" id="page-support"  hidden>
+    <header class="page__head">
+      <div>
+        <p class="crumb">Dashboard · Help</p>
+        <h1>How can we help?</h1>
+        <p class="page__sub">Search the answers, ask the assistant, or talk to a person.</p>
+      </div>
+    </header>
+
+    <div class="field field--search field--wide">
+      <i data-lucide="search"></i>
+      <input id="faqSearch" type="search" placeholder="Search help topics" aria-label="Search help" />
+    </div>
+
+    <div class="chips" id="faqFilters">
+      <button class="chip is-active" data-fcat="All">All</button>
+      <button class="chip" data-fcat="Account">Account</button>
+      <button class="chip" data-fcat="Courses">Courses</button>
+      <button class="chip" data-fcat="Payments">Payments</button>
+      <button class="chip" data-fcat="Marketplace">Marketplace</button>
+      <button class="chip" data-fcat="Community">Community</button>
+    </div>
+
+    <div id="faqList" class="faq"></div>
+
+    <div class="split split--support">
+      <div class="chat" style="display:none;" aria-label="Support assistant">
+        <div class="chat__head">
+          <span class="chat__avatar"><i data-lucide="sparkles"></i></span>
+          <div>
+            <strong>Skilled-Creatives assistant</strong>
+            <small>How can I help you today?</small>
+          </div>
+        </div>
+        <div id="chatLog" class="chat__log" aria-live="polite"></div>
+        <div class="chat__input">
+          <label class="sr-only" for="chatInput">Message the assistant</label>
+          <input id="chatInput" type="text" placeholder="Ask about courses, downloads, payments…" autocomplete="off" />
+          <button id="chatSend" class="btn btn--primary btn--icon" type="button" aria-label="Send">
+            <i data-lucide="send-horizontal"></i>
+          </button>
+        </div>
+        <p class="chat__note">Answers come from our help content. For anything account-specific, contact support.</p>
+      </div>
+
+      <div>
+        <div class="section-head"><h2>Contact support</h2></div>
+        <div class="contact-list">
+          <button class="contact" type="button" data-action="support-whatsapp">
+            <i data-lucide="message-circle"></i>
+            <span><strong>WhatsApp</strong><small>Fastest reply during working hours</small></span>
+            <i data-lucide="chevron-right" class="contact__go"></i>
+          </button>
+          <button class="contact" type="button" data-action="support-email">
+            <i data-lucide="mail"></i>
+            <span><strong>Email</strong><small id="supportEmailText">—</small></span>
+            <i data-lucide="chevron-right" class="contact__go"></i>
+          </button>
+          <button class="contact" type="button" data-action="support-phone">
+            <i data-lucide="phone"></i>
+            <span><strong>Phone</strong><small id="supportPhoneText">—</small></span>
+            <i data-lucide="chevron-right" class="contact__go"></i>
+          </button>
+        </div>
+        <div class="hours">
+          <i data-lucide="clock"></i>
+          <div><strong>Support hours</strong><span>Monday to Friday, 8:00 AM – 5:00 PM (WAT)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="modalRoot" class="modal-root" hidden>
+  <div class="modal__backdrop" data-close-modal></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header class="modal__head">
+      <h2 id="modalTitle"></h2>
+      <button class="icon-btn" type="button" data-close-modal aria-label="Close"><i data-lucide="x"></i></button>
+    </header>
+    <div id="modalBody" class="modal__body"></div>
+  </div>
+</div>
+
+<div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="dashboard.js?v=10" defer></script>
+</body>
+</html>
