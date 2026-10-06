@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skilled-Creatives International Limited | Skills, Energy &amp; Innovation Hub</title>
+<meta name="description" content="Skilled-Creatives International Limited — empowering communities through tech education, renewable energy, organic wellness, fashion, and enterprise development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0A3D91;
+    --blue-deep:#072a66;
+    --ink:#0B0F1A;
+    --white:#FFFFFF;
+    --orange:#F2921D;
+    --cloud:#F5F7FB;
+    --slate:#5B6472;
+    --line:#E3E7EF;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.6;overflow-x:hidden;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;letter-spacing:-0.01em;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:500;}
+  section{padding:96px 0;}
+  @media(max-width:720px){section{padding:64px 0;}}
+
+  :focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+  }
+/* PREMIUM HEADER */
+
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 2000;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 2px solid #072a66;
+
+  box-shadow:
+    0 6px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   NAVIGATION CONTAINER
+========================================= */
+
+.nav {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 82px;
+
+  margin: 0 auto;
+  padding: 12px 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.logo img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+  padding: 4px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.08);
+
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1.1;
+
+  min-width: 0;
+}
+
+.logo-title {
+  color: #0a4d8c;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+}
+
+.logo-subtitle {
+  margin-top: 3px;
+
+  color: #666666;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   DESKTOP NAVIGATION LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(14px, 1.8vw, 30px);
+
+  list-style: none;
+
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.nav-item {
+  flex-shrink: 0;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+
+  color: #222222;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-item a:hover {
+  color: #0a4d8c;
+  transform: translateY(-2px);
+}
+
+/* Hide mobile-only parts on desktop */
+.nav-number,
+.nav-arrow,
+.side-nav-header,
+.side-nav-label,
+.side-nav-bottom {
+  display: none;
+}
+
+
+/* =========================================
+   HEADER BUTTON AREA
+========================================= */
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+/* Primary button */
+
+.btn-primary {
+  padding: 12px 22px;
+
+  border-radius: 50px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0a4d8c,
+      #1677ff
+    );
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px rgba(22, 119, 255, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(22, 119, 255, 0.32);
+}
+
+
+/* Ghost button */
+
+.btn-ghost {
+  padding: 12px 19px;
+
+  border: 1px solid rgba(10, 77, 140, 0.2);
+  border-radius: 50px;
+
+  color: #0a4d8c;
+  background: #ffffff;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn-ghost:hover {
+  background: #f4f8ff;
+  border-color: rgba(10, 77, 140, 0.4);
+}
+
+
+/* =========================================
+   HAMBURGER BUTTON
+========================================= */
+
+.menu-toggle {
+  width: 44px;
+  height: 44px;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: 1px solid rgba(10, 77, 140, 0.15);
+  border-radius: 50%;
+
+  background: #f5f9ff;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+
+  display: block;
+
+  border-radius: 5px;
+
+  background: #0a4d8c;
+}
+
+
+/* =========================================
+   OVERLAY — HIDDEN ON DESKTOP
+========================================= */
+
+.nav-overlay {
+  display: none;
+}
+
+
+/* =========================================
+   SMALL LAPTOPS AND TABLETS
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .nav {
+    min-height: 76px;
+    padding: 10px 22px;
+  }
+
+  .logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-title {
+    font-size: 15px;
+  }
+
+  .logo-subtitle {
+    font-size: 10px;
+  }
+
+  /* Side navigation */
+  .nav-links {
+    position: fixed;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: min(390px, 88vw);
+    height: 100vh;
+    height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbff 100%
+      );
+
+    z-index: 2000;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transform: translateX(-105%);
+
+    transition:
+      transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+
+    box-shadow:
+      15px 0 50px rgba(0, 0, 0, 0.18);
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+
+  /* Mobile side header */
+
+  .side-nav-header {
+    position: relative;
+
+    width: 100%;
+
+    padding: 22px 65px 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom:
+      1px solid rgba(10, 77, 140, 0.1);
+
+    background: rgba(255, 255, 255, 0.98);
+  }
+
+  .side-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+  }
+
+  .side-brand img {
+    width: 46px;
+    height: 46px;
+
+    object-fit: contain;
+
+    padding: 4px;
+
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 5px 18px rgba(0, 0, 0, 0.1);
+
+    flex-shrink: 0;
+  }
+
+  .side-brand div {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.15;
+  }
+
+  .side-brand strong {
+    color: #0a4d8c;
+
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .side-brand span {
+    margin-top: 4px;
+
+    color: #777777;
+
+    font-size: 10px;
+
+    letter-spacing: 0.4px;
+  }
+
+
+  /* Close button */
+
+  .side-close {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+      1px solid rgba(10, 77, 140, 0.12);
+
+    border-radius: 50%;
+
+    color: #0a4d8c;
+    background: #f6f9fc;
+
+    font-size: 27px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .side-close:hover {
+    color: #ffffff;
+    background: #0a4d8c;
+
+    transform: rotate(90deg);
+  }
+
+
+  /* Menu label */
+
+  .side-nav-label {
+    width: 100%;
+
+    display: block;
+
+    padding: 27px 27px 11px;
+  }
+
+  .side-nav-label span {
+    color: #f39a27;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+  }
+
+
+  /* Mobile navigation items */
+
+  .nav-item {
+    width: 100%;
+
+    padding: 0 18px;
+  }
+
+  .nav-item a {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 35px minmax(0, 1fr) 25px;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 17px 10px;
+
+    color: #17202a;
+
+    border-bottom:
+      1px solid rgba(10, 77, 140, 0.07);
+
+    font-size: 15px;
+    font-weight: 650;
+
+    white-space: normal;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  .nav-item a:hover {
+    color: #0a4d8c;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(10, 77, 140, 0.07),
+        transparent
+      );
+
+    transform: none;
+    padding-left: 16px;
+  }
+
+  .nav-number {
+    display: block;
+
+    color: #9aa6b2;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+  }
+
+  .nav-name {
+    min-width: 0;
+  }
+
+  .nav-arrow {
+    display: block;
+
+    color: #0a4d8c;
+
+    font-size: 18px;
+
+    opacity: 0.45;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .nav-item a:hover .nav-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+
+  /* Bottom mobile CTA */
+
+  .side-nav-bottom {
+    width: 100%;
+
+    display: block;
+
+    margin-top: auto;
+    padding: 24px 22px 28px;
+
+    border-top:
+      1px solid rgba(10, 77, 140, 0.08);
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(245, 249, 253, 0.5),
+        #ffffff
+      );
+  }
+
+  .side-enroll {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    color: #ffffff;
+
+    background:
+      linear-gradient(
+        135deg,
+        #0a4d8c,
+        #1677ff
+      );
+
+    font-size: 14px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    box-shadow:
+      0 10px 25px rgba(10, 77, 140, 0.22);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .side-enroll:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 14px 30px rgba(10, 77, 140, 0.3);
+  }
+
+  .side-enroll span:last-child {
+    font-size: 19px;
+  }
+
+  .side-nav-bottom p {
+    margin: 17px 0 0;
+
+    color: #9aa6b2;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+
+  /* Show menu toggle */
+
+  .menu-toggle {
+    display: flex;
+  }
+
+
+  /* Hide partner button */
+
+  .btn-ghost {
+    display: none;
+  }
+
+
+  /* Overlay */
+
+  .nav-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: block;
+
+    z-index: 1500;
+
+    background: rgba(3, 12, 25, 0.58);
+
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .nav {
+    min-height: 70px;
+
+    padding: 10px 15px;
+
+    gap: 10px;
+  }
+
+  .logo {
+    gap: 9px;
+
+    min-width: 0;
+  }
+
+  .logo img {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 10px;
+  }
+
+  .logo-text {
+    max-width: 190px;
+  }
+
+  .logo-title {
+    font-size: 14px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .logo-subtitle {
+    font-size: 9px;
+  }
+
+  .nav-cta {
+    gap: 7px;
+  }
+
+  .btn-primary {
+    padding: 10px 16px;
+
+    font-size: 12px;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .nav {
+    padding: 9px 11px;
+  }
+
+  .logo img {
+    width: 41px;
+    height: 41px;
+  }
+
+  .logo-text {
+    max-width: 145px;
+  }
+
+  .logo-title {
+    font-size: 12px;
+  }
+
+  .logo-subtitle {
+    font-size: 8px;
+  }
+
+  .btn-primary {
+    padding: 9px 13px;
+
+    font-size: 11px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-links {
+    width: min(350px, 90vw);
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 370px) {
+
+  .logo-text {
+    max-width: 115px;
+  }
+
+  .logo-title {
+    font-size: 11px;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+}
+  /* ===== Hero ===== */
+  .hero{position:relative;padding:168px 0 110px;background:radial-gradient(120% 100% at 15% 0%, #0d1830 0%, var(--ink) 55%, #060810 100%);color:#fff;overflow:hidden;}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  @media(max-width:940px){.hero .wrap{grid-template-columns:1fr;}}
+  .hero-grid-bg{position:absolute;inset:0;opacity:0.35;background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 20% 20%, black, transparent 70%);}
+  .hero-glow{position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(10,61,145,0.55),transparent 65%);top:-220px;right:-180px;filter:blur(10px);}
+  .hero h1{font-size:clamp(34px,4.6vw,56px);margin:18px 0 20px;color:#fff;}
+  .hero h1 span{color:var(--orange);}
+  .hero p.lead{font-size:17px;color:#B9C2D6;max-width:520px;margin-bottom:34px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px;}
+  .hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
+  .stat{font-family:var(--mono);}
+  .stat .num{font-size:26px;font-weight:600;color:#fff;display:block;}
+  .stat .lbl{font-size:12px;color:#8791A8;text-transform:uppercase;letter-spacing:.08em;}
+
+  /* signature hub diagram */
+  .hub-wrap{position:relative;aspect-ratio:1/1;max-width:460px;margin:0 auto;}
+  .hub-svg{width:100%;height:100%;overflow:visible;}
+  .hub-line{stroke:rgba(255,255,255,0.28);stroke-width:1.4;fill:none;stroke-dasharray:280;stroke-dashoffset:280;animation:draw 1.6s ease forwards;}
+  .hub-node{transform-origin:center;opacity:0;animation:pop .5s ease forwards;}
+  .hub-node circle{fill:var(--ink);stroke:var(--orange);stroke-width:1.6;}
+  .hub-node.center circle{fill:var(--orange);stroke:none;}
+  .hub-node text{font-family:var(--mono);font-size:9.5px;fill:#DCE2EE;letter-spacing:.02em;}
+  .hub-node.center text{fill:#1a1200;font-weight:700;font-size:11px;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes pop{to{opacity:1;}}
+  .hub-caption{text-align:center;font-family:var(--mono);font-size:11.5px;color:#8791A8;margin-top:14px;letter-spacing:.04em;}
+
+  /* ===== Marquee partners strip ===== */
+  .strip{
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      var(--cloud) 50%,
+      #ffffff 100%
+    );
+  border-top:1px solid rgba(15,23,42,.05);
+  border-bottom:1px solid var(--line);
+  padding:24px 0;
+}
+
+.strip::before,
+.strip::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:100px;
+  z-index:3;
+  pointer-events:none;
+}
+
+.strip::before{
+  left:0;
+  background:linear-gradient(
+    90deg,
+    var(--cloud),
+    transparent
+  );
+}
+
+.strip::after{
+  right:0;
+  background:linear-gradient(
+    270deg,
+    var(--cloud),
+    transparent
+  );
+}
+
+.strip-row{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin:9px 0;
+}
+
+.strip-label{
+  flex:0 0 auto;
+  min-width:145px;
+  padding-left:clamp(16px,4vw,50px);
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:600;
+  color:var(--slate);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  white-space:nowrap;
+}
+
+.marquee{
+  position:relative;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+}
+
+.marquee-track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  gap:11px;
+  will-change:transform;
+}
+
+.marquee-left .marquee-track{
+  animation:slideLeft 32s linear infinite;
+}
+
+.marquee-right .marquee-track{
+  animation:slideRight 32s linear infinite;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  padding:8px 16px;
+  border:1px solid rgba(15,23,42,.09);
+  border-radius:100px;
+  background:rgba(255,255,255,.9);
+  color:var(--ink);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.01em;
+  box-shadow:
+    0 4px 12px rgba(15,23,42,.04);
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.tag::before{
+  content:"";
+  width:5px;
+  height:5px;
+  margin-right:8px;
+  border-radius:50%;
+  background:var(--blue);
+  opacity:.7;
+}
+
+.tag:hover{
+  transform:translateY(-2px);
+  border-color:rgba(0,91,187,.25);
+  background:#fff;
+  box-shadow:
+    0 8px 20px rgba(15,23,42,.08);
+}
+
+/* Continuous left movement */
+@keyframes slideLeft{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+/* Continuous right movement */
+@keyframes slideRight{
+  from{
+    transform:translateX(-50%);
+  }
+
+  to{
+    transform:translateX(0);
+  }
+}
+
+
+/* Pause when the user hovers */
+.marquee:hover .marquee-track{
+  animation-play-state:paused;
+}
+
+
+/* Mobile */
+@media(max-width:700px){
+
+  .strip{
+    padding:20px 0;
+  }
+
+  .strip-row{
+    display:block;
+    margin:8px 0 14px;
+  }
+
+  .strip-label{
+    display:block;
+    min-width:0;
+    padding:0 16px 8px;
+    font-size:9px;
+  }
+
+  .marquee-track{
+    gap:8px;
+  }
+
+  .tag{
+    padding:7px 13px;
+    font-size:11px;
+  }
+
+  .strip::before,
+  .strip::after{
+    width:55px;
+  }
+
+  .marquee-left .marquee-track,
+  .marquee-right .marquee-track{
+    animation-duration:24s;
+  }
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion:reduce){
+  .marquee-track{
+    animation:none !important;
+    transform:none !important;
+  }
+}
+  /* ===== About / Welcome ===== */
+.about{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start;}
+  @media(max-width:860px){.about{grid-template-columns:1fr;}}
+  .about h2{font-size:clamp(26px,3vw,38px);margin:12px 0 18px;}
+  .about p{color:var(--slate);font-size:15.5px;margin-bottom:16px;max-width:560px;}
+ .mv-cards{
+  display:grid;
+  gap:16px;
+}
+
+.mv-card{
+  position:relative;
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.96),rgba(247,250,253,.92));
+  box-shadow:0 10px 30px rgba(15,23,42,.05);
+  overflow:hidden;
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.mv-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  background:linear-gradient(
+    180deg,
+    var(--blue),
+    #f59e0b
+  );
+  opacity:.9;
+}
+
+.mv-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(0,90,180,.25);
+  box-shadow:0 18px 40px rgba(15,23,42,.10);
+}
+
+.mv-icon{
+  flex:0 0 48px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:linear-gradient(
+    135deg,
+    rgba(0,91,187,.10),
+    rgba(245,158,11,.12)
+  );
+  border:1px solid rgba(0,91,187,.12);
+  color:var(--blue);
+  transition:all .3s ease;
+}
+
+.mv-card:hover .mv-icon{
+  transform:scale(1.06);
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 8px 20px rgba(0,91,187,.20);
+}
+
+.mv-icon svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.mv-content{
+  flex:1;
+}
+
+.mv-card h4{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:.02em;
+  color:var(--blue);
+  margin:2px 0 8px;
+}
+
+.mv-card p{
+  font-size:14px;
+  line-height:1.7;
+  color:var(--slate);
+  margin:0;
+}
+
+  /* ===== Sectors ===== */
+  /* =========================================
+   SECTORS SECTION
+========================================= */
+
+.sectors {
+  position: relative;
+
+  padding: clamp(75px, 9vw, 120px) 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(22, 119, 255, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      var(--cloud, #f5f8fc) 0%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+}
+
+.sectors .wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.sector-head {
+  max-width: 690px;
+  margin-bottom: clamp(35px, 5vw, 58px);
+}
+
+.sector-head .eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--orange, #f39a27);
+
+  font-family: var(--mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.sector-head .eyebrow::before {
+  content: "";
+
+  width: 28px;
+  height: 2px;
+
+  margin-right: 10px;
+
+  border-radius: 20px;
+  background: var(--orange, #f39a27);
+}
+
+.sector-head h2 {
+  margin: 14px 0 16px;
+
+  color: #081225;
+
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.12;
+
+  letter-spacing: -1.5px;
+}
+
+.sector-head p {
+  max-width: 650px;
+
+  color: var(--slate, #647084);
+
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   SECTOR GRID
+========================================= */
+
+.sector-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================================
+   SECTOR CARD
+========================================= */
+
+.sector-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border:
+    1px solid rgba(10, 77, 140, 0.12);
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  box-shadow:
+    0 12px 40px rgba(8, 28, 65, 0.07);
+
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.sector-card.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sector-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(10, 77, 140, 0.5);
+
+  box-shadow:
+    0 28px 60px rgba(8, 42, 95, 0.16);
+}
+
+
+/* =========================================
+   CARD IMAGE
+========================================= */
+
+.sector-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  background: #dfe8f5;
+
+  overflow: hidden;
+}
+
+.sector-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(3, 20, 45, 0.4) 100%
+    );
+
+  pointer-events: none;
+}
+
+.sector-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.4s ease;
+}
+
+.sector-card:hover .sector-image img {
+  transform: scale(1.055);
+  filter: saturate(1.08);
+}
+
+
+/* Card number */
+
+.sector-number {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  min-width: 42px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50px;
+
+  color: #ffffff;
+  background: rgba(3, 26, 59, 0.68);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.sector-content {
+  position: relative;
+
+  padding: 30px 27px 27px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sector-icon {
+  width: 52px;
+  height: 52px;
+
+  margin-top: -56px;
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 3;
+
+  border:
+    5px solid #ffffff;
+
+  border-radius: 17px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #073f7c,
+      #1677ff
+    );
+
+  box-shadow:
+    0 12px 25px rgba(10, 77, 140, 0.28);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sector-card:hover .sector-icon {
+  transform: translateY(-3px) rotate(-3deg);
+
+  box-shadow:
+    0 16px 32px rgba(10, 77, 140, 0.35);
+}
+
+.sector-icon svg {
+  width: 22px;
+  height: 22px;
+
+  stroke: currentColor;
+}
+
+.sector-card h3 {
+  margin: 0 0 11px;
+
+  color: #091225;
+
+  font-size: clamp(18px, 1.7vw, 21px);
+  font-weight: 750;
+  line-height: 1.3;
+
+  letter-spacing: -0.3px;
+}
+
+.sector-card p {
+  margin: 0 0 24px;
+
+  color: var(--slate, #647084);
+
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   CARD LINK
+========================================= */
+
+.sector-link {
+  width: fit-content;
+
+  margin-top: auto;
+  padding-bottom: 5px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: var(--blue, #0a4d8c);
+
+  border-bottom:
+    1px solid rgba(10, 77, 140, 0.25);
+
+  font-family: var(--mono, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sector-link:hover {
+  color: #1677ff;
+  border-color: #1677ff;
+}
+
+.link-arrow {
+  font-size: 17px;
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+}
+
+.sector-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   SMALL LAPTOP
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .sector-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 760px) {
+
+  .sectors {
+    padding: 75px 0;
+  }
+
+  .sectors .wrap {
+    width: min(100% - 30px, 650px);
+  }
+
+  .sector-head {
+    margin-bottom: 35px;
+  }
+
+  .sector-head h2 {
+    letter-spacing: -1px;
+  }
+
+  .sector-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .sector-card {
+    border-radius: 22px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .sectors {
+    padding: 60px 0;
+  }
+
+  .sectors .wrap {
+    width: calc(100% - 24px);
+  }
+
+  .sector-head h2 {
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  .sector-head p {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .sector-card {
+    border-radius: 20px;
+  }
+
+  .sector-content {
+    padding: 27px 21px 23px;
+  }
+
+  .sector-icon {
+    width: 50px;
+    height: 50px;
+
+    margin-top: -52px;
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+  }
+
+  .sector-card h3 {
+    font-size: 19px;
+  }
+
+  .sector-card p {
+    font-size: 13.5px;
+  }
+
+  .sector-link {
+    font-size: 11.5px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sector-card,
+  .sector-image img,
+  .sector-icon,
+  .link-arrow {
+    transition: none;
+  }
+}
+  /* ===== Impact counters ===== */
+ .impact{
+  position:relative;
+  background:
+    radial-gradient(
+      circle at 50% -80%,
+      rgba(20,90,180,.18),
+      transparent 55%
+    ),
+    var(--ink);
+  color:#fff;
+  overflow:hidden;
+}
+
+.impact .wrap{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+
+.impact-item{
+  position:relative;
+  text-align:center;
+  padding:28px 18px;
+  border-left:1px solid rgba(255,255,255,.1);
+  transition:background .3s ease;
+}
+
+.impact-item:first-child{
+  border-left:none;
+}
+
+.impact-item:hover{
+  background:rgba(255,255,255,.025);
+}
+
+
+/* Premium icon container */
+.impact-icon{
+  width:48px;
+  height:48px;
+  margin:0 auto 13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.025)
+    );
+
+  border:1px solid rgba(255,255,255,.12);
+
+  color:var(--orange);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 8px 25px rgba(0,0,0,.15);
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    border-color .3s ease;
+}
+
+.impact-icon svg{
+  width:23px;
+  height:23px;
+}
+
+.impact-item:hover .impact-icon{
+  transform:translateY(-4px) scale(1.05);
+  background:rgba(245,158,11,.09);
+  border-color:rgba(245,158,11,.28);
+}
+
+
+/* Number */
+.impact-item .num{
+  font-family:var(--mono);
+  font-size:36px;
+  line-height:1;
+  font-weight:600;
+  color:var(--orange);
+  letter-spacing:-.03em;
+}
+
+
+/* Label */
+.impact-item .lbl{
+  font-size:12px;
+  line-height:1.5;
+  color:#B9C2D6;
+  margin-top:8px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+
+
+/* Mobile */
+@media(max-width:760px){
+
+  .impact .wrap{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .impact-item{
+    padding:25px 12px;
+    border-left:none;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+
+  .impact-item:nth-child(-n+2){
+    border-top:none;
+  }
+
+  .impact-item .num{
+    font-size:30px;
+  }
+
+  .impact-item .lbl{
+    font-size:10.5px;
+  }
+
+  .impact-icon{
+    width:44px;
+    height:44px;
+  }
+}
+
+  /* ===== Renewable energy feature ===== */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:860px){.feature{grid-template-columns:1fr;}}
+  .feature.reverse .feature-visual{order:2;}
+  @media(max-width:860px){.feature.reverse .feature-visual{order:0;}}
+  .feature h2{font-size:clamp(24px,2.8vw,32px);margin:12px 0 16px;}
+  .feature p{color:var(--slate);font-size:15px;margin-bottom:20px;}
+  .feature-list{display:grid;gap:10px;margin-bottom:26px;}
+  .feature-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink);}
+  .feature-list li svg{flex:none;width:17px;height:17px;stroke:var(--orange);margin-top:2px;}
+  .feature-visual{position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(150deg,var(--blue),var(--blue-deep));aspect-ratio:4/3.2;display:flex;align-items:center;justify-content:center;}
+  .tribrid{display:flex;gap:14px;}
+  .tribrid .node{width:70px;text-align:center;color:#fff;}
+  .tribrid .node .ic{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;}
+  .tribrid .node .ic svg{width:24px;height:24px;stroke:#fff;}
+  .tribrid .node span{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;}
+
+  /* ===== Testimonials ===== */
+  .testi{background:var(--cloud);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:860px){.testi-grid{grid-template-columns:1fr;}}
+  .testi-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;}
+  .testi-card p{font-size:14.5px;color:var(--ink);margin-bottom:18px;line-height:1.65;}
+  .testi-who{display:flex;align-items:center;gap:10px;}
+  .testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:600;flex:none;}
+  .testi-name{font-size:13.5px;font-weight:600;}
+  .testi-role{font-size:12px;color:var(--slate);}
+
+  /* ===== CEO teaser ===== */
+.ceo{
+  display:grid;
+  grid-template-columns:0.8fr 1.2fr;
+  gap:50px;
+  align-items:center;
+}
+
+@media(max-width:820px){
+  .ceo{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* CEO PHOTO */
+.ceo-photo{
+  position:relative;
+  aspect-ratio:1 / 1.1;
+  border-radius:20px;
+  overflow:hidden;
+  background:var(--ink);
+  display:flex;
+  align-items:flex-end;
+  padding:22px;
+  color:#fff;
+  box-shadow:0 20px 45px rgba(15,23,42,.16);
+}
+
+
+/* Actual photograph */
+.ceo-photo img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  z-index:0;
+}
+
+
+/* Dark gradient at the bottom */
+.ceo-photo-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(
+      to top,
+      rgba(10,15,30,.82) 0%,
+      rgba(10,15,30,.35) 28%,
+      rgba(10,15,30,0) 60%
+    );
+}
+
+
+/* CEO caption */
+.ceo-photo .cap{
+  position:relative;
+  z-index:2;
+  font-family:var(--mono);
+  font-size:11.5px;
+  line-height:1.5;
+  color:#fff;
+  padding:10px 14px;
+  border-left:3px solid var(--orange);
+  background:rgba(10,15,30,.55);
+  border-radius:0 7px 7px 0;
+  backdrop-filter:blur(7px);
+}
+  .ceo blockquote{font-family:var(--display);font-size:clamp(20px,2.4vw,27px);font-weight:500;line-height:1.4;margin:14px 0 18px;color:var(--ink);}
+  .ceo p.name{font-weight:700;font-size:15px;color:var(--blue);}
+  .ceo p.role{font-size:13px;color:var(--slate);margin-bottom:16px;}
+  .ceo p.bio{color:var(--slate);font-size:14.5px;margin-bottom:20px;max-width:560px;}
+
+  /* ===== Newsletter / CTA ===== */
+.cta-band{
+  background:linear-gradient(
+    120deg,
+    var(--blue),
+    var(--blue-deep)
+  );
+  color:#fff;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.cta-band h2{
+  font-size:clamp(24px,3vw,34px);
+  margin-bottom:12px;
+  line-height:1.2;
+}
+
+.cta-band p{
+  color:#CCD8EE;
+  max-width:520px;
+  margin:0 auto 28px;
+  font-size:15px;
+  line-height:1.7;
+}
+
+.cta-actions{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+
+/* Base CTA button */
+.cta-actions .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 22px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  letter-spacing:.01em;
+  cursor:pointer;
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+
+/* Enroll Now */
+.cta-actions .btn-light{
+  background:#fff;
+  color:var(--blue);
+  border:1px solid #fff;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.cta-actions .btn-light:hover{
+  transform:translateY(-3px);
+  background:#f8fafc;
+  box-shadow:0 14px 28px rgba(0,0,0,.18);
+}
+
+
+/* Become a Partner */
+.cta-actions .btn-outline-light{
+  background:rgba(255,255,255,.04);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);
+}
+
+.cta-actions .btn-outline-light:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.12);
+  border-color:#fff;
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+
+/* Mobile */
+@media(max-width:520px){
+
+  .cta-band{
+    padding:55px 18px;
+  }
+
+  .cta-actions{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .cta-actions .btn{
+    width:100%;
+    max-width:280px;
+  }
+}
+
+/* ===== FAQ-specific ===== */
+  .faq{background:var(--cloud);}
+  .faq .wrap{max-width:840px;}
+  .faq-head{max-width:600px;margin-bottom:44px;}
+  .faq-head h2{font-size:clamp(26px,3vw,38px);margin:12px 0 14px;}
+  .faq-head p{color:var(--slate);font-size:15.5px;}
+
+  .faq-list{display:flex;flex-direction:column;gap:12px;}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+
+  .faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:20px 22px;background:none;border:none;text-align:left;cursor:pointer;
+    font-family:var(--display);font-size:15.5px;font-weight:600;color:var(--ink);
+  }
+  .faq-q:hover{color:var(--blue);}
+
+  .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .3s, background .3s, border-color .3s;}
+  .plus::before,.plus::after{content:'';position:absolute;background:var(--blue);top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .3s, background .3s;}
+  .plus::before{width:10px;height:1.6px;}
+  .plus::after{width:1.6px;height:10px;}
+
+  .faq-item.open .plus{background:var(--orange);border-color:var(--orange);}
+  .faq-item.open .plus::before,.faq-item.open .plus::after{background:#1a1200;}
+  .faq-item.open .plus::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0);}
+
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{padding:0 22px 20px;font-size:14.5px;line-height:1.65;color:var(--slate);max-width:640px;}
+
+  .faq-more{margin-top:24px;font-size:14px;color:var(--slate);}
+  .faq-more a{color:var(--blue);font-weight:600;text-decoration:none;}
+  .faq-more a:hover{text-decoration:underline;}
+  /* ===== Contact form ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-info h2{font-size:clamp(24px,2.8vw,32px);margin:12px 0 16px;}
+  .contact-info p{color:var(--slate);font-size:15px;margin-bottom:24px;max-width:440px;}
+  .contact-line{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:14.5px;}
+  .contact-line .ic{width:36px;height:36px;border-radius:9px;background:var(--cloud);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none;}
+  .contact-line .ic svg{width:17px;height:17px;stroke:var(--blue);}
+  form.card{background:var(--cloud);border:1px solid var(--line);border-radius:18px;padding:28px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  .field input,.field select,.field textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);font-family:var(--body);font-size:14px;background:#fff;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,61,145,0.12);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:520px){.field-row{grid-template-columns:1fr;}}
+  form.card .btn{width:100%;justify-content:center;margin-top:4px;}
+  .form-note{font-size:12px;color:var(--slate);margin-top:12px;text-align:center;}
+
+  /* ===== Footer ===== */
+  footer{background:var(--ink);color:#B9C2D6;padding:60px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px;}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;}}
+  .foot-logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;color:#fff;font-size:16px;margin-bottom:12px;}
+  footer p.tag{font-size:13.5px;color:#8791A8;max-width:280px;}
+  footer h5{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin-bottom:14px;}
+  footer ul li{margin-bottom:9px;}
+  footer ul li a{font-size:13.5px;color:#B9C2D6;transition:color .2s;}
+  footer ul li a:hover{color:var(--orange);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#7C879C;}
+
+  /* ===== WhatsApp float ===== */
+  .wa-float{position:fixed;bottom:22px;right:22px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px -8px rgba(37,211,102,0.7);transition:transform .2s;}
+  .wa-float:hover{transform:scale(1.07);}
+  .wa-float svg{width:26px;height:26px;fill:#fff;}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+
+      <!-- MAIN LOGO -->
+      <a href="#top" class="logo">
+        <img src="./skilllogo.jpeg"
+          alt="Skilled-Creatives International logo"
+        >
+
+        <div class="logo-text">
+          <span class="logo-title">
+            Skilled-Creatives International
+          </span>
+
+          <span class="logo-subtitle">
+            International Ltd.
+          </span>
+        </div>
+      </a>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links" id="navLinks">
+
+        <!-- MOBILE MENU HEADER -->
+        <li class="side-nav-header">
+          <div class="side-brand">
+            <img
+              src="./skilllogo.jpeg"
+              alt="Skilled-Creatives International"
+            >
+
+            <div>
+              <strong>Skilled-Creatives</strong>
+              <span>International Ltd.</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="side-close"
+            id="sideClose"
+            aria-label="Close navigation menu"
+          >
+            &times;
+          </button>
+        </li>
+
+        <!-- MOBILE MENU LABEL -->
+        <li class="side-nav-label">
+          <span>MENU</span>
+        </li>
+
+        <li class="nav-item">
+          <a href="marketplace.html">
+            <span class="nav-number">01</span>
+            <span class="nav-name">Marketplace</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#about">
+            <span class="nav-number">02</span>
+            <span class="nav-name">About</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#sectors">
+            <span class="nav-number">03</span>
+            <span class="nav-name">Sectors</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#energy">
+            <span class="nav-number">04</span>
+            <span class="nav-name">Renewable Energy</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#ceo">
+            <span class="nav-number">05</span>
+            <span class="nav-name">Leadership</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="#contact">
+            <span class="nav-number">06</span>
+            <span class="nav-name">Contact</span>
+            <span class="nav-arrow">→</span>
+          </a>
+        </li>
+
+        <!-- MOBILE BOTTOM SECTION -->
+        <li class="side-nav-bottom">
+          <a href="auth.html" class="side-enroll">
+            <span>Enroll Now</span>
+            <span>↗</span>
+          </a>
+
+          <p>Skills · Energy · Innovation Hub</p>
+        </li>
+
+      </ul>
+
+      <!-- HEADER BUTTONS -->
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost">
+          Become a Partner
+        </a>
+
+        <a href="auth.html" class="btn btn-primary">
+          Enroll
+        </a>
+
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation menu"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+
+
+
+<section class="hero" id="top">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Skills · Energy · Innovation Hub</span>
+      <h1>Empowering communities through <span>innovation</span>, skills and sustainable solutions.</h1>
+      <p class="lead">Skilled-Creatives International Limited trains talent, powers homes and builds enterprise — turning project-based learning into livelihoods across tech, renewable energy, agriculture and trade.</p>
+      <div class="hero-actions">
+        <a href="auth.html" class="btn btn-primary">Enroll Now</a>
+        <a href="#contact" class="btn btn-ghost" style="border-color:rgba(255,255,255,.25);color:#fff;">Become a Partner</a>
+        <a href="#sectors" class="btn btn-ghost" style="border-color:rgba(255,255,255,.25);color:#fff;">Explore Sectors</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="num">6</span><span class="lbl">Sectors United</span></div>
+        <div class="stat"><span class="num">1</span><span class="lbl">Hub</span></div>
+        <div class="stat"><span class="num">100%</span><span class="lbl">Project-Based</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="hub-wrap">
+        <svg class="hub-svg" viewBox="0 0 300 300">
+          <g id="hubLines"></g>
+          <g id="hubNodes"></g>
+        </svg>
+      </div>
+      <p class="hub-caption">ONE HUB — SIX SECTORS — CONVERGING</p>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <!-- Top row: slides LEFT -->
+  <div class="strip-row">
+    <span class="strip-label">Working across</span>
+    
+    <div class="marquee marquee-left">
+      <div class="marquee-track">
+        <span class="tag">Government Agencies</span>
+        <span class="tag">NGOs</span>
+        <span class="tag">Educational Institutions</span>
+        <span class="tag">Investors</span>
+        <span class="tag">Renewable Energy Partners</span>
+        <span class="tag">Development Agencies</span>
+        
+        <!-- Duplicate set for seamless animation -->
+        <span class="tag">Government Agencies</span>
+        <span class="tag">NGOs</span>
+        <span class="tag">Educational Institutions</span>
+        <span class="tag">Investors</span>
+        <span class="tag">Renewable Energy Partners</span>
+        <span class="tag">Development Agencies</span>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Bottom row: slides RIGHT -->
+  <div class="strip-row">
+    <span class="strip-label">Strategic partnerships</span>
+    
+    <div class="marquee marquee-right">
+      <div class="marquee-track">
+        <span class="tag">Technology Partners</span>
+        <span class="tag">Agricultural Organizations</span>
+        <span class="tag">Skills Development Partners</span>
+        <span class="tag">Community Organizations</span>
+        <span class="tag">Research Institutions</span>
+        <span class="tag">International Partners</span>
+        
+        <!-- Duplicate set for seamless animation -->
+        <span class="tag">Technology Partners</span>
+        <span class="tag">Agricultural Organizations</span>
+        <span class="tag">Skills Development Partners</span>
+        <span class="tag">Community Organizations</span>
+        <span class="tag">Research Institutions</span>
+        <span class="tag">International Partners</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">Who We Are</span>
+      <h2>Bridging technology, agriculture, energy and enterprise.</h2>
+      <p>Skilled-Creatives International Limited exists to bridge the gap between technology, agriculture, renewable energy and entrepreneurship — through project-based learning and sustainable innovation. We don't just teach; we build workforces that create their own jobs.</p>
+      <p>From solar-powered classrooms to marketplace-ready graduates, every programme is designed to move a learner from theory to a tangible, income-generating outcome.</p>
+    </div>
+   <div class="mv-cards">
+  
+  <div class="mv-card">
+    <div class="mv-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"></circle>
+        <circle cx="12" cy="12" r="5"></circle>
+        <circle cx="12" cy="12" r="1.5"></circle>
+      </svg>
+    </div>
+    <div class="mv-content">
+      <h4>Mission</h4>
+      <p>
+        Bridge the gap between technology, agriculture, renewable energy and
+        entrepreneurship through project-based learning and sustainable innovation.
+      </p>
+    </div>
+  </div>
+  
+  <div class="mv-card">
+    <div class="mv-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+    </div>
+    <div class="mv-content">
+      <h4>Vision</h4>
+      <p>
+        Create globally competitive communities through skills development,
+        technology, sustainable agriculture and renewable energy.
+      </p>
+    </div>
+  </div>
+  
+  <div class="mv-card">
+    <div class="mv-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3l2.6 5.4L20 11l-5.4 2.6L12 19l-2.6-5.4L4 11l5.4-2.6L12 3z"></path>
+        <path d="M19 3v4"></path>
+        <path d="M17 5h4"></path>
+      </svg>
+    </div>
+    <div class="mv-content">
+      <h4>Core Values</h4>
+      <p>
+        Creativity · Innovation · Integrity · Teamwork · Excellence · Respect
+      </p>
+    </div>
+  </div>
+  
+</div>
+</div>
+</section>
+
+
+
+<section class="impact">
+  <div class="wrap">
+
+    <!-- IMPACT ITEM 1 -->
+    <div class="impact-item">
+      <div class="impact-icon">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+        </svg>
+      </div>
+
+      <div class="num" data-count="6">0</div>
+      <div class="lbl">Sectors Under One Hub</div>
+    </div>
+
+    <!-- IMPACT ITEM 2 -->
+    <div class="impact-item">
+      <div class="impact-icon">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 21V10"></path>
+          <path d="M12 14C8 14 5 11 5 7c4 0 7 3 7 7Z"></path>
+          <path d="M12 11c0-4 3-7 7-7 0 4-3 7-7 7Z"></path>
+        </svg>
+      </div>
+
+      <div class="num" data-count="5">0</div>
+      <div class="lbl">Organic Product Lines</div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="sectors" id="sectors">
+  <div class="wrap">
+
+    <div class="sector-head">
+      <span class="eyebrow">What We Do</span>
+
+      <h2>Six sectors, one convergent hub.</h2>
+
+      <p>
+        Every division feeds the next — trained hands power renewable
+        systems, renewable systems power farms, and farms feed the
+        marketplace our graduates run.
+      </p>
+    </div>
+
+    <div class="sector-grid" id="sectorGrid">
+
+      <!-- RENEWABLE ENERGY -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./solar.jpeg"
+            alt="Solar panels and wind turbines generating renewable energy"
+            loading="lazy"
+          >
+
+          <span class="sector-number">01</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path>
+            </svg>
+          </div>
+
+          <h3>Renewable Energy</h3>
+
+          <p>
+            Solar, wind and biogas systems — the Tri-Brid approach to
+            powering homes, farms and rural communities.
+          </p>
+
+          <a href="#energy" class="sector-link">
+            <span>Explore Renewable Energy</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- TECH EDUCATION -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./tech.jpeg"
+            alt="Students attending a modern computer training programme"
+            loading="lazy"
+          >
+
+          <span class="sector-number">02</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 4h16v12H4z"></path>
+              <path d="M8 20h8M12 16v4"></path>
+            </svg>
+          </div>
+
+          <h3>Tech Education</h3>
+
+          <p>
+            Programming, AI, data analytics, design and cybersecurity —
+            taught through real, deployable projects.
+          </p>
+
+          <a href="auth.html" class="sector-link">
+            <span>Enroll in a Programme</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- ORGANIC PRODUCTS -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./organic.jpeg"
+            alt="Natural nutritional products, supplements and healthy foods"
+            loading="lazy"
+          >
+
+          <span class="sector-number">03</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2s6 5.5 6 10a6 6 0 1 1-12 0c0-4.5 6-10 6-10z"
+              ></path>
+            </svg>
+          </div>
+
+          <h3>Organic Foods &amp; Supplements</h3>
+
+          <p>
+            VegiFufu, Sweet Potato Mush Poundo, ShroomVita, Acha Flour
+            and Oats-Mushroom blends — nutrition rooted in tradition.
+          </p>
+
+          <a href="marketplace.html" class="sector-link">
+            <span>View Products</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- FASHION -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./lifestyle.jpeg"
+            alt="Premium fashion and lifestyle shopping experience"
+            loading="lazy"
+          >
+
+          <span class="sector-number">04</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 3 12 8l6-5"></path>
+              <path d="M6 3l2 4-4 1 2 12h12l2-12-4-1 2-4"></path>
+            </svg>
+          </div>
+
+          <h3>Fashion &amp; Lifestyle</h3>
+
+          <p>
+            Training academy, professional styling and a growing
+            lifestyle marketplace built by our own graduates.
+          </p>
+
+          <a href="auth.html" class="sector-link">
+            <span>Learn More</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- MARKETPLACE -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./marketplace.jpeg"
+            alt="Entrepreneurs selling physical products through a marketplace"
+            loading="lazy"
+          >
+
+          <span class="sector-number">05</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 9h18"></path>
+              <path d="M3 9v10h18V9"></path>
+              <path d="M3 9l2-6h14l2 6"></path>
+            </svg>
+          </div>
+
+          <h3>Marketplace</h3>
+
+          <p>
+            A multi-vendor ecosystem where trained talent lists, sells
+            and grows real digital and physical businesses.
+          </p>
+
+          <a href="auth.html" class="sector-link">
+            <span>Become a Vendor</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- INNOVATION -->
+      <article class="sector-card">
+
+        <div class="sector-image">
+          <img
+            src="./incubation.jpeg"
+            alt="Students developing technology projects in a coding classroom"
+            loading="lazy"
+          >
+
+          <span class="sector-number">06</span>
+        </div>
+
+        <div class="sector-content">
+          <div class="sector-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 2v4M12 18v4"></path>
+              <path d="M4.9 4.9l2.8 2.8"></path>
+              <path d="M16.3 16.3l2.8 2.8"></path>
+              <path d="M2 12h4M18 12h4"></path>
+              <path d="M4.9 19.1l2.8-2.8"></path>
+              <path d="M16.3 7.7l2.8-2.8"></path>
+            </svg>
+          </div>
+
+          <h3>Innovation &amp; Incubation</h3>
+
+          <p>
+            Research projects, startup showcases and mentorship —
+            turning student ideas into funded ventures.
+          </p>
+
+          <a href="#contact" class="sector-link">
+            <span>Apply for Incubation</span>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
+<section style="background:var(--cloud);">
+  <div class="wrap feature reverse">
+    <div class="feature-visual" style="background:linear-gradient(150deg,#173a1f,#0e2413);">
+      <div class="tribrid">
+        <div class="node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2s6 5.5 6 10a6 6 0 1 1-12 0c0-4.5 6-10 6-10z"/></svg></div><span>VEGIFUFU</span></div>
+        <div class="node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16v16H4z"/></svg></div><span>ACHA FLOUR</span></div>
+        <div class="node"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="8"/></svg></div><span>SHROOMVITA</span></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">Organic Foods &amp; Supplements</span>
+      <h2>Fibre-rich, tradition-rooted nutrition — grown and processed locally.</h2>
+      <p>Our organic line includes VegiFufu, Sweet Potato Mush Poundo, ShroomVita, Acha Flour and Oats Flour with Mushroom — formulated to support digestive and heart health using natural, fibre-rich ingredients like psyllium husk, cabbage and spinach.</p>
+      <p style="font-size:12.5px;color:var(--slate);border-left:2px solid var(--orange);padding-left:12px;">These products are not intended to diagnose, treat, cure or prevent any disease. Drink adequate water, separate use from medications by at least two hours, and consult a healthcare provider before use if you have swallowing difficulties or a bowel obstruction.</p>
+     <a href="marketplace.html" class="btn btn-primary" style="margin-top:14px;"> Order via Marketplace</a>
+    </div>
+  </div>
+</section>
+
+<section class="testi">
+  <div class="wrap">
+    <div class="sector-head">
+      <span class="eyebrow">Success Stories</span>
+      <h2>Graduates who turned skills into livelihoods.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"I enrolled for web development and left with three paying clients before graduation. The project-based structure made the difference."</p>
+        <div class="testi-who"><div class="testi-avatar">C</div><div><div class="testi-name">Chidinma A.</div><div class="testi-role">Tech Education Graduate</div></div></div>
+      </div>
+      <div class="testi-card">
+        <p>"The solar installation training gave my community electricity for the first time — and gave me a trade I now run as a business."</p>
+        <div class="testi-who"><div class="testi-avatar">E</div><div><div class="testi-name">Emeka O.</div><div class="testi-role">Renewable Energy Trainee</div></div></div>
+      </div>
+      <div class="testi-card">
+        <p>"Listing on the marketplace connected my fashion line to customers I never could have reached on my own."</p>
+        <div class="testi-who"><div class="testi-avatar">F</div><div><div class="testi-name">Fatima B.</div><div class="testi-role">Marketplace Vendor</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ceo">
+  <div class="wrap ceo">
+
+    <div class="ceo-photo">
+      <img 
+        src="./mranthony.png"
+        alt="Mr. Anthony O. Obukowho — Chief Executive Officer"
+      >
+
+      <div class="ceo-photo-overlay"></div>
+
+      <span class="cap">
+        Mr. Anthony O. Obukowho — Chief Executive Officer
+      </span>
+    </div>
+
+    <!-- Your CEO information can remain here -->
+    <div class="ceo-content">
+      <span class="eyebrow">Leadership</span>
+
+      <blockquote>
+        "Building a Future Where Skills Create Freedom."
+      </blockquote>
+
+      <p class="name">Mr. Anthony O. Obukowho</p>
+
+      <p class="role">
+        Chief Executive Officer, Skilled-Creatives International Limited
+      </p>
+
+      <p class="bio">
+        As CEO, Anthony isn't just teaching trades — he's architecting a
+        workforce revolution. With a focus on project-based learning, he has
+        redefined how digital, urban agriculture and renewable energy skills
+        are taught across borders, ensuring graduates don't just find jobs —
+        they create them.
+      </p>
+    </div>
+
+  </div>
+</section>
+    
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to build with us?</h2>
+    
+    <p>
+      Whether you're enrolling in a programme, listing on the marketplace,
+      or exploring a partnership — let's talk.
+    </p>
+    
+    <div class="cta-actions">
+      <a href="auth.html" class="btn btn-light">
+        Enroll Now
+      </a>
+      
+      <a href="auth.html" class="btn btn-outline-light">
+        Become a Partner
+      </a>
+    </div>
+  </div>
+</section>
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="faq-head">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Common questions, answered.</h2>
+      <p>Can't find what you're looking for? Message us directly on WhatsApp and our team will respond personally.</p>
+    </div>
+    
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I enroll in a Tech Education programme?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Fill in the enquiry form or message us on WhatsApp with the programme you're interested in — Programming, AI, Data Analytics, Digital Marketing, Design, Robotics, Web Development, Cybersecurity or UI/UX. Our team will confirm the next intake, schedule and fees.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What does the Tri-Brid renewable energy service cover?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>We design and install hybrid solar, wind and biogas systems for homes, farms and rural communities, including rural electrification and waste-to-energy projects. Request a project consultation and a specialist will assess your site.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>Are the organic foods and supplements safe for everyone?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Our fibre-rich products (VegiFufu, ShroomVita, Acha Flour and more) are formulated from natural ingredients like psyllium husk, cabbage and spinach. They're not intended to diagnose, treat, cure or prevent any disease — drink adequate water, separate use from medications by at least two hours, and consult a healthcare provider if you have swallowing difficulties or a bowel obstruction.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I become a marketplace vendor?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Select "Marketplace Vendor Registration" on the enquiry form or message us on WhatsApp. We'll walk you through listing digital or physical products, pricing and how vendor support works.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How can my organization partner with Skilled-Creatives International?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>We work with government agencies, NGOs, international organizations, investors, educational institutions and renewable energy companies. Choose "Partnership / Sponsorship" on the enquiry form and our leadership team will follow up to discuss collaboration.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>How do I apply for startup incubation or funding?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>Select "Startup Incubation" on the enquiry form with a short description of your idea or venture. Our Innovation Hub team reviews applications on a rolling basis and will reach out about mentorship and funding opportunities.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>What's the fastest way to reach the team?</span>
+          <span class="plus" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">
+          <p>WhatsApp is the quickest — tap the green button on the site or call/message 0813 643 2955. For formal enquiries, email skilledcreativeinternational@gmail.com.</p>
+        </div>
+      </div>
+    </div>
+    <p class="faq-more">Still have questions? <a href="#contact">Reach out to our team →</a></p>
+  </div>
+</section>
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's start the conversation.</h2>
+      <p>Reach us directly on WhatsApp for a fast response, or send your details below and our team will follow up.</p>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5z"/></svg></div>
+        <span>0813 643 2955 (Call / WhatsApp)</span>
+      </div>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
+        <span>skilledcreativeinternational@gmail.com</span>
+      </div>
+      <div class="contact-line">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <span>skilledcreativeinternational.com</span>
+      </div>
+    </div>
+    <form class="card" id="enquiryForm">
+      <div class="field-row">
+        <div class="field"><label for="fname">Full Name</label><input id="fname" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="fphone">Phone</label><input id="fphone" name="phone" type="tel" placeholder="080..." required></div>
+      </div>
+      <div class="field"><label for="femail">Email</label><input id="femail" name="email" type="email" placeholder="you@email.com"></div>
+      <div class="field">
+        <label for="finterest">I'm interested in</label>
+        <select id="finterest" name="interest">
+          <option>Tech Education Enrollment</option>
+          <option>Renewable Energy Consultation</option>
+          <option>Organic Foods Order</option>
+          <option>Marketplace Vendor Registration</option>
+          <option>Partnership / Sponsorship</option>
+          <option>Startup Incubation</option>
+          <option>General Enquiry</option>
+        </select>
+      </div>
+      <div class="field"><label for="fmsg">Message</label><textarea id="fmsg" name="message" rows="4" placeholder="Tell us more..."></textarea></div>
+      <button type="submit" class="btn btn-primary">Send via WhatsApp &amp; Email</button>
+      <p class="form-note">Submitting opens a pre-filled WhatsApp message to our team, and prepares an email you can send from your device.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span <a href="#top" class="logo">
+  <img src="./skilllogo.jpeg" alt="Skilled-Creatives Logo">
+  
+  <div class="logo-text">
+    <span class="logo-title">Skilled-Creatives</span>
+    <span class="logo-subtitle">International Ltd.</span>
+  </div>
+</div>
+</div>
+<div>
+        <h5>Sectors</h5>
+        <ul><li><a href="#energy">Renewable Energy</a></li><li><a href="#sectors">Tech Education</a></li><li><a href="#sectors">Organic Foods</a></li><li><a href="#sectors">Marketplace</a></li></ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul><li><a href="#about">About Us</a></li><li><a href="#ceo">Leadership</a></li><li><a href="#contact">Careers</a></li><li><a href="#contact">Partnerships</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><a href="add:+2348136432955">192 Uselu Lagos Road, Benin City</a></li><li><a href="mailto:skilledcreativeinternational@gmail.com">Email Us</a></li><li><a href="#contact">Enquiry Form</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Skilled-Creatives International Limited. All rights reserved.</span>
+      <span>skilledcreativeinternational.com</span>
+    </div>
+  </div>
+</footer>
+
+  <!-- MOBILE DARK OVERLAY -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+
+const navLinks = document.getElementById("navLinks");
+
+const sideClose = document.getElementById("sideClose");
+
+const navOverlay = document.getElementById("navOverlay");
+
+const navigationLinks = document.querySelectorAll(".nav-item a");
+
+function openMenu() {
+  
+  navLinks.classList.add("open");
+  
+  navOverlay.classList.add("active");
+  
+  document.body.classList.add("menu-open");
+  
+  menuToggle.setAttribute("aria-expanded", "true");
+  
+}
+
+function closeMenu() {
+  
+  navLinks.classList.remove("open");
+  
+  navOverlay.classList.remove("active");
+  
+  document.body.classList.remove("menu-open");
+  
+  menuToggle.setAttribute("aria-expanded", "false");
+  
+}
+
+menuToggle.addEventListener("click", openMenu);
+
+sideClose.addEventListener("click", closeMenu);
+
+navOverlay.addEventListener("click", closeMenu);
+
+navigationLinks.forEach((link) => {
+  
+  link.addEventListener("click", closeMenu);
+  
+});
+
+document.addEventListener("keydown", (event) => {
+  
+  if (event.key === "Escape") {
+    
+    closeMenu();
+    
+  }
+  
+});
+
+window.addEventListener("resize", () => {
+  
+  if (window.innerWidth > 1100) {
+    
+    closeMenu();
+    
+  }
+  
+});
+
+
+// CLOSE WITH ESC KEY
+document.addEventListener('keydown', event => {
+  
+  if (event.key === 'Escape') {
+    closeSideNav();
+  }
+  
+});
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Contact config
+  const Address = '192 Uselu Lagos Road, Benin City'; // 08136432955 in international format
+  const CONTACT_EMAIL = 'skilledcreativeinternational@gmail.com';
+
+ 
+ document.querySelectorAll('.faq-item').forEach(item => {
+   const btn = item.querySelector('.faq-q');
+   const answer = item.querySelector('.faq-a');
+   
+   btn.addEventListener('click', () => {
+     const isOpen = item.classList.contains('open');
+     
+     // close any other open item (accordion behavior)
+     document.querySelectorAll('.faq-item.open').forEach(openItem => {
+       if (openItem !== item) {
+         openItem.classList.remove('open');
+         openItem.querySelector('.faq-a').style.maxHeight = null;
+         openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+       }
+     });
+     
+     if (isOpen) {
+       item.classList.remove('open');
+       answer.style.maxHeight = null;
+       btn.setAttribute('aria-expanded', 'false');
+     } else {
+       item.classList.add('open');
+       answer.style.maxHeight = answer.scrollHeight + 'px';
+       btn.setAttribute('aria-expanded', 'true');
+     }
+   });
+ });
+  // Enquiry form -> WhatsApp + mailto
+  document.getElementById('enquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const interest = document.getElementById('finterest').value;
+    const message = document.getElementById('fmsg').value.trim();
+
+    const waText = `Hello Skilled-Creatives International,%0A%0AName: ${name}%0APhone: ${phone}%0AInterest: ${interest}%0AMessage: ${message || 'N/A'}`;
+    const mailSubject = encodeURIComponent('Enquiry: ' + interest);
+    const mailBody = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nInterest: ${interest}\nMessage: ${message}`);
+
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + waText, '_blank');
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${mailSubject}&body=${mailBody}`;
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.sector-card');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Counters
+  const counters = document.querySelectorAll('.impact .num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        let cur = 0;
+        const step = Math.max(1, Math.ceil(target / 40));
+        const t = setInterval(() => {
+          cur += step;
+          if (cur >= target) { cur = target; clearInterval(t); }
+          el.textContent = cur;
+        }, 30);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(el => counterIO.observe(el));
+
+  // Hub diagram (sectors around a center node)
+  (function drawHub(){
+    const lines = document.getElementById('hubLines');
+    const nodes = document.getElementById('hubNodes');
+    const cx = 150, cy = 150, r = 108;
+    const sectors = ['ENERGY','TECH','FOODS','FASHION','MARKET','HUB'];
+    const center = { x: cx, y: cy, label: 'SCI' };
+
+    sectors.forEach((label, i) => {
+      const angle = (Math.PI * 2 / sectors.length) * i - Math.PI / 2;
+      const x = cx + r * Math.cos(angle);
+      const y = cy + r * Math.sin(angle);
+
+      const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+      line.setAttribute('x1', cx); line.setAttribute('y1', cy);
+      line.setAttribute('x2', x); line.setAttribute('y2', y);
+      line.setAttribute('class','hub-line');
+      line.style.animationDelay = (i * 0.08) + 's';
+      lines.appendChild(line);
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+      g.setAttribute('class','hub-node');
+      g.style.animationDelay = (0.4 + i * 0.08) + 's';
+      const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx', x); circle.setAttribute('cy', y); circle.setAttribute('r', 30);
+      const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+      text.setAttribute('x', x); text.setAttribute('y', y + 3);
+      text.setAttribute('text-anchor','middle');
+      text.textContent = label;
+      g.appendChild(circle); g.appendChild(text);
+      nodes.appendChild(g);
+    });
+
+    const cg = document.createElementNS('http://www.w3.org/2000/svg','g');
+    cg.setAttribute('class','hub-node center');
+    cg.style.animationDelay = '0.9s';
+    const ccircle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ccircle.setAttribute('cx', center.x); ccircle.setAttribute('cy', center.y); ccircle.setAttribute('r', 32);
+    const ctext = document.createElementNS('http://www.w3.org/2000/svg','text');
+    ctext.setAttribute('x', center.x); ctext.setAttribute('y', center.y + 4);
+    ctext.setAttribute('text-anchor','middle');
+    ctext.textContent = center.label;
+    cg.appendChild(ccircle); cg.appendChild(ctext);
+    nodes.appendChild(cg);
+  })();
+</script>
+
+</body>
+</html>

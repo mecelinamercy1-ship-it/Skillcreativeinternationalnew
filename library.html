@@ -1,0 +1,3018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>
+Library | Skilled-Creatives International
+</title>
+<meta name="description"
+content="Explore physical books and eBooks from Skilled-Creatives International. Preview, buy or read online.">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+<style>
+/* =========================================================
+   VARIABLES
+========================================================= */
+:root{
+  --navy:#071a35;
+  --navy2:#102b55;
+  --blue:#1555d6;
+  --blue-dark:#0d3fa8;
+  --orange:#f47c20;
+  --orange-dark:#d96508;
+  --green:#159447;
+  --bg:#f5f8fd;
+  --white:#ffffff;
+  --ink:#14213a;
+  --muted:#61708a;
+  --line:#e0e7f2;
+  --radius:16px;
+  --shadow:
+  0 5px 15px rgba(10,26,51,.06),
+  0 18px 40px rgba(10,26,51,.08);
+  --heading:
+  'Bricolage Grotesque',
+  'Segoe UI',
+  Arial,
+  sans-serif;
+  --body:
+  'Plus Jakarta Sans',
+  'Segoe UI',
+  Arial,
+  sans-serif;
+}
+/* =========================================================
+   RESET
+========================================================= */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html{
+  scroll-behavior:smooth;
+}
+body{
+  font-family:var(--body);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{
+  display:block;
+  max-width:100%;
+}
+a{
+  color:inherit;
+  text-decoration:none;
+}
+button,
+input,
+select{
+  font:inherit;
+}
+button{
+  cursor:pointer;
+  border:0;
+}
+ul{
+  list-style:none;
+}
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+h1,
+h2,
+h3,
+h4{
+  font-family:var(--heading);
+  line-height:1.15;
+}
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:44px;
+  padding:10px 18px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:700;
+  transition:.2s ease;
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+.btn-primary{
+  background:var(--orange);
+  color:#fff;
+}
+.btn-primary:hover{
+  background:var(--orange-dark);
+}
+.btn-blue{
+  background:var(--blue);
+  color:#fff;
+}
+.btn-blue:hover{
+  background:var(--blue-dark);
+}
+.btn-outline{
+  background:#fff;
+  color:var(--blue);
+  border:1px solid var(--blue);
+}
+.btn-outline:hover{
+  background:#eef3ff;
+}
+.btn-light{
+  color:#fff;
+  border:1px solid rgba(255,255,255,.4);
+  background:transparent;
+}
+.btn-light:hover{
+  background:rgba(255,255,255,.1);
+}
+/* =========================================================
+   HEADER
+========================================================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--navy);
+  color:#fff;
+  box-shadow:
+  0 3px 15px rgba(0,0,0,.2);
+}
+t
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:var(--heading);
+  font-weight:800;
+  font-size:17px;
+  line-height:1;
+}
+.site-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 5px;
+  background: #fff;
+  padding: 2px;
+}
+.logo small{
+  display:block;
+  margin-top:5px;
+  font-family:var(--body);
+  font-size:8px;
+  letter-spacing:2px;
+  color:#9db4d8;
+}
+.logo-mark{
+  width:40px;
+  height:40px;
+  background:var(--blue);
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:800;
+}
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+.nav-links a{
+  color:#d4e0f5;
+  font-size:13px;
+  font-weight:600;
+  padding:8px 0;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover,
+.nav-links a.active{
+  color:#fff;
+  border-color:var(--orange);
+}
+.nav-actions{
+  display:flex;
+  gap:8px;
+}
+.menu-btn{
+  display:none;
+  background:transparent;
+  color:#fff;
+  font-size:27px;
+}
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+.mobile-menu{
+  display:none;
+  background:var(--navy2);
+  padding:15px 4% 22px;
+}
+.mobile-menu.open{
+  display:block;
+}
+.mobile-menu a{
+  display:block;
+  color:#fff;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+/* =========================================================
+   HERO
+========================================================= */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+  linear-gradient(
+    150deg,
+    var(--navy),
+    var(--navy2),
+    #153a76
+  );
+  color:#fff;
+  padding:25px 0 80px;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  right:-220px;
+  top:-220px;
+  border-radius:50%;
+  border:75px solid
+  rgba(244,124,32,.1);
+}
+.back{
+  position:relative;
+  z-index:5;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 16px;
+  background:rgba(255,255,255,.1);
+  border-radius:50px;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+.back:hover{
+  background:var(--orange);
+}
+/* =========================================================
+   HERO BOOK SLIDER
+========================================================= */
+/* =========================================================
+   HERO BOOK SLIDER
+========================================================= */
+
+.hero-books {
+   position: relative;
+   z-index: 2;
+   
+   max-width: 900px;
+   margin: 0 auto 35px;
+   
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+.hero-slider {
+   display: flex;
+   transition: transform .6s ease;
+   will-change: transform;
+}
+
+.hero-slide {
+   min-width: 100%;
+   position: relative;
+   display: grid;
+   grid-template-columns: 280px 1fr;
+   gap: 30px;
+   align-items: center;
+   
+   background: rgba(255, 255, 255, .98);
+   padding: 15px;
+   border-radius: 20px;
+   
+   box-shadow: 0 20px 50px rgba(0, 0, 0, .3);
+}
+
+.hero-slide-image {
+   width: 100%;
+   height: 380px;
+   object-fit: cover;
+   border-radius: 14px;
+}
+
+.hero-slide-content {
+   color: var(--ink);
+   padding: 20px;
+}
+
+.hero-slide-content .slide-label {
+   display: inline-block;
+   background: var(--orange);
+   color: #fff;
+   padding: 6px 12px;
+   border-radius: 30px;
+   font-size: 11px;
+   font-weight: 800;
+   margin-bottom: 10px;
+}
+
+.hero-slide-content h2 {
+   font-size: 28px;
+   margin-bottom: 8px;
+}
+
+.hero-slide-content p {
+   color: var(--muted);
+   font-size: 14px;
+   margin-bottom: 18px;
+}
+
+.slide-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+
+.slider-arrow {
+   position: absolute;
+   z-index: 5;
+   top: 50%;
+   transform: translateY(-50%);
+   
+   width: 44px;
+   height: 44px;
+   
+   border-radius: 50%;
+   
+   background: rgba(10, 26, 51, .88);
+   color: #fff;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   font-size: 22px;
+   box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+.slider-arrow:hover {
+   background: var(--orange);
+}
+
+.slider-prev {
+   left: 12px;
+}
+
+.slider-next {
+   right: 12px;
+}
+
+.slider-dots {
+   display: flex;
+   justify-content: center;
+   gap: 7px;
+   margin-top: 14px;
+}
+
+.slider-dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: rgba(255, 255, 255, .35);
+   cursor: pointer;
+   transition: .2s;
+}
+
+.slider-dot.active {
+   width: 24px;
+   border-radius: 20px;
+   background: var(--orange);
+}
+
+
+/* MOBILE SLIDER */
+
+@media(max-width:650px) {
+   
+   .hero-slide {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+   }
+   
+   .hero-slide-image {
+      height: 330px;
+   }
+   
+   .hero-slide-content {
+      padding: 12px 10px 15px;
+   }
+   
+   .hero-slide-content h2 {
+      font-size: 21px;
+   }
+   
+   .hero-slide-content p {
+      font-size: 13px;
+   }
+   
+   .slide-buttons {
+      flex-direction: column;
+   }
+   
+   .slide-buttons .btn {
+      width: 100%;
+   }
+   
+   .slider-arrow {
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+   }
+   
+}
+}
+/* =========================================================
+   HERO TEXT
+========================================================= */
+.hero-content{
+  position:relative;
+  z-index:5;
+}
+.hero h1{
+  max-width:800px;
+  font-size:
+  clamp(2.2rem,5vw,3.8rem);
+  font-weight:800;
+}
+.hero-description{
+  max-width:760px;
+  color:#c3d3ee;
+  margin:18px 0 25px;
+  font-size:16px;
+}
+/* =========================================================
+   SEARCH
+========================================================= */
+.search{
+  display:flex;
+  max-width:650px;
+  background:#fff;
+  padding:5px;
+  border-radius:14px;
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.25);
+}
+.search input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  padding:12px;
+  color:var(--ink);
+  background:transparent;
+  font-size:15px;
+}
+.search button{
+  width:48px;
+  border-radius:10px;
+  background:var(--orange);
+  color:#fff;
+  font-size:20px;
+}
+/* =========================================================
+   CATEGORIES
+========================================================= */
+.categories{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+}
+.category{
+  padding:8px 15px;
+  border-radius:50px;
+  border:1px solid
+  rgba(255,255,255,.25);
+  color:#e1eaf9;
+  background:transparent;
+  font-size:13px;
+}
+.category:hover,
+.category.active{
+  background:var(--orange);
+  border-color:var(--orange);
+  color:#fff;
+}
+/* =========================================================
+   FORMAT FILTER
+========================================================= */
+.format-filter{
+  position:relative;
+  z-index:20;
+  margin-top:-40px;
+}
+.format-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(3,1fr);
+  gap:15px;
+}
+.format-card{
+  background:#fff;
+  border:2px solid transparent;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:var(--shadow);
+  text-align:left;
+  transition:.2s;
+}
+.format-card:hover{
+  transform:translateY(-3px);
+}
+.format-card.active{
+  border-color:var(--blue);
+}
+.format-card h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+.format-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+.format-card span{
+  display:block;
+  color:var(--blue);
+  margin-top:10px;
+  font-size:13px;
+  font-weight:700;
+}
+/* =========================================================
+   SECTIONS
+========================================================= */
+section{
+  padding:55px 0;
+}
+.section-heading{
+  margin-bottom:25px;
+}
+.section-heading h2{
+  font-size:
+  clamp(1.7rem,3vw,2.3rem);
+}
+.section-heading p{
+  color:var(--muted);
+  margin-top:6px;
+}
+/* =========================================================
+   FEATURED
+========================================================= */
+.featured{
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:45px;
+  align-items:center;
+  background:var(--navy);
+  color:#fff;
+  border-radius:24px;
+  padding:40px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.featured-cover{
+  width:100%;
+  max-width:260px;
+  margin:auto;
+  border-radius:12px;
+  box-shadow:
+  0 15px 30px rgba(0,0,0,.35);
+}
+.featured-label{
+  display:inline-block;
+  padding:6px 12px;
+  background:var(--orange);
+  border-radius:50px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.featured h2{
+  font-size:
+  clamp(1.8rem,3vw,2.6rem);
+}
+.featured .author{
+  color:#9db4d8;
+  margin:7px 0 15px;
+}
+.featured-description{
+  color:#cbd8ef;
+  max-width:600px;
+  margin-bottom:20px;
+}
+.featured-price{
+  color:#ffb878;
+  font-size:25px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+.featured-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+/* =========================================================
+   TOOLBAR
+========================================================= */
+.toolbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-bottom:20px;
+}
+.book-count{
+  color:var(--muted);
+  font-weight:600;
+}
+.sort{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  font-weight:700;
+}
+.sort select{
+  min-height:42px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#fff;
+  padding:8px 12px;
+  color:var(--ink);
+}
+/* =========================================================
+   BOOK GRID
+========================================================= */
+.book-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(4,1fr);
+  gap:20px;
+}
+.book-card{
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:13px;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+.book-card:hover{
+  transform:translateY(-6px);
+  box-shadow:
+  0 20px 40px
+  rgba(10,26,51,.14);
+}
+.book-image{
+  position:relative;
+  background:#eef3fb;
+  border-radius:12px;
+  padding:10px;
+  margin-bottom:15px;
+}
+.book-image img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:8px;
+}
+.badge{
+  position:absolute;
+  left:8px;
+  top:8px;
+  z-index:2;
+  background:var(--navy);
+  color:#fff;
+  padding:5px 9px;
+  border-radius:30px;
+  font-size:10px;
+  font-weight:700;
+}
+.book-card h3{
+  font-size:17px;
+}
+.book-author{
+  color:var(--muted);
+  font-size:13px;
+}
+.book-category{
+  display:inline-block;
+  width:max-content;
+  background:#e8efff;
+  color:var(--blue);
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:700;
+  margin:8px 0;
+}
+.book-description{
+  color:var(--muted);
+  font-size:13px;
+  flex:1;
+  margin-bottom:14px;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.book-price{
+  font-size:19px;
+  font-weight:800;
+  font-family:var(--heading);
+  margin-bottom:10px;
+}
+.book-actions{
+  display:grid;
+  grid-template-columns:
+  1fr 1fr;
+  gap:7px;
+}
+.book-actions .btn{
+  font-size:12px;
+  padding:9px 5px;
+}
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+.steps{
+  display:grid;
+  grid-template-columns:
+  repeat(4,1fr);
+  gap:15px;
+}
+.step{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px;
+}
+.step-number{
+  color:var(--orange);
+  font-family:var(--heading);
+  font-size:32px;
+  font-weight:800;
+}
+.step h3{
+  margin:8px 0 5px;
+  font-size:17px;
+}
+.step p{
+  color:var(--muted);
+  font-size:13px;
+}
+/* =========================================================
+   INFO
+========================================================= */
+.info-box{
+  background:#fff4e9;
+  border-left:5px solid var(--orange);
+  border-radius:12px;
+  padding:20px;
+}
+.info-box h3{
+  font-size:18px;
+  margin-bottom:5px;
+}
+.info-box p{
+  color:#5a4630;
+  font-size:14px;
+}
+/* =========================================================
+   CTA
+========================================================= */
+.cta{
+  background:
+  linear-gradient(
+    135deg,
+    var(--blue),
+    var(--navy2)
+  );
+  color:#fff;
+  border-radius:24px;
+  padding:50px 25px;
+  text-align:center;
+}
+.cta h2{
+  font-size:
+  clamp(1.7rem,3vw,2.3rem);
+}
+.cta p{
+  max-width:600px;
+  margin:10px auto 22px;
+  color:#d3e0f8;
+}
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{
+  background:var(--navy);
+  color:#b9c9e6;
+  padding:55px 0 20px;
+  margin-top:30px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:
+  1.6fr repeat(3,1fr);
+  gap:35px;
+}
+.footer-logo{
+  color:#fff;
+  font-family:var(--heading);
+  font-size:18px;
+  font-weight:800;
+}
+.footer-description{
+  max-width:300px;
+  margin:12px 0;
+  font-size:13px;
+}
+footer h4{
+  color:#fff;
+  margin-bottom:10px;
+}
+footer li{
+  margin:7px 0;
+}
+footer li a{
+  font-size:13px;
+}
+footer li a:hover{
+  color:var(--orange);
+}
+.social{
+  display:flex;
+  gap:7px;
+}
+.social a{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.08);
+  border-radius:50%;
+  font-size:11px;
+}
+.social a:hover{
+  background:var(--orange);
+}
+.copyright{
+  text-align:center;
+  border-top:
+  1px solid rgba(255,255,255,.1);
+  margin-top:35px;
+  padding-top:18px;
+  font-size:12px;
+}
+/* =========================================================
+   MODAL
+========================================================= */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  background:
+  rgba(4,12,28,.78);
+  backdrop-filter:blur(4px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+.modal-overlay.show{
+  display:flex;
+}
+.modal{
+  position:relative;
+  width:min(850px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:20px;
+}
+.close-modal{
+  position:absolute;
+  right:12px;
+  top:12px;
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#edf1f8;
+  font-size:23px;
+  z-index:10;
+}
+.close-modal:hover{
+  background:var(--orange);
+  color:#fff;
+}
+.preview-content{
+  display:grid;
+  grid-template-columns:260px 1fr;
+}
+.preview-left{
+  background:
+  linear-gradient(
+    var(--navy),
+    var(--navy2)
+  );
+  color:#fff;
+  padding:30px 20px;
+  border-radius:
+  20px 0 0 20px;
+}
+.preview-left img{
+  width:100%;
+  border-radius:10px;
+}
+.preview-right{
+  padding:35px;
+}
+.preview-right h2{
+  font-size:27px;
+  padding-right:35px;
+}
+.preview-author{
+  color:var(--muted);
+  margin:5px 0 15px;
+}
+.preview-text{
+  background:#f5f8fd;
+  border-left:4px solid var(--blue);
+  border-radius:10px;
+  padding:18px;
+  margin-top:10px;
+  font-family:Georgia,serif;
+  color:#2a3a55;
+}
+.preview-note{
+  background:#fff4e9;
+  color:#7a4a15;
+  padding:12px;
+  border-radius:10px;
+  margin:15px 0;
+  font-size:13px;
+  font-weight:600;
+}
+.purchase-options{
+  display:grid;
+  gap:10px;
+  margin-top:15px;
+}
+.purchase-option{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px;
+}
+.purchase-option strong{
+  display:block;
+  margin-bottom:3px;
+}
+.purchase-option small{
+  display:block;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+/* =========================================================
+   TOAST
+========================================================= */
+.toast{
+  position:fixed;
+  z-index:1000;
+  left:50%;
+  bottom:20px;
+  transform:
+  translate(-50%,120px);
+  background:var(--navy);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:10px;
+  border-left:
+  4px solid var(--orange);
+  transition:.3s;
+}
+.toast.show{
+  transform:
+  translate(-50%,0);
+}
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media(max-width:1100px){
+  .nav-links,
+  .nav-actions{
+    display:none;
+  }
+  .menu-btn{
+    display:block;
+  }
+  .book-grid{
+    grid-template-columns:
+    repeat(3,1fr);
+  }
+  .footer-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+}
+.social {
+   display: flex;
+   gap: 12px;
+   align-items: center;
+}
+
+.social a {
+   width: 38px;
+   height: 38px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   text-decoration: none;
+   font-size: 18px;
+   transition: 0.3s ease;
+}
+
+.social a:hover {
+   transform: translateY(-3px);
+   opacity: 0.8;
+}
+@media(max-width:850px){
+  .format-grid{
+    grid-template-columns:1fr;
+  }
+  .featured{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .featured-description{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .featured-actions{
+    justify-content:center;
+  }
+  .steps{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+  .book-grid{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+  .preview-content{
+    grid-template-columns:1fr;
+  }
+  .preview-left{
+    border-radius:
+    20px 20px 0 0;
+  }
+}
+@media(max-width:650px){
+  .hero{
+    padding-top:20px;
+  }
+  .hero-slide{
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:10px;
+  }
+  .hero-slide-image{
+    height:320px;
+  }
+  .hero-slide-content{
+    padding:12px 10px 15px;
+  }
+  .hero-slide-content h2{
+    font-size:22px;
+  }
+  .hero-slide-content p{
+    font-size:13px;
+  }
+  .slide-buttons{
+    flex-direction:column;
+  }
+  .slide-buttons .btn{
+    width:100%;
+  }
+  .slider-arrow{
+    width:38px;
+    height:38px;
+    font-size:20px;
+  }
+  .hero h1{
+    font-size:2.25rem;
+  }
+  .categories{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding-bottom:5px;
+  }
+  .category{
+    white-space:nowrap;
+  }
+  .book-grid{
+    grid-template-columns:1fr;
+  }
+  .steps{
+    grid-template-columns:1fr;
+  }
+  .toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .sort{
+    justify-content:space-between;
+  }
+  .sort select{
+    flex:1;
+  }
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+  .featured{
+    padding:25px 18px;
+  }
+  .featured-actions{
+    flex-direction:column;
+  }
+  .featured-actions .btn{
+    width:100%;
+  }
+  .preview-right{
+    padding:25px 18px;
+  }
+}
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+@media(max-width:380px){
+  .hero-slide-image{
+    height:270px;
+  }
+  .hero h1{
+    font-size:2rem;
+  }
+}
+/* =========================================================
+   TOUCH
+========================================================= */
+@media(hover:none){
+  .book-card:hover{
+    transform:none;
+  }
+  .btn:hover{
+    transform:none;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<!-- =======================================================
+     HEADER
+======================================================= -->
+<header>
+<div class="container nav">
+<a href="index.html" class="logo">
+<img src="./skilllogo.jpeg"
+alt="Skilled-Creatives International Logo"
+class="site-logo">
+<span> Skilled-Creatives
+<small>INTERNATIONAL</small>
+</span>
+</a>
+<ul class="nav-links">
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+<li>
+<a href="sectors.html">
+Sectors
+</a>
+</li>
+<li>
+<a href="courses.html">
+Courses
+</a>
+</li>
+<li>
+<a href="library.html" class="active">
+Library
+</a>
+</li>
+<li>
+<a href="marketplace.html">
+Marketplace
+</a>
+</li>
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+</ul>
+<div class="nav-actions">
+<a
+href="auth.html?mode=login"
+class="btn btn-light">
+Login
+</a>
+<a
+href="auth.html?mode=signup"
+class="btn btn-primary">
+Sign Up
+</a>
+</div>
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="Open menu">
+☰
+</button>
+</div>
+<div
+class="mobile-menu"
+id="mobileMenu">
+<div class="mobile-menu-header">
+<strong>Menu</strong>
+<button
+class="close-menu"
+id="closeMenu"
+aria-label="Close menu">
+×
+</button>
+</div>
+<a href="index.html">
+Home
+</a>
+<a href="about.html">
+About
+</a>
+<a href="sectors.html">
+Sectors
+</a>
+<a href="courses.html">
+Courses
+</a>
+<a href="library.html">
+Library
+</a>
+<a href="marketplace.html">
+Marketplace
+</a>
+<a href="contact.html">
+Contact
+</a>
+<br>
+<a
+href="auth.html?mode=login"
+class="btn btn-light">
+Login
+</a>
+<br>
+<a
+href="auth.html?mode=signup"
+class="btn btn-primary">
+Sign Up
+</a>
+</div>
+</header>
+<!-- =======================================================
+     HERO
+======================================================= -->
+<section class="hero">
+<div class="container">
+<a
+href="index.html"
+class="back">
+←
+</a>
+<!-- =====================================================
+     SLIDING BOOK DISPLAY
+===================================================== -->
+<!-- ==================================================
+     BOOK SLIDER
+================================================== -->
+
+<div class="hero-books">
+
+  <div class="hero-slider" id="heroSlider">
+
+
+    <!-- SLIDE 1 -->
+
+    <div class="hero-slide">
+
+      <img
+        class="hero-slide-image"
+        src="assets/ai-prompt-engineering.jpeg"
+        alt="AI Prompt Engineering">
+
+      <div class="hero-slide-content">
+
+        <span class="slide-label">
+          FEATURED EBOOK
+        </span>
+
+        <h2>
+          AI Prompt Engineering
+        </h2>
+
+        <p>
+          Learn how to communicate effectively with
+          artificial intelligence and create powerful
+          prompts for work, business and learning.
+        </p>
+
+        <div class="slide-buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="slideBuy(1)">
+
+            Buy Now
+
+          </button>
+
+          <button
+            class="btn btn-blue"
+            onclick="slideRead()">
+
+            Read Online
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- SLIDE 2 -->
+
+    <div class="hero-slide">
+
+      <img
+        class="hero-slide-image"
+        src="assets/essential-biology.jpeg"
+        alt="Essential Biology for Cambridge IGCSE">
+
+      <div class="hero-slide-content">
+
+        <span class="slide-label">
+          EDUCATION
+        </span>
+
+        <h2>
+          Essential Biology for Cambridge IGCSE
+        </h2>
+
+        <p>
+          A practical biology workbook designed to
+          support students preparing for Cambridge
+          IGCSE Biology examinations.
+        </p>
+
+        <div class="slide-buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="slideBuy(2)">
+
+            Buy Now
+
+          </button>
+
+          <button
+            class="btn btn-blue"
+            onclick="slideRead()">
+
+            Read Online
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- SLIDE 3 -->
+
+    <div class="hero-slide">
+
+      <div
+        class="hero-slide-image"
+        style="
+          background:linear-gradient(
+            145deg,
+            #1555d6,
+            #0a1a33
+          );
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          color:#fff;
+          font-family:var(--heading);
+          font-size:28px;
+          font-weight:800;
+          padding:30px;
+        ">
+
+        Building Skills,
+        Building Freedom
+
+      </div>
+
+      <div class="hero-slide-content">
+
+        <span class="slide-label">
+          PERSONAL DEVELOPMENT
+        </span>
+
+        <h2>
+          Building Skills, Building Freedom
+        </h2>
+
+        <p>
+          Discover how valuable skills can create
+          independence, confidence and new income
+          opportunities.
+        </p>
+
+        <div class="slide-buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="slideBuy(3)">
+
+            Buy Now
+
+          </button>
+
+          <button
+            class="btn btn-blue"
+            onclick="slideRead()">
+
+            Read Online
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- SLIDE 4 -->
+
+    <div class="hero-slide">
+
+      <div
+        class="hero-slide-image"
+        style="
+          background:linear-gradient(
+            145deg,
+            #f47c20,
+            #0a1a33
+          );
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          color:#fff;
+          font-family:var(--heading);
+          font-size:28px;
+          font-weight:800;
+          padding:30px;
+        ">
+
+        The Modern African
+        Entrepreneur
+
+      </div>
+
+      <div class="hero-slide-content">
+
+        <span class="slide-label">
+          ENTREPRENEURSHIP
+        </span>
+
+        <h2>
+          The Modern African Entrepreneur
+        </h2>
+
+        <p>
+          Learn how entrepreneurs identify real
+          problems, start small and build sustainable
+          businesses.
+        </p>
+
+        <div class="slide-buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="slideBuy(4)">
+
+            Buy Now
+
+          </button>
+
+          <button
+            class="btn btn-blue"
+            onclick="slideRead()">
+
+            Read Online
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- SLIDE 5 -->
+
+    <div class="hero-slide">
+
+      <div
+        class="hero-slide-image"
+        style="
+          background:linear-gradient(
+            145deg,
+            #1555d6,
+            #0f43ab
+          );
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          color:#fff;
+          font-family:var(--heading);
+          font-size:28px;
+          font-weight:800;
+          padding:30px;
+        ">
+
+        Renewable Energy
+        Made Simple
+
+      </div>
+
+      <div class="hero-slide-content">
+
+        <span class="slide-label">
+          RENEWABLE ENERGY
+        </span>
+
+        <h2>
+          Renewable Energy Made Simple
+        </h2>
+
+        <p>
+          Understand solar panels, batteries and
+          inverters in simple language for homes,
+          businesses and technicians.
+        </p>
+
+        <div class="slide-buttons">
+
+          <button
+            class="btn btn-primary"
+            onclick="slideBuy(5)">
+
+            Buy Now
+
+          </button>
+
+          <button
+            class="btn btn-blue"
+            onclick="slideRead()">
+
+            Read Online
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- ARROWS -->
+
+  <button
+    class="slider-arrow slider-prev"
+    id="sliderPrev"
+    aria-label="Previous book">
+
+    ‹
+
+  </button>
+
+
+  <button
+    class="slider-arrow slider-next"
+    id="sliderNext"
+    aria-label="Next book">
+    ›
+  </button>
+
+
+  <!-- DOTS -->
+
+  <div
+    class="slider-dots"
+    id="sliderDots">
+  </div>
+
+</div>
+<!-- =====================================================
+     HERO TEXT
+===================================================== -->
+<div class="hero-content">
+<h1>
+Knowledge That Builds
+Skills, Businesses & Futures
+</h1>
+<p class="hero-description">
+Explore our collection of physical books
+and digital eBooks designed to educate,
+inspire and equip you with practical
+knowledge.
+Preview selected content before deciding
+whether to purchase the complete book
+or continue reading online.
+</p>
+<form
+class="search"
+id="searchForm">
+<input
+type="search"
+id="searchInput"
+placeholder="Search books, authors or topics...">
+<button
+type="submit">
+🔍
+</button>
+</form>
+<div
+class="categories"
+id="categories">
+</div>
+</div>
+</div>
+</section>
+<!-- =======================================================
+     FORMAT FILTER
+======================================================= -->
+<div class="format-filter">
+<div class="container">
+<div class="format-grid">
+<button
+class="format-card active"
+data-format="all">
+<h3>
+All Books
+</h3>
+<p>
+Browse every book available in our library.
+</p>
+<span>
+View All Books →
+</span>
+</button>
+<button
+class="format-card"
+data-format="physical">
+<h3>
+Physical Books
+</h3>
+<p>
+Printed books available for purchase.
+</p>
+<span>
+View Physical Books →
+</span>
+</button>
+<button
+class="format-card"
+data-format="ebook">
+<h3>
+eBooks
+</h3>
+<p>
+Digital books available as PDF or online reading.
+</p>
+<span>
+View eBooks →
+</span>
+</button>
+</div>
+</div>
+</div>
+<main>
+<!-- =======================================================
+     FEATURED BOOK
+======================================================= -->
+<section>
+<div
+class="container"
+id="featured">
+</div>
+</section>
+<!-- =======================================================
+     BOOK COLLECTION
+======================================================= -->
+<section id="booksSection">
+<div class="container">
+<div class="section-heading">
+<h2>
+Browse the Collection
+</h2>
+<p>
+Preview a book before deciding to purchase
+or continue reading online.
+</p>
+</div>
+<div class="toolbar">
+<div
+class="book-count"
+id="bookCount">
+0 books found
+</div>
+<div class="sort">
+<label for="sortSelect">
+Sort:
+</label>
+<select id="sortSelect">
+<option value="featured">
+Featured
+</option>
+<option value="newest">
+Newest
+</option>
+<option value="low">
+Price: Low to High
+</option>
+<option value="high">
+Price: High to Low
+</option>
+<option value="az">
+A-Z
+</option>
+</select>
+</div>
+</div>
+<div
+class="book-grid"
+id="bookGrid">
+</div>
+</div>
+</section>
+<!-- =======================================================
+     HOW IT WORKS
+======================================================= -->
+<section>
+<div class="container">
+<div class="section-heading">
+<h2>
+How Our Library Works
+</h2>
+</div>
+<div class="steps">
+<div class="step">
+<div class="step-number">
+01
+</div>
+<h3>
+Explore
+</h3>
+<p>
+Browse physical books and eBooks in our library.
+</p>
+</div>
+<div class="step">
+<div class="step-number">
+02
+</div>
+<h3>
+Preview
+</h3>
+<p>
+Read a short introductory portion before buying.
+</p>
+</div>
+<div class="step">
+<div class="step-number">
+03
+</div>
+<h3>
+Choose
+</h3>
+<p>
+Buy the complete book or pay to continue reading online.
+</p>
+</div>
+<div class="step">
+<div class="step-number">
+04
+</div>
+<h3>
+Learn
+</h3>
+<p>
+Access your purchased digital content or receive your physical book.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- =======================================================
+     INFORMATION
+======================================================= -->
+<section>
+<div class="container">
+<div class="info-box">
+<h3>
+Digital Access
+</h3>
+<p>
+Some books may be available as downloadable
+PDF files, while others may offer paid online
+reading. Availability depends on the individual book.
+</p>
+</div>
+</div>
+</section>
+<!-- =======================================================
+     CTA
+======================================================= -->
+<section>
+<div class="container">
+<div class="cta">
+<h2>
+Ready to Learn More?
+</h2>
+<p>
+Create your Skilled-Creatives International
+account to purchase books, access your
+digital library and manage your reading history.
+</p>
+<div class="cta-buttons">
+<a
+href="auth.html?mode=signup"
+class="btn btn-primary">
+Create Account
+</a>
+<a
+href="auth.html?mode=login"
+class="btn btn-light">
+Login
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-logo">
+Skilled-Creatives International
+</div>
+<p class="footer-description">
+Building a Future Where Skills Create Freedom.
+</p>
+<div class="social">
+   <!-- Facebook -->
+   <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+   </a>
+   
+   <!-- Instagram -->
+   <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+   </a>
+   
+   <!-- YouTube -->
+   <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+   </a>
+   
+   <!-- LinkedIn -->
+   <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+   </a>
+   
+   <!-- WhatsApp -->
+   <a href="https://wa.me/2348073704830" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+   </a>
+</div>
+<div>
+<h4>
+Company
+</h4>
+<ul>
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+<li>
+<a href="leadership.html">
+Leadership
+</a>
+</li>
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+</ul>
+</div>
+<div>
+<h4>
+Learning
+</h4>
+<ul>
+<li>
+<a href="courses.html">
+Courses
+</a>
+</li>
+<li>
+<a href="library.html">
+Library
+</a>
+</li>
+<li>
+<a href="academy.html">
+Academy
+</a>
+</li>
+</ul>
+</div>
+<div>
+<h4>
+Support
+</h4>
+<ul>
+<li>
+<a href="help.html">
+Help Center
+</a>
+</li>
+<li>
+<a href="faq.html">
+FAQ
+</a>
+</li>
+<li>
+<a href="privacy.html">
+Privacy
+</a>
+</li>
+<li>
+<a href="terms.html">
+Terms
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="copyright">
+© 2026 Skilled-Creatives International.
+All rights reserved.
+</div>
+</div>
+</footer>
+<!-- =======================================================
+     MODAL
+======================================================= -->
+<div
+class="modal-overlay"
+id="modalOverlay">
+<div
+class="modal"
+id="modal">
+</div>
+</div>
+<!-- =======================================================
+     TOAST
+======================================================= -->
+<div
+class="toast"
+id="toast">
+</div>
+<script>
+/* =========================================================
+   BOOK DATA
+========================================================= */
+const books = [
+{
+id:1,
+title:"AI Prompt Engineering",
+author:"Skilled-Creatives International",
+category:"Technology",
+format:"ebook",
+price:5000,
+onlinePrice:2000,
+image:"assets/ai-prompt-engineering.jpeg",
+description:
+"A beginner-friendly workbook designed to help you understand AI prompt engineering and use AI tools effectively.",
+preview:
+"Artificial intelligence is changing the way people learn, work and build businesses. Prompt engineering gives ordinary people the ability to communicate with AI tools more effectively. In this introductory section, we explore the basic principles of writing useful prompts and how better instructions can produce better results.",
+physical:false,
+pdf:true,
+online:true,
+featured:true,
+year:2026
+},
+{
+id:2,
+title:"Essential Biology for Cambridge IGCSE",
+author:"Ron Pickering",
+category:"Education",
+format:"physical",
+price:8500,
+onlinePrice:2500,
+image:"assets/essential-biology.jpeg",
+description:
+"A practical biology workbook designed to support students preparing for Cambridge IGCSE Biology.",
+preview:
+"Biology is the study of living organisms and the processes that make life possible. This workbook introduces important biological concepts and provides students with practical material that can support classroom learning and examination preparation.",
+physical:true,
+pdf:false,
+online:true,
+featured:false,
+year:2026
+},
+{
+id:3,
+title:"Building Skills, Building Freedom",
+author:"Anthony O. Obukowho",
+category:"Personal Development",
+format:"both",
+price:8500,
+onlinePrice:3000,
+image:"",
+description:
+"A practical guide to turning useful skills into independence, income and lasting confidence.",
+preview:
+"Every great transformation begins with the decision to learn. In a changing world, people who continuously build valuable skills create more opportunities for themselves and their communities.",
+physical:true,
+pdf:true,
+online:true,
+featured:false,
+year:2025
+},
+{
+id:4,
+title:"The Modern African Entrepreneur",
+author:"Skilled-Creatives International",
+category:"Entrepreneurship",
+format:"both",
+price:7500,
+onlinePrice:2500,
+image:"",
+description:
+"Learn how modern African entrepreneurs identify real problems, start small and build sustainable businesses.",
+preview:
+"Across Africa, a new generation of entrepreneurs is solving everyday problems with creativity, technology and determination. This book explores the mindset required to turn an idea into a real business.",
+physical:true,
+pdf:true,
+online:true,
+featured:false,
+year:2025
+},
+{
+id:5,
+title:"Renewable Energy Made Simple",
+author:"Skilled-Creatives Energy Team",
+category:"Renewable Energy",
+format:"both",
+price:10000,
+onlinePrice:3500,
+image:"",
+description:
+"Solar panels, batteries and inverters explained in simple language for homes, businesses and technicians.",
+preview:
+"The sun provides one of the world's most abundant sources of energy. Understanding how solar panels, batteries and inverters work together can help individuals and businesses make better energy decisions.",
+physical:true,
+pdf:true,
+online:true,
+featured:false,
+year:2025
+},
+{
+id:6,
+title:"From Idea to Income",
+author:"Skilled-Creatives International",
+category:"Business",
+format:"both",
+price:6500,
+onlinePrice:2200,
+image:"",
+description:
+"A practical guide for turning an idea into your first paying customers.",
+preview:
+"Most ideas never become businesses because they are never properly tested. Before spending money on branding or equipment, entrepreneurs need to understand the problem they are solving and the people they are solving it for.",
+physical:true,
+pdf:true,
+online:true,
+featured:false,
+year:2024
+}
+];
+/* =========================================================
+   STATE
+========================================================= */
+const state = {
+search:"",
+category:"All",
+format:"all",
+sort:"featured"
+};
+/* =========================================================
+   HELPER
+========================================================= */
+function $(selector){
+return document.querySelector(selector);
+}
+function money(amount){
+return "₦" +
+amount.toLocaleString("en-NG");
+}
+function showToast(message){
+const toast = $("#toast");
+toast.textContent = message;
+toast.classList.add("show");
+setTimeout(function(){
+toast.classList.remove("show");
+},2500);
+}
+/* =========================================================
+   CATEGORIES
+========================================================= */
+const categories = [
+"All",
+"Technology",
+"Education",
+"Business",
+"Entrepreneurship",
+"Personal Development",
+"Renewable Energy"
+];
+function renderCategories(){
+$("#categories").innerHTML =
+categories.map(function(category){
+return `
+<button
+class="category ${
+state.category === category
+? "active"
+: ""
+}"
+data-category="${category}">
+${category}
+</button>
+`;
+}).join("");
+}
+document.addEventListener(
+"click",
+function(e){
+const button =
+e.target.closest("[data-category]");
+if(!button) return;
+state.category =
+button.dataset.category;
+renderCategories();
+renderBooks();
+}
+);
+/* =========================================================
+   FILTER BOOKS
+========================================================= */
+function getFilteredBooks(){
+let result = books.filter(function(book){
+const search =
+state.search
+.toLowerCase()
+.trim();
+const matchesSearch =
+!search ||
+book.title
+.toLowerCase()
+.includes(search) ||
+book.author
+.toLowerCase()
+.includes(search) ||
+book.category
+.toLowerCase()
+.includes(search);
+const matchesCategory =
+state.category === "All" ||
+book.category === state.category;
+const matchesFormat =
+state.format === "all" ||
+(
+state.format === "physical"
+&&
+book.physical
+) ||
+(
+state.format === "ebook"
+&&
+(book.pdf || book.online)
+);
+return (
+matchesSearch &&
+matchesCategory &&
+matchesFormat
+);
+});
+if(state.sort === "newest"){
+result.sort(function(a,b){
+return b.year - a.year;
+});
+}
+if(state.sort === "low"){
+result.sort(function(a,b){
+return a.price - b.price;
+});
+}
+if(state.sort === "high"){
+result.sort(function(a,b){
+return b.price - a.price;
+});
+}
+if(state.sort === "az"){
+result.sort(function(a,b){
+return a.title
+.localeCompare(b.title);
+});
+}
+if(state.sort === "featured"){
+result.sort(function(a,b){
+return Number(b.featured) -
+Number(a.featured);
+});
+}
+return result;
+}
+/* =========================================================
+   BOOK COVER
+========================================================= */
+function bookImage(book){
+if(book.image){
+return `
+<img
+src="${book.image}"
+alt="${book.title}"
+loading="lazy">
+`;
+}
+return `
+<div
+style="
+aspect-ratio:3/4;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+border-radius:8px;
+color:white;
+font-family:var(--heading);
+font-weight:800;
+font-size:20px;
+background:linear-gradient(
+145deg,
+#1555d6,
+#071a35
+);
+">
+${book.title}
+</div>
+`;
+}
+/* =========================================================
+   BOOK GRID
+========================================================= */
+function renderBooks(){
+const result =
+getFilteredBooks();
+$("#bookCount").textContent =
+`${result.length}
+${result.length === 1 ? "book" : "books"}
+found`;
+if(!result.length){
+$("#bookGrid").innerHTML = `
+<div
+style="
+grid-column:1/-1;
+background:#fff;
+padding:50px;
+text-align:center;
+border-radius:16px;
+color:var(--muted);
+">
+<h3>
+No books found
+</h3>
+<p>
+Try another search or category.
+</p>
+</div>
+`;
+return;
+}
+$("#bookGrid").innerHTML =
+result.map(function(book){
+return `
+<article class="book-card">
+<div class="book-image">
+<span class="badge">
+${
+book.format === "physical"
+? "PHYSICAL"
+: book.format === "ebook"
+? "EBOOK"
+: "PHYSICAL + EBOOK"
+}
+</span>
+${bookImage(book)}
+</div>
+<h3>
+${book.title}
+</h3>
+<div class="book-author">
+${book.author}
+</div>
+<span class="book-category">
+${book.category}
+</span>
+<p class="book-description">
+${book.description}
+</p>
+<div class="book-price">
+${money(book.price)}
+</div>
+<div class="book-actions">
+<button
+class="btn btn-outline"
+onclick="openPreview(${book.id})">
+Preview
+</button>
+<button
+class="btn btn-blue"
+onclick="requireAccount(${book.id},'buy')">
+Buy
+</button>
+</div>
+</article>
+`;
+}).join("");
+}
+/* =========================================================
+   FEATURED BOOK
+========================================================= */
+function renderFeatured(){
+const book =
+books.find(function(book){
+return book.featured;
+});
+if(!book) return;
+$("#featured").innerHTML = `
+<div class="featured">
+<div>
+${
+book.image
+?
+`
+<img
+class="featured-cover"
+src="${book.image}"
+alt="${book.title}">
+`
+:
+`
+<div
+class="featured-cover"
+style="
+aspect-ratio:3/4;
+background:linear-gradient(
+145deg,
+#1555d6,
+#071a35
+);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+color:#fff;
+font-weight:800;
+font-size:24px;
+">
+${book.title}
+</div>
+`
+}
+</div>
+<div>
+<span class="featured-label">
+Featured Book
+</span>
+<h2>
+${book.title}
+</h2>
+<div class="author">
+by ${book.author}
+</div>
+<p class="featured-description">
+${book.description}
+</p>
+<div class="featured-price">
+${money(book.price)}
+</div>
+<div class="featured-actions">
+<button
+class="btn btn-light"
+onclick="openPreview(${book.id})">
+Preview Book
+</button>
+<button
+class="btn btn-primary"
+onclick="requireAccount(${book.id},'buy')">
+Buy Complete Book
+</button>
+<button
+class="btn btn-light"
+onclick="readBook(${book.id})">
+Read More Online
+</button>
+</div>
+</div>
+</div>
+`;
+}
+/* =========================================================
+   PREVIEW MODAL
+========================================================= */
+function openPreview(id){
+const book =
+books.find(function(book){
+return book.id === id;
+});
+if(!book) return;
+let options = "";
+if(book.physical){
+options += `
+<div class="purchase-option">
+<strong>
+Physical Book — ${money(book.price)}
+</strong>
+<small>
+Purchase the printed physical copy.
+</small>
+<button
+class="btn btn-outline"
+onclick="requireAccount(${book.id},'physical')">
+Buy Physical Book
+</button>
+</div>
+`;
+}
+if(book.pdf){
+options += `
+<div class="purchase-option">
+<strong>
+Complete PDF — ${money(book.price)}
+</strong>
+<small>
+Purchase the complete digital book.
+</small>
+<button
+class="btn btn-blue"
+onclick="requireAccount(${book.id},'pdf')">
+Buy Complete PDF
+</button>
+</div>
+`;
+}
+if(book.online){
+options += `
+<div class="purchase-option">
+<strong>
+Read Online — ${money(book.onlinePrice)}
+</strong>
+<small>
+Pay to continue reading online.
+</small>
+<button
+class="btn btn-primary"
+onclick="requireAccount(${book.id},'read')">
+Pay & Read Online
+</button>
+</div>
+`;
+}
+$("#modal").innerHTML = `
+<button
+class="close-modal"
+onclick="closeModal()">
+×
+</button>
+<div class="preview-content">
+<div class="preview-left">
+${
+book.image
+?
+`
+<img
+src="${book.image}"
+alt="${book.title}">
+`
+:
+`
+<div
+style="
+aspect-ratio:3/4;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(
+145deg,
+#1555d6,
+#071a35
+);
+padding:20px;
+border-radius:10px;
+font-weight:800;
+">
+${book.title}
+</div>
+`
+}
+</div>
+<div class="preview-right">
+<h2>
+${book.title}
+</h2>
+<div class="preview-author">
+by ${book.author}
+</div>
+<h4>
+Introduction
+</h4>
+<p
+style="
+color:var(--muted);
+font-size:14px;
+margin-top:7px;
+">
+${book.description}
+</p>
+<h4 style="margin-top:20px">
+Sample from the Book
+</h4>
+<div class="preview-text">
+${book.preview}
+</div>
+<div class="preview-note">
+This is only a short preview.
+Create an account to purchase the
+complete book or pay to continue
+reading online.
+</div>
+<h4>
+Choose an Option
+</h4>
+<div class="purchase-options">
+${options}
+</div>
+</div>
+</div>
+`;
+$("#modalOverlay")
+.classList.add("show");
+document.body.style.overflow =
+"hidden";
+}
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+function closeModal(){
+$("#modalOverlay")
+.classList.remove("show");
+document.body.style.overflow =
+"";
+}
+$("#modalOverlay")
+.addEventListener(
+"click",
+function(e){
+if(e.target === this){
+closeModal();
+}
+}
+);
+document.addEventListener(
+"keydown",
+function(e){
+if(e.key === "Escape"){
+closeModal();
+}
+}
+);
+/* =========================================================
+   AUTH
+========================================================= */
+function requireAccount(bookId,action){
+showToast(
+"Create an account or login to continue."
+);
+setTimeout(function(){
+window.location.href =
+"auth.html?mode=signup&book="
++
+bookId
++
+"&action="
++
+action;
+},700);
+}
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+const heroSlider =
+document.getElementById(
+"heroSlider"
+);
+const sliderDots =
+document.getElementById(
+"sliderDots"
+);
+const sliderPrev =
+document.getElementById(
+"sliderPrev"
+);
+const sliderNext =
+document.getElementById(
+"sliderNext"
+);
+let currentSlide = 0;
+const totalSlides =
+document.querySelectorAll(
+".hero-slide"
+).length;
+/* CREATE DOTS */
+for(
+let i = 0;
+i < totalSlides;
+i++
+){
+const dot =
+document.createElement("button");
+dot.className =
+"slider-dot" +
+(i === 0
+? " active"
+: "");
+dot.setAttribute(
+"aria-label",
+"Go to slide " + (i + 1)
+);
+dot.addEventListener(
+"click",
+function(){
+goToSlide(i);
+}
+);
+sliderDots.appendChild(dot);
+}
+/* GO TO SLIDE */
+function goToSlide(index){
+if(index < 0){
+index =
+totalSlides - 1;
+}
+if(index >= totalSlides){
+index = 0;
+}
+currentSlide = index;
+heroSlider.style.transform =
+`translateX(-${currentSlide * 100}%)`;
+document
+.querySelectorAll(".slider-dot")
+.forEach(function(dot,index){
+dot.classList.toggle(
+"active",
+index === currentSlide
+);
+});
+}
+/* NEXT */
+sliderNext.addEventListener(
+"click",
+function(){
+goToSlide(
+currentSlide + 1
+);
+}
+);
+/* PREVIOUS */
+sliderPrev.addEventListener(
+"click",
+function(){
+goToSlide(
+currentSlide - 1
+);
+}
+);
+/* AUTOMATIC SLIDE */
+let sliderTimer =
+setInterval(function(){
+goToSlide(
+currentSlide + 1
+);
+},5000);
+/* PAUSE */
+document
+.querySelector(".hero-books")
+.addEventListener(
+"mouseenter",
+function(){
+clearInterval(
+sliderTimer
+);
+}
+);
+/* RESUME */
+document
+.querySelector(".hero-books")
+.addEventListener(
+"mouseleave",
+function(){
+sliderTimer =
+setInterval(function(){
+goToSlide(
+currentSlide + 1
+);
+},5000);
+}
+);
+/* =========================================================
+   SLIDER BUY NOW
+========================================================= */
+function slideBuy(bookId){
+requireAccount(
+bookId,
+"buy"
+);
+}
+/* =========================================================
+   SLIDER READ ONLINE
+========================================================= */
+function slideRead(){
+state.format = "ebook";
+document
+.querySelectorAll(".format-card")
+.forEach(function(card){
+card.classList.toggle(
+"active",
+card.dataset.format === "ebook"
+);
+});
+renderBooks();
+setTimeout(function(){
+document
+.getElementById("booksSection")
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+},100);
+}
+/* =========================================================
+   FEATURED READ ONLINE
+========================================================= */
+function readBook(bookId){
+state.format = "ebook";
+document
+.querySelectorAll(".format-card")
+.forEach(function(card){
+card.classList.toggle(
+"active",
+card.dataset.format === "ebook"
+);
+});
+renderBooks();
+setTimeout(function(){
+document
+.getElementById("booksSection")
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+},100);
+}
+/* =========================================================
+   SEARCH
+========================================================= */
+$("#searchInput")
+.addEventListener(
+"input",
+function(){
+state.search =
+this.value;
+renderBooks();
+}
+);
+$("#searchForm")
+.addEventListener(
+"submit",
+function(e){
+e.preventDefault();
+state.search =
+$("#searchInput").value;
+renderBooks();
+document
+.getElementById("booksSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+}
+);
+/* =========================================================
+   FORMAT FILTER
+========================================================= */
+document.addEventListener(
+"click",
+function(e){
+const button =
+e.target.closest(
+"[data-format]"
+);
+if(!button) return;
+state.format =
+button.dataset.format;
+document
+.querySelectorAll(
+".format-card"
+)
+.forEach(function(card){
+card.classList.toggle(
+"active",
+card === button
+);
+});
+renderBooks();
+}
+);
+/* =========================================================
+   SORT
+========================================================= */
+$("#sortSelect")
+.addEventListener(
+"change",
+function(){
+state.sort =
+this.value;
+renderBooks();
+}
+);
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+$("#menuBtn")
+.addEventListener(
+"click",
+function(){
+$("#mobileMenu")
+.classList.toggle(
+"open"
+);
+}
+);
+/* CLOSE MOBILE MENU */
+$("#closeMenu")
+  .addEventListener(
+    "click",
+    function() {
+      $("#mobileMenu")
+        .classList.remove(
+          "open"
+        );
+    }
+  );
+/* CLOSE MOBILE MENU AFTER LINK */
+document
+.querySelectorAll(
+"#mobileMenu a"
+)
+.forEach(function(link){
+link.addEventListener(
+"click",
+function(){
+$("#mobileMenu")
+.classList.remove(
+"open"
+);
+}
+);
+});
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+renderCategories();
+renderFeatured();
+renderBooks();
+</script>
+</body>
+</html>
