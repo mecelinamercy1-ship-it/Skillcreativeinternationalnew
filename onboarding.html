@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Your Profile — Skilled-Creatives International Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{
+    --blue:#0A3D91;
+    --blue-deep:#072a66;
+    --ink:#0B0F1A;
+    --white:#FFFFFF;
+    --orange:#F2921D;
+    --cloud:#F5F7FB;
+    --slate:#5B6472;
+    --line:#E3E7EF;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'IBM Plex Sans', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);color:var(--ink);background:var(--cloud);line-height:1.6;overflow-x:hidden;min-height:100vh;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.15;letter-spacing:-0.01em;}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);font-weight:500;}
+  :focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* ===== Top bar ===== */
+  .ob-header{padding:22px 0;border-bottom:1px solid var(--line);background:#fff;}
+  .ob-header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:16px;color:var(--blue);}
+  .logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--mono);font-size:11px;flex:none;}
+  .skip-link{font-size:13px;color:var(--slate);font-weight:500;background:none;border:none;cursor:pointer;font-family:var(--body);}
+  .skip-link:hover{color:var(--blue);}
+
+  /* ===== Progress ===== */
+  .progress-shell{background:#fff;border-bottom:1px solid var(--line);padding:20px 0 24px;}
+  .progress-track{position:relative;display:flex;justify-content:space-between;max-width:640px;margin:0 auto;}
+  .progress-line{position:absolute;top:15px;left:0;right:0;height:2px;background:var(--line);z-index:0;}
+  .progress-line-fill{position:absolute;top:15px;left:0;height:2px;background:var(--orange);z-index:1;transition:width .4s ease;width:0%;}
+  .p-step{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;}
+  .p-dot{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12.5px;font-weight:600;color:var(--slate);transition:border-color .3s,background .3s,color .3s;}
+  .p-step.active .p-dot{border-color:var(--blue);color:var(--blue);}
+  .p-step.done .p-dot{background:var(--orange);border-color:var(--orange);color:#1a1200;}
+  .p-label{font-size:11.5px;color:var(--slate);text-align:center;max-width:90px;font-weight:500;}
+  .p-step.active .p-label{color:var(--ink);font-weight:600;}
+  @media(max-width:560px){.p-label{display:none;}}
+
+  /* ===== Body ===== */
+  .ob-main{padding:56px 0 80px;}
+  .ob-card{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:44px;}
+  @media(max-width:640px){.ob-card{padding:28px 22px;border-radius:16px;}}
+
+  .step{display:none;animation:fadeIn .4s ease;}
+  .step.active{display:block;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+  .step h2{font-size:clamp(22px,2.6vw,28px);margin-bottom:8px;}
+  .step .sub{color:var(--slate);font-size:14.5px;margin-bottom:30px;}
+
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  .field input,.field select,.field textarea{width:100%;padding:12px 14px;border-radius:9px;border:1px solid var(--line);font-family:var(--body);font-size:16px;background:#fff;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(10,61,145,0.12);}
+  .field input:disabled{background:var(--cloud);color:var(--slate);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:520px){.field-row{grid-template-columns:1fr;}}
+  .field small.hint{display:block;margin-top:6px;font-size:11.5px;color:var(--slate);}
+
+  /* Path selection cards */
+  .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px;}
+  @media(max-width:520px){.path-grid{grid-template-columns:1fr;}}
+  .path-card{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;}
+  .path-card:hover{transform:translateY(-2px);border-color:var(--blue);}
+  .path-card input{position:absolute;opacity:0;pointer-events:none;}
+  .path-card .ic{width:36px;height:36px;border-radius:9px;background:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+  .path-card .ic svg{width:18px;height:18px;stroke:#fff;}
+  .path-card h4{font-size:14px;margin-bottom:4px;}
+  .path-card p{font-size:12px;color:var(--slate);}
+  .path-card input:checked ~ .check{opacity:1;transform:scale(1);}
+  .path-card:has(input:checked){border-color:var(--orange);background:#FFF8ED;}
+  .path-card .check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.6);transition:opacity .2s,transform .2s;}
+  .path-card .check svg{width:11px;height:11px;stroke:#1a1200;}
+
+  /* Multi-select chips (organic foods) */
+  .chip-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+  .chip{border:1.5px solid var(--line);border-radius:100px;padding:9px 16px;font-size:13px;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s,color .2s;position:relative;}
+  .chip input{position:absolute;opacity:0;pointer-events:none;}
+  .chip:has(input:checked){border-color:var(--blue);background:var(--blue);color:#fff;}
+
+  /* Review summary */
+  .summary-list{display:grid;gap:12px;margin-bottom:8px;}
+  .summary-row{display:flex;justify-content:space-between;gap:16px;padding:14px 16px;background:var(--cloud);border-radius:10px;font-size:13.5px;}
+  .summary-row .k{color:var(--slate);font-weight:500;}
+  .summary-row .v{font-weight:600;color:var(--ink);text-align:right;}
+
+  /* Buttons */
+  .step-actions{display:flex;justify-content:space-between;gap:12px;margin-top:32px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:9px;font-size:14.5px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s,opacity .2s;font-family:var(--body);}
+  .btn:hover{transform:translateY(-1px);}
+  .btn:disabled{opacity:.55;cursor:not-allowed;transform:none;}
+  .btn-primary{background:var(--orange);color:#1a1200;box-shadow:0 6px 16px -6px rgba(242,146,29,0.6);}
+  .btn-primary:hover:not(:disabled){box-shadow:0 10px 22px -6px rgba(242,146,29,0.7);}
+  .btn-ghost{background:none;border-color:var(--line);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+  .spinner{width:15px;height:15px;border-radius:50%;border:2px solid rgba(0,0,0,0.2);border-top-color:#1a1200;animation:spin .7s linear infinite;display:none;}
+  .btn.loading .spinner{display:inline-block;}
+  .btn.loading .btn-label{opacity:.7;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .alert{border-radius:10px;padding:12px 14px;font-size:13px;margin-bottom:18px;display:none;gap:8px;align-items:flex-start;}
+  .alert.show{display:flex;}
+  .alert.error{background:#FDECEC;color:#B42318;border:1px solid #F6C6C2;}
+  .alert svg{width:16px;height:16px;flex:none;margin-top:1px;}
+
+  /* Success screen */
+  .success-screen{text-align:center;padding:20px 0;}
+  .success-icon{width:64px;height:64px;border-radius:50%;background:#E8F6EE;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+  .success-icon svg{width:30px;height:30px;stroke:#0F6D3B;}
+  .success-screen h2{margin-bottom:10px;}
+  .success-screen p{color:var(--slate);font-size:14.5px;margin-bottom:26px;max-width:400px;margin-left:auto;margin-right:auto;}
+</style>
+</head>
+<body>
+
+<header class="ob-header">
+  <div class="wrap">
+    <div class="logo"><span class="logo-mark">SC</span>Skilled-Creatives Intl.</div>
+    <button class="skip-link" id="skipBtn">Skip for now →</button>
+  </div>
+</header>
+
+<div class="progress-shell">
+  <div class="wrap">
+    <div class="progress-track">
+      <div class="progress-line"></div>
+      <div class="progress-line-fill" id="progressFill"></div>
+      <div class="p-step active" data-step="1"><div class="p-dot">1</div><div class="p-label">About You</div></div>
+      <div class="p-step" data-step="2"><div class="p-dot">2</div><div class="p-label">Choose Path</div></div>
+      <div class="p-step" data-step="3"><div class="p-dot">3</div><div class="p-label">Details</div></div>
+      <div class="p-step" data-step="4"><div class="p-dot">4</div><div class="p-label">Review</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="ob-main">
+  <div class="wrap">
+    <div class="ob-card">
+
+      <div class="alert error" id="errorAlert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span id="errorText"></span>
+      </div>
+
+      <!-- STEP 1: About You -->
+      <section class="step active" id="step-1">
+        <span class="eyebrow">Step 1 of 4</span>
+        <h2>Tell us about you</h2>
+        <p class="sub">A few details to personalize your dashboard.</p>
+
+        <div class="field">
+          <label for="ob-name">Full Name</label>
+          <input type="text" id="ob-name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="ob-email">Email</label>
+          <input type="email" id="ob-email" disabled>
+          <small class="hint">From your account — can't be changed here.</small>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="ob-phone">Phone Number</label>
+            <input type="tel" id="ob-phone" placeholder="080..." required>
+          </div>
+          <div class="field">
+            <label for="ob-city">City</label>
+            <input type="text" id="ob-city" placeholder="e.g. Benin City" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ob-state">State</label>
+          <input type="text" id="ob-state" placeholder="e.g. Edo State" required>
+        </div>
+
+        <div class="step-actions">
+          <span></span>
+          <button class="btn btn-primary" id="toStep2"><span class="btn-label">Continue</span></button>
+        </div>
+      </section>
+
+      <!-- STEP 2: Choose Path -->
+      <section class="step" id="step-2">
+        <span class="eyebrow">Step 2 of 4</span>
+        <h2>What brings you here?</h2>
+        <p class="sub">Pick the sector you're most interested in — we'll tailor your dashboard around it.</p>
+
+        <div class="path-grid" id="pathGrid">
+          <label class="path-card">
+            <input type="radio" name="path" value="Tech Education">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
+            <h4>Tech Education</h4>
+            <p>Programming, AI, design &amp; more</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+          <label class="path-card">
+            <input type="radio" name="path" value="Renewable Energy">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+            <h4>Renewable Energy</h4>
+            <p>Solar, wind &amp; biogas systems</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+          <label class="path-card">
+            <input type="radio" name="path" value="Organic Foods & Supplements">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 5.5 6 10a6 6 0 1 1-12 0c0-4.5 6-10 6-10z"/></svg></div>
+            <h4>Organic Foods</h4>
+            <p>Wellness &amp; nutrition products</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+          <label class="path-card">
+            <input type="radio" name="path" value="Fashion & Lifestyle">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3 12 8l6-5M6 3l2 4-4 1 2 12h12l2-12-4-1 2-4"/></svg></div>
+            <h4>Fashion &amp; Lifestyle</h4>
+            <p>Training &amp; marketplace</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+          <label class="path-card">
+            <input type="radio" name="path" value="Marketplace Vendor">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 9v10h18V9M3 9l2-6h14l2 6"/></svg></div>
+            <h4>Marketplace Vendor</h4>
+            <p>Sell your products or services</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+          <label class="path-card">
+            <input type="radio" name="path" value="Innovation & Incubation">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+            <h4>Innovation Hub</h4>
+            <p>Startup incubation &amp; funding</p>
+            <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </label>
+        </div>
+
+        <div class="step-actions">
+          <button class="btn btn-ghost" data-back="1"><span class="btn-label">Back</span></button>
+          <button class="btn btn-primary" id="toStep3"><span class="btn-label">Continue</span></button>
+        </div>
+      </section>
+
+      <!-- STEP 3: Path-specific details (rendered dynamically) -->
+      <section class="step" id="step-3">
+        <span class="eyebrow">Step 3 of 4</span>
+        <h2 id="step3Title">A bit more detail</h2>
+        <p class="sub" id="step3Sub">This helps us route you to the right team.</p>
+
+        <div id="step3Fields"></div>
+
+        <div class="step-actions">
+          <button class="btn btn-ghost" data-back="2"><span class="btn-label">Back</span></button>
+          <button class="btn btn-primary" id="toStep4"><span class="btn-label">Continue</span></button>
+        </div>
+      </section>
+
+      <!-- STEP 4: Review & Finish -->
+      <section class="step" id="step-4">
+        <span class="eyebrow">Step 4 of 4</span>
+        <h2>Review &amp; finish</h2>
+        <p class="sub">Confirm your details before we set up your dashboard.</p>
+
+        <div class="summary-list" id="summaryList"></div>
+
+        <div class="step-actions">
+          <button class="btn btn-ghost" data-back="3"><span class="btn-label">Back</span></button>
+          <button class="btn btn-primary" id="finishBtn">
+            <span class="spinner"></span><span class="btn-label">Finish Setup</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SUCCESS -->
+      <section class="step" id="step-success">
+        <div class="success-screen">
+          <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h2>You're all set!</h2>
+          <p>Your profile is ready. Redirecting you to your dashboard...</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<script>
+/* =========================================================
+   SUPABASE CONFIG
+========================================================= */
+
+const SUPABASE_URL =
+      'https://aezepgnnykxqitzhhmen.supabase.co';
+
+    const SUPABASE_ANON_KEY =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlemVwZ25ueWt4cWl0emhobWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MDUwNTYsImV4cCI6MjEwMzE4MTA1Nn0.Ds9Vhp0ula5JxH5mZ-YVoEWQji2bNXuuzGYo_lInwDI';
+
+
+const POST_ONBOARDING_REDIRECT = 'index.html';
+const PROFILES_TABLE = 'profiles';
+
+
+/* =========================================================
+   SUPABASE INITIALIZATION
+========================================================= */
+
+let supabaseClient = null;
+let currentUser = null;
+
+function initializeSupabase() {
+
+  if (!window.supabase) {
+    throw new Error(
+      'Supabase library failed to load. Check your internet connection or CDN.'
+    );
+  }
+
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    throw new Error('Supabase URL or Anon Key is missing.');
+  }
+
+  supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  return supabaseClient;
+}
+
+
+/* =========================================================
+   PAGE STATE
+========================================================= */
+
+const state = {
+  currentStep: 1,
+  path: null,
+  pathDetails: {}
+};
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const errorAlert = document.getElementById('errorAlert');
+const errorText = document.getElementById('errorText');
+
+
+function showError(message) {
+
+  console.error('Application Error:', message);
+
+  errorText.textContent = message;
+  errorAlert.classList.add('show');
+
+}
+
+
+function clearError() {
+
+  errorAlert.classList.remove('show');
+  errorText.textContent = '';
+
+}
+
+
+function setLoading(button, loading) {
+
+  button.disabled = loading;
+  button.classList.toggle('loading', loading);
+
+}
+
+
+/* =========================================================
+   INITIALIZE PAGE
+========================================================= */
+
+async function init() {
+
+  try {
+
+    initializeSupabase();
+
+    const {
+      data: { session },
+      error
+    } = await supabaseClient.auth.getSession();
+
+    if (error) {
+      throw error;
+    }
+
+    if (!session) {
+
+      window.location.href = 'auth.html';
+      return;
+
+    }
+
+    currentUser = session.user;
+
+    /* Fill email */
+
+    const emailInput = document.getElementById('ob-email');
+
+    if (emailInput) {
+      emailInput.value = currentUser.email || '';
+    }
+
+
+    /* Fill name if available */
+
+    const nameInput = document.getElementById('ob-name');
+
+    if (
+      currentUser.user_metadata &&
+      currentUser.user_metadata.full_name
+    ) {
+
+      nameInput.value =
+        currentUser.user_metadata.full_name;
+
+    }
+
+    console.log(
+      'Supabase initialized successfully.',
+      currentUser.email
+    );
+
+  } catch (error) {
+
+    console.error('Initialization error:', error);
+
+    showError(
+      error.message ||
+      'Unable to initialize the application.'
+    );
+
+  }
+
+}
+
+
+/* Start application */
+
+init();
+
+
+/* =========================================================
+   STEP NAVIGATION
+========================================================= */
+
+function goToStep(stepNumber) {
+
+  clearError();
+
+  document
+    .querySelectorAll('.step')
+    .forEach(step => {
+      step.classList.remove('active');
+    });
+
+
+  const targetStep =
+    document.getElementById('step-' + stepNumber);
+
+  if (!targetStep) {
+    console.error(
+      'Step not found:',
+      stepNumber
+    );
+    return;
+  }
+
+  targetStep.classList.add('active');
+
+
+  document
+    .querySelectorAll('.p-step')
+    .forEach(step => {
+
+      const number =
+        parseInt(step.dataset.step, 10);
+
+      step.classList.toggle(
+        'active',
+        number === stepNumber
+      );
+
+      step.classList.toggle(
+        'done',
+        number < stepNumber
+      );
+
+    });
+
+
+  const progressFill =
+    document.getElementById('progressFill');
+
+  if (progressFill) {
+
+    const percentage =
+      stepNumber <= 4
+        ? ((stepNumber - 1) / 3) * 100
+        : 100;
+
+    progressFill.style.width =
+      percentage + '%';
+
+  }
+
+
+  state.currentStep = stepNumber;
+
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+
+}
+
+
+/* =========================================================
+   BACK BUTTONS
+========================================================= */
+
+document
+  .querySelectorAll('[data-back]')
+  .forEach(button => {
+
+    button.addEventListener('click', () => {
+
+      const previousStep =
+        parseInt(
+          button.dataset.back,
+          10
+        );
+
+      goToStep(previousStep);
+
+    });
+
+  });
+
+
+/* =========================================================
+   SKIP
+========================================================= */
+
+document
+  .getElementById('skipBtn')
+  .addEventListener('click', () => {
+
+    window.location.href =
+      POST_ONBOARDING_REDIRECT;
+
+  });
+
+
+/* =========================================================
+   STEP 1 → STEP 2
+========================================================= */
+
+document
+  .getElementById('toStep2')
+  .addEventListener('click', () => {
+
+    clearError();
+
+    const name =
+      document.getElementById('ob-name')
+        .value.trim();
+
+    const phone =
+      document.getElementById('ob-phone')
+        .value.trim();
+
+    const city =
+      document.getElementById('ob-city')
+        .value.trim();
+
+    const stateValue =
+      document.getElementById('ob-state')
+        .value.trim();
+
+
+    if (!name || !phone || !city || !stateValue) {
+
+      showError(
+        'Please fill in all fields to continue.'
+      );
+
+      return;
+
+    }
+
+
+    goToStep(2);
+
+  });
+
+
+/* =========================================================
+   STEP 2 → STEP 3
+========================================================= */
+
+document
+  .getElementById('toStep3')
+  .addEventListener('click', () => {
+
+    clearError();
+
+    const selected =
+      document.querySelector(
+        'input[name="path"]:checked'
+      );
+
+
+    if (!selected) {
+
+      showError(
+        'Please choose a path to continue.'
+      );
+
+      return;
+
+    }
+
+
+    state.path =
+      selected.value;
+
+
+    renderStep3(
+      state.path
+    );
+
+
+    goToStep(3);
+
+  });
+
+
+/* =========================================================
+   STEP 3 CONFIGURATION
+========================================================= */
+
+const step3Config = {
+
+  'Tech Education': {
+
+    title:
+      'Your tech education interest',
+
+    sub:
+      'Tell us which programme and level fits you.',
+
+    fields: `
+      <div class="field">
+        <label for="d-programme">Programme</label>
+
+        <select id="d-programme">
+
+          <option>Programming</option>
+          <option>Artificial Intelligence</option>
+          <option>Data Analytics</option>
+          <option>Digital Marketing</option>
+          <option>Video Editing</option>
+          <option>Graphics Design</option>
+          <option>Robotics</option>
+          <option>Web Development</option>
+          <option>Cybersecurity</option>
+          <option>UI/UX Design</option>
+
+        </select>
+      </div>
+
+      <div class="field">
+
+        <label for="d-level">
+          Experience Level
+        </label>
+
+        <select id="d-level">
+
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+
+        </select>
+
+      </div>
+    `,
+
+    collect: () => ({
+
+      programme:
+        document.getElementById('d-programme').value,
+
+      level:
+        document.getElementById('d-level').value
+
+    })
+
+  },
+
+
+  'Renewable Energy': {
+
+    title:
+      'Your renewable energy project',
+
+    sub:
+      'Help us understand the kind of system you need.',
+
+    fields: `
+
+      <div class="field">
+
+        <label for="d-project">
+          Project Type
+        </label>
+
+        <select id="d-project">
+
+          <option>Residential Power</option>
+          <option>Farm / Agriculture</option>
+          <option>Rural Electrification</option>
+          <option>Waste-to-Energy</option>
+
+        </select>
+
+      </div>
+
+      <div class="field">
+
+        <label for="d-siteloc">
+          Project Location
+        </label>
+
+        <input
+          type="text"
+          id="d-siteloc"
+          placeholder="e.g. Benin City, Edo State"
+        >
+
+      </div>
+
+    `,
+
+    collect: () => ({
+
+      project_type:
+        document.getElementById('d-project').value,
+
+      project_location:
+        document.getElementById('d-siteloc').value.trim()
+
+    })
+
+  },
+
+
+  'Organic Foods & Supplements': {
+
+    title:
+      'Products you\'re interested in',
+
+    sub:
+      'Select all that apply.',
+
+    fields: `
+
+      <div
+        class="chip-grid"
+        id="foodChips"
+      >
+
+        ${
+          [
+            'VegiFufu',
+            'Sweet Potato Mush Poundo',
+            'ShroomVita',
+            'Acha Flour',
+            'Oats Flour with Mushroom'
+          ]
+          .map(product => `
+
+            <label class="chip">
+
+              <input
+                type="checkbox"
+                value="${product}"
+              >
+
+              ${product}
+
+            </label>
+
+          `)
+          .join('')
+        }
+
+      </div>
+
+    `,
+
+    collect: () => ({
+
+      products:
+        Array.from(
+          document.querySelectorAll(
+            '#foodChips input:checked'
+          )
+        ).map(input => input.value)
+
+    })
+
+  },
+
+
+  'Fashion & Lifestyle': {
+
+    title:
+      'Your fashion interest',
+
+    sub:
+      'Are you shopping, training, or both?',
+
+    fields: `
+
+      <div class="field">
+
+        <label for="d-fashion">
+          I'm interested in
+        </label>
+
+        <select id="d-fashion">
+
+          <option>
+            Shopping the Marketplace
+          </option>
+
+          <option>
+            Fashion Training Academy
+          </option>
+
+          <option>
+            Both
+          </option>
+
+        </select>
+
+      </div>
+
+    `,
+
+    collect: () => ({
+
+      fashion_interest:
+        document.getElementById(
+          'd-fashion'
+        ).value
+
+    })
+
+  },
+
+
+  'Marketplace Vendor': {
+
+    title:
+      'Your vendor details',
+
+    sub:
+      'A quick overview of what you plan to sell.',
+
+    fields: `
+
+      <div class="field">
+
+        <label for="d-bizname">
+          Business Name
+        </label>
+
+        <input
+          type="text"
+          id="d-bizname"
+          placeholder="Your business name"
+        >
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="d-biztype">
+          Product Type
+        </label>
+
+        <select id="d-biztype">
+
+          <option>
+            Physical Products
+          </option>
+
+          <option>
+            Digital Products
+          </option>
+
+          <option>
+            Both
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="d-bizdesc">
+          Brief Description
+        </label>
+
+        <textarea
+          id="d-bizdesc"
+          rows="3"
+          placeholder="What do you sell?"
+        ></textarea>
+
+      </div>
+
+    `,
+
+    collect: () => ({
+
+      business_name:
+        document.getElementById(
+          'd-bizname'
+        ).value.trim(),
+
+      product_type:
+        document.getElementById(
+          'd-biztype'
+        ).value,
+
+      description:
+        document.getElementById(
+          'd-bizdesc'
+        ).value.trim()
+
+    })
+
+  },
+
+
+  'Innovation & Incubation': {
+
+    title:
+      'Your venture or idea',
+
+    sub:
+      'Tell us briefly what you\'re building.',
+
+    fields: `
+
+      <div class="field">
+
+        <label for="d-stage">
+          Stage
+        </label>
+
+        <select id="d-stage">
+
+          <option>Just an Idea</option>
+          <option>Early Stage</option>
+          <option>Growth Stage</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="d-idea">
+          Brief Description
+        </label>
+
+        <textarea
+          id="d-idea"
+          rows="3"
+          placeholder="What are you building?"
+        ></textarea>
+
+      </div>
+
+    `,
+
+    collect: () => ({
+
+      stage:
+        document.getElementById(
+          'd-stage'
+        ).value,
+
+      idea:
+        document.getElementById(
+          'd-idea'
+        ).value.trim()
+
+    })
+
+  }
+
+};
+
+
+/* =========================================================
+   RENDER STEP 3
+========================================================= */
+
+function renderStep3(path) {
+
+  const config =
+    step3Config[path];
+
+
+  if (!config) {
+
+    showError(
+      'Invalid path selected.'
+    );
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    'step3Title'
+  ).textContent =
+    config.title;
+
+
+  document.getElementById(
+    'step3Sub'
+  ).textContent =
+    config.sub;
+
+
+  document.getElementById(
+    'step3Fields'
+  ).innerHTML =
+    config.fields;
+
+}
+
+
+/* =========================================================
+   STEP 3 → STEP 4
+========================================================= */
+
+document
+  .getElementById('toStep4')
+  .addEventListener('click', () => {
+
+    clearError();
+
+    if (!state.path) {
+
+      showError(
+        'Please choose a path first.'
+      );
+
+      return;
+
+    }
+
+
+    const config =
+      step3Config[state.path];
+
+
+    if (!config) {
+
+      showError(
+        'Unable to load your selected path.'
+      );
+
+      return;
+
+    }
+
+
+    state.pathDetails =
+      config.collect();
+
+
+    renderSummary();
+
+    goToStep(4);
+
+  });
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+function renderSummary() {
+
+  const name =
+    document.getElementById(
+      'ob-name'
+    ).value.trim();
+
+  const phone =
+    document.getElementById(
+      'ob-phone'
+    ).value.trim();
+
+  const city =
+    document.getElementById(
+      'ob-city'
+    ).value.trim();
+
+  const stateValue =
+    document.getElementById(
+      'ob-state'
+    ).value.trim();
+
+
+  const rows = [
+
+    ['Name', name],
+
+    ['Phone', phone],
+
+    [
+      'Location',
+      `${city}, ${stateValue}`
+    ],
+
+    ['Path', state.path]
+
+  ];
+
+
+  Object.entries(
+    state.pathDetails
+  ).forEach(([key, value]) => {
+
+    const label =
+      key
+        .replace(/_/g, ' ')
+        .replace(
+          /\b\w/g,
+          character =>
+            character.toUpperCase()
+        );
+
+
+    const displayValue =
+      Array.isArray(value)
+        ? (value.join(', ') || '—')
+        : (value || '—');
+
+
+    rows.push([
+      label,
+      displayValue
+    ]);
+
+  });
+
+
+  document.getElementById(
+    'summaryList'
+  ).innerHTML = rows
+    .map(([key, value]) => `
+
+      <div class="summary-row">
+
+        <span class="k">
+          ${escapeHTML(key)}
+        </span>
+
+        <span class="v">
+          ${escapeHTML(value)}
+        </span>
+
+      </div>
+
+    `)
+    .join('');
+
+}
+
+
+/* =========================================================
+   SECURITY HELPER
+========================================================= */
+
+function escapeHTML(value) {
+
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
+}
+
+
+/* =========================================================
+   FINISH SETUP
+========================================================= */
+
+document
+  .getElementById('finishBtn')
+  .addEventListener('click', async () => {
+
+    clearError();
+
+    const button =
+      document.getElementById(
+        'finishBtn'
+      );
+
+
+    try {
+
+      /* Check Supabase */
+
+      if (!supabaseClient) {
+
+        throw new Error(
+          'Supabase has not finished loading. Please refresh the page.'
+        );
+
+      }
+
+
+      /* Check user */
+
+      if (!currentUser) {
+
+        const {
+          data: { session },
+          error
+        } =
+          await supabaseClient.auth.getSession();
+
+
+        if (error) {
+          throw error;
+        }
+
+
+        if (!session) {
+
+          window.location.href =
+            'auth.html';
+
+          return;
+
+        }
+
+
+        currentUser =
+          session.user;
+
+      }
+
+
+      setLoading(button, true);
+
+
+      /* Build profile */
+
+      const payload = {
+
+        id:
+          currentUser.id,
+
+        full_name:
+          document.getElementById(
+            'ob-name'
+          ).value.trim(),
+
+        phone:
+          document.getElementById(
+            'ob-phone'
+          ).value.trim(),
+
+        city:
+          document.getElementById(
+            'ob-city'
+          ).value.trim(),
+
+        state:
+          document.getElementById(
+            'ob-state'
+          ).value.trim(),
+
+        interest_path:
+          state.path,
+
+        path_details:
+          state.pathDetails,
+
+        onboarded_at:
+          new Date().toISOString()
+
+      };
+
+
+      console.log(
+        'Saving profile:',
+        payload
+      );
+
+
+      /* Save to Supabase */
+
+      const {
+        error
+      } =
+        await supabaseClient
+          .from(PROFILES_TABLE)
+          .upsert(
+            payload,
+            {
+              onConflict: 'id'
+            }
+          );
+
+
+      if (error) {
+
+        console.error(
+          'Supabase database error:',
+          error
+        );
+
+        throw error;
+
+      }
+
+
+      /* Success */
+
+      document
+        .querySelectorAll('.step')
+        .forEach(step => {
+          step.classList.remove(
+            'active'
+          );
+        });
+
+
+      document
+        .getElementById(
+          'step-success'
+        )
+        .classList.add('active');
+
+
+      document
+        .getElementById(
+          'progressFill'
+        )
+        .style.width =
+        '100%';
+
+
+      document
+        .querySelectorAll('.p-step')
+        .forEach(step => {
+          step.classList.add('done');
+        });
+
+
+      setTimeout(() => {
+
+        window.location.href =
+          POST_ONBOARDING_REDIRECT;
+
+      }, 1600);
+
+
+    } catch (error) {
+
+      console.error(
+        'Finish setup error:',
+        error
+      );
+
+
+      showError(
+        error.message ||
+        'Could not save your profile. Please try again.'
+      );
+
+
+    } finally {
+
+      setLoading(
+        button,
+        false
+      );
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
