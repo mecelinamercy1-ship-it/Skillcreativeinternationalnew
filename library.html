@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library | Skilled-Creatives International</title>
+<meta name="description" content="Explore physical books and eBooks from Skilled-Creatives International. Preview, buy or read online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VARIABLES */
+:root{
+  --navy:#071a35;--navy2:#102b55;--blue:#1555d6;--blue-dark:#0d3fa8;
+  --orange:#f47c20;--orange-dark:#d96508;--green:#159447;
+  --bg:#f5f8fd;--white:#ffffff;--ink:#14213a;--muted:#61708a;--line:#e0e7f2;
+  --radius:16px;
+  --shadow:0 5px 15px rgba(10,26,51,.06),0 18px 40px rgba(10,26,51,.08);
+  --heading:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'Plus Jakarta Sans','Segoe UI',Arial,sans-serif;
+}
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer;border:0}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin:auto}
+h1,h2,h3,h4{font-family:var(--heading);line-height:1.15}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:700;transition:.2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--blue);border:1px solid var(--blue)}
+.btn-outline:hover{background:#eef3ff}
+.btn-light{color:#fff;border:1px solid rgba(255,255,255,.4);background:transparent}
+.btn-light:hover{background:rgba(255,255,255,.1)}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:1000;color:#fff;background:rgba(7,26,53,.94);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0;color:#fff;font-family:var(--heading);font-size:17px;font-weight:800;letter-spacing:-.4px}
+.site-logo{width:43px;height:43px;object-fit:contain;border-radius:12px;background:#fff;padding:3px;box-shadow:0 5px 18px rgba(0,0,0,.2)}
+.logo small{display:block;margin-top:5px;color:#a8bddb;font-family:var(--body);font-size:9px;font-weight:700;letter-spacing:2.5px}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.5vw,23px)}
+.nav-links a{position:relative;display:block;padding:10px 0;color:#b8c9e2;font-size:12px;font-weight:700;transition:.25s ease}
+.nav-links a::after{content:"";position:absolute;bottom:3px;left:0;width:0;height:2px;border-radius:10px;background:var(--orange);transition:width .25s ease}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.site-header .btn{min-height:42px;padding:9px 17px;border-radius:9px;font-size:12px}
+.site-header .btn-light{border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.04)}
+.site-header .btn-primary{background:linear-gradient(135deg,#ff963e,#f47c20);box-shadow:0 6px 18px rgba(244,124,32,.2)}
+
+/* MOBILE NAV */
+.menu-btn{display:none;width:43px;height:43px;padding:10px;flex-direction:column;justify-content:center;gap:5px;border:1px solid rgba(255,255,255,.15);border-radius:10px;background:rgba(255,255,255,.06)}
+.menu-btn span{display:block;width:20px;height:2px;margin:auto;border-radius:5px;background:#fff}
+.mobile-menu{display:none;padding:18px 5% 25px;background:#091f3e;border-top:1px solid rgba(255,255,255,.08)}
+.mobile-menu.open{display:block;animation:menuReveal .25s ease}
+@keyframes menuReveal{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;color:#fff}
+.close-menu{width:35px;height:35px;border-radius:8px;background:rgba(255,255,255,.08);color:#fff;font-size:23px}
+.mobile-menu > a:not(.btn){display:block;padding:12px 3px;color:#d4e0f5;font-size:14px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.07)}
+.mobile-menu-actions{display:flex;gap:10px;margin-top:18px}
+.mobile-menu-actions .btn{flex:1}
+
+/* HERO */
+.library-hero{position:relative;isolation:isolate;overflow:hidden;padding:30px 0 100px;color:#fff;background:radial-gradient(ellipse at 80% 15%,rgba(21,85,214,.28),transparent 38%),linear-gradient(135deg,#06152c 0%,#0a2245 52%,#102e5c 100%)}
+.hero-grid{position:absolute;inset:0;z-index:-1;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:55px 55px;mask-image:linear-gradient(to bottom,black,transparent 90%);-webkit-mask-image:linear-gradient(to bottom,black,transparent 90%)}
+.hero-orb{position:absolute;z-index:-1;border-radius:50%;pointer-events:none;filter:blur(2px)}
+.hero-orb-one{width:430px;height:430px;top:-250px;right:-100px;border:1px solid rgba(244,124,32,.2);box-shadow:0 0 0 45px rgba(244,124,32,.025),0 0 0 90px rgba(244,124,32,.02)}
+.hero-orb-two{width:300px;height:300px;bottom:-200px;left:-120px;background:rgba(21,85,214,.18);filter:blur(70px)}
+.back{position:relative;z-index:2;display:inline-flex;align-items:center;gap:9px;margin-bottom:35px;padding:9px 15px;color:#dce8fa;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.13);border-radius:50px;background:rgba(255,255,255,.05);transition:.25s ease}
+.back:hover{color:#fff;border-color:var(--orange);background:rgba(244,124,32,.12)}
+.library-hero-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(35px,5vw,75px)}
+
+/* BOOK SLIDER */
+.hero-books{position:relative;z-index:2;width:100%;min-width:0;padding-bottom:25px;overflow:hidden;border-radius:22px}
+.hero-slider{display:flex;width:100%;transition:transform .65s cubic-bezier(.22,.61,.36,1);will-change:transform}
+.hero-slide{min-width:100%;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:20px;padding:17px;border:1px solid rgba(255,255,255,.65);border-radius:20px;background:linear-gradient(145deg,#fff,#f3f6fb);box-shadow:0 25px 65px rgba(0,0,0,.25),0 4px 15px rgba(0,0,0,.08)}
+.hero-slide-image{width:100%;height:350px;object-fit:cover;border-radius:13px;box-shadow:0 12px 30px rgba(10,26,51,.15)}
+.hero-slide-content{min-width:0;padding:12px 9px;color:var(--ink)}
+.hero-slide-content .slide-label{display:inline-flex;align-items:center;margin-bottom:17px;padding:7px 11px;color:#b9570b;border:1px solid rgba(244,124,32,.18);border-radius:50px;background:#fff1e6;font-size:9px;font-weight:800;letter-spacing:1.2px}
+.hero-slide-content h2{margin-bottom:13px;color:#102544;font-size:clamp(20px,2.2vw,27px);line-height:1.2;letter-spacing:-.8px}
+.hero-slide-content p{margin-bottom:22px;color:#66758d;font-size:12px;line-height:1.9}
+.slide-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.slide-buttons .btn{min-height:42px;padding:10px 14px;border-radius:9px;font-size:11px}
+.slide-cover{display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:var(--heading);font-size:28px;font-weight:800;padding:30px}
+
+/* SLIDER CONTROLS */
+.slider-arrow{position:absolute;z-index:5;top:43%;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;background:rgba(7,26,53,.85);font-size:24px;backdrop-filter:blur(10px);transition:.25s ease}
+.slider-arrow:hover{background:var(--orange);transform:scale(1.08)}
+.slider-prev{left:8px}
+.slider-next{right:8px}
+.slider-dots{position:absolute;bottom:0;left:0;display:flex;justify-content:center;gap:0;width:100%;margin:0}
+/* Larger tap target: 23px hit area, 7px visible dot */
+.slider-dot{width:23px;height:23px;padding:8px;border:0;border-radius:20px;background:rgba(255,255,255,.3);background-clip:content-box;cursor:pointer;transition:.3s ease}
+.slider-dot.active{width:41px;background:var(--orange);background-clip:content-box}
+
+/* HERO TEXT */
+.hero-content{position:relative;z-index:2;min-width:0}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:23px;color:#b8cce9;font-size:10px;font-weight:800;letter-spacing:2px}
+.eyebrow-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 14px rgba(244,124,32,.7)}
+.hero-content h1{max-width:600px;color:#fff;font-size:clamp(34px,4vw,55px);font-weight:800;line-height:1.12;letter-spacing:-2px}
+.hero-content h1 span{display:block;color:#ff9b4b}
+.hero-description{max-width:510px;margin:22px 0 27px;color:#b7c9e2;font-size:14px;line-height:1.9}
+
+/* SEARCH */
+.search{display:flex;align-items:center;gap:9px;max-width:510px;min-height:58px;padding:6px 7px 6px 17px;border:1px solid rgba(255,255,255,.18);border-radius:13px;background:rgba(255,255,255,.96);box-shadow:0 15px 35px rgba(0,0,0,.15);transition:.25s ease}
+.search:focus-within{border-color:var(--orange);box-shadow:0 0 0 4px rgba(244,124,32,.12)}
+.search-icon{color:#8090a8;font-size:25px;line-height:1}
+.search input{flex:1;min-width:0;padding:10px 3px;border:0;outline:0;color:var(--ink);background:transparent;font-size:12px}
+.search input::placeholder{color:#98a4b5}
+.search button{min-height:43px;padding:0 18px;border-radius:9px;color:#fff;background:linear-gradient(135deg,#ff963e,#f47c20);font-size:11px;font-weight:800;transition:.2s ease}
+.search button:hover{background:var(--orange-dark)}
+
+/* CATEGORIES */
+.categories{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.category{padding:8px 13px;border:1px solid rgba(255,255,255,.17);border-radius:50px;color:#d2def0;background:rgba(255,255,255,.045);font-size:10px;font-weight:600;transition:.25s ease}
+.category:hover,.category.active{border-color:var(--orange);color:#fff;background:rgba(244,124,32,.17)}
+
+/* TRUST */
+.hero-trust{display:flex;align-items:center;flex-wrap:wrap;gap:13px;margin-top:27px;color:#9db2d1;font-size:10px;font-weight:600}
+.trust-divider{width:4px;height:4px;border-radius:50%;background:var(--orange)}
+
+/* HERO RESPONSIVE */
+@media (max-width:1050px){
+  .nav{gap:15px}
+  .nav-links{gap:12px}
+  .nav-links a{font-size:11px}
+  .library-hero-layout{gap:30px}
+  .hero-slide{grid-template-columns:1fr;gap:10px}
+  .hero-slide-image{height:250px}
+  .hero-slide-content{padding:10px 8px 15px}
+  .hero-slide-content .slide-label{margin-bottom:9px}
+  .hero-slide-content h2{font-size:21px}
+  .hero-slide-content p{margin-bottom:13px}
+}
+@media (max-width:800px){
+  .nav{min-height:72px}
+  .nav-links,.nav-actions{display:none}
+  .menu-btn{display:flex}
+  .library-hero{padding:25px 0 75px}
+  .library-hero-layout{grid-template-columns:1fr;gap:42px}
+  .hero-books{max-width:560px;margin:auto}
+  .hero-content{max-width:650px}
+  .hero-content h1{font-size:clamp(35px,7vw,52px)}
+  .hero-description{max-width:600px}
+}
+@media (max-width:550px){
+  .library-hero{padding:20px 0 60px}
+  .back{margin-bottom:23px}
+  .hero-slide{padding:11px;border-radius:15px}
+  .hero-slide-image{height:265px}
+  .hero-slide-content{padding:10px 7px 13px}
+  .hero-slide-content h2{font-size:21px}
+  .hero-slide-content p{font-size:12px}
+  .slide-buttons{display:grid;grid-template-columns:1fr 1fr}
+  .slide-buttons .btn{width:100%;padding:9px 7px;font-size:10px}
+  .hero-content h1{font-size:36px;letter-spacing:-1.5px}
+  .hero-description{font-size:13px}
+  .search{min-height:53px}
+  .search button{padding:0 13px}
+  .hero-trust{font-size:9px;gap:9px}
+  .slider-arrow{width:34px;height:34px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-slider,.slider-arrow,.slider-dot,.category{transition:none}
+}
+
+/* FORMAT FILTER */
+.format-filter{position:relative;z-index:20;margin-top:-40px}
+.format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.format-card{background:#fff;border:2px solid transparent;border-radius:16px;padding:20px;box-shadow:var(--shadow);text-align:left;transition:.2s}
+.format-card:hover{transform:translateY(-3px)}
+.format-card.active{border-color:var(--blue)}
+.format-card h3{font-size:18px;margin-bottom:5px}
+.format-card p{color:var(--muted);font-size:13px}
+.format-card span{display:block;color:var(--blue);margin-top:10px;font-size:13px;font-weight:700}
+
+/* SECTIONS */
+section{padding:55px 0}
+.section-heading{margin-bottom:25px}
+.section-heading h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.section-heading p{color:var(--muted);margin-top:6px}
+
+/* FEATURED */
+.featured{display:grid;grid-template-columns:300px 1fr;gap:45px;align-items:center;background:var(--navy);color:#fff;border-radius:24px;padding:40px;box-shadow:var(--shadow);overflow:hidden}
+.featured-cover{width:100%;max-width:260px;margin:auto;border-radius:12px;box-shadow:0 15px 30px rgba(0,0,0,.35)}
+.featured-label{display:inline-block;padding:6px 12px;background:var(--orange);border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px}
+.featured h2{font-size:clamp(1.8rem,3vw,2.6rem)}
+.featured .author{color:#9db4d8;margin:7px 0 15px}
+.featured-description{color:#cbd8ef;max-width:600px;margin-bottom:20px}
+.featured-price{color:#ffb878;font-size:25px;font-weight:800;margin-bottom:15px}
+.featured-actions{display:flex;flex-wrap:wrap;gap:8px}
+
+/* TOOLBAR */
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}
+.book-count{color:var(--muted);font-weight:600}
+.sort{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700}
+.sort select{min-height:42px;border:1px solid var(--line);border-radius:9px;background:#fff;padding:8px 12px;color:var(--ink)}
+
+/* BOOK GRID */
+.book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.book-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;box-shadow:var(--shadow);transition:.25s}
+.book-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(10,26,51,.14)}
+.book-image{position:relative;background:#eef3fb;border-radius:12px;padding:10px;margin-bottom:15px}
+.book-image img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:8px}
+.cover-placeholder{aspect-ratio:3/4;align-items:center;justify-content:center;text-align:center;padding:20px;border-radius:8px;color:#fff;font-family:var(--heading);font-weight:800;font-size:20px;background:linear-gradient(145deg,#1555d6,#071a35)}
+.badge{position:absolute;left:8px;top:8px;z-index:2;background:var(--navy);color:#fff;padding:5px 9px;border-radius:30px;font-size:10px;font-weight:700}
+.book-card h3{font-size:17px}
+.book-author{color:var(--muted);font-size:13px}
+.book-category{display:inline-block;width:max-content;background:#e8efff;color:var(--blue);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;margin:8px 0}
+.book-description{color:var(--muted);font-size:13px;flex:1;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:3;line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.book-price{font-size:19px;font-weight:800;font-family:var(--heading);margin-bottom:10px}
+.book-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.book-actions .btn{font-size:12px;padding:9px 5px}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.step-number{color:var(--orange);font-family:var(--heading);font-size:32px;font-weight:800}
+.step h3{margin:8px 0 5px;font-size:17px}
+.step p{color:var(--muted);font-size:13px}
+
+/* INFO */
+.info-box{background:#fff4e9;border-left:5px solid var(--orange);border-radius:12px;padding:20px}
+.info-box h3{font-size:18px;margin-bottom:5px}
+.info-box p{color:#5a4630;font-size:14px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--blue),var(--navy2));color:#fff;border-radius:24px;padding:50px 25px;text-align:center}
+.cta h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.cta p{max-width:600px;margin:10px auto 22px;color:#d3e0f8}
+.cta-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+
+/* FOOTER */
+.site-footer{position:relative;isolation:isolate;overflow:hidden;margin-top:0;padding:75px 0 22px;color:#b7c8e1;background:linear-gradient(135deg,#06152c 0%,#091e3c 55%,#0d2b52 100%)}
+.footer-glow{position:absolute;z-index:-1;top:-180px;right:-100px;width:420px;height:420px;border-radius:50%;background:rgba(21,85,214,.13);filter:blur(100px);pointer-events:none}
+.site-footer::before{content:"";position:absolute;top:0;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(244,124,32,.7),rgba(21,85,214,.6),transparent)}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:55px;padding-bottom:55px}
+.footer-brand-logo{display:inline-flex;align-items:center;gap:12px;color:#fff;font-family:var(--heading);font-size:18px;font-weight:800;line-height:1}
+.footer-brand-logo img{width:48px;height:48px;padding:3px;object-fit:contain;border-radius:12px;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.footer-brand-logo small{display:block;margin-top:6px;color:#91a9cb;font-family:var(--body);font-size:9px;font-weight:700;letter-spacing:2.5px}
+.footer-description{max-width:340px;margin:20px 0 23px;color:#a9bbd5;font-size:13px;line-height:1.9}
+.social{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.social a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#c6d5eb;background:rgba(255,255,255,.055);font-size:18px;transition:.3s ease}
+.social a:hover{transform:translateY(-4px);border-color:var(--orange);color:#fff;background:var(--orange);box-shadow:0 8px 20px rgba(244,124,32,.2)}
+.footer-column h4{position:relative;display:inline-block;margin-bottom:22px;color:#fff;font-family:var(--heading);font-size:14px;font-weight:800}
+.footer-column h4::after{content:"";position:absolute;left:0;bottom:-9px;width:24px;height:2px;border-radius:5px;background:var(--orange)}
+.footer-column ul{display:flex;flex-direction:column;gap:13px}
+.footer-column li{margin:0}
+.footer-column a{display:inline-block;color:#9fb2cf;font-size:12px;font-weight:500;transition:.25s ease}
+.footer-column a:hover{padding-left:5px;color:#ff9b4b}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:22px;border-top:1px solid rgba(255,255,255,.09)}
+.copyright{margin:0;color:#8196b5;font-size:11px;line-height:1.7}
+.back-to-top{display:inline-flex;align-items:center;gap:10px;color:#a9bdd9;font-size:11px;font-weight:700;transition:.25s ease}
+.back-to-top span{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid rgba(255,255,255,.15);border-radius:8px;color:#fff;background:rgba(255,255,255,.06);font-size:15px}
+.back-to-top:hover{color:var(--orange)}
+.back-to-top:hover span{border-color:var(--orange);background:var(--orange)}
+@media (max-width:900px){
+  .footer-grid{grid-template-columns:1.5fr 1fr 1fr;gap:35px}
+  .footer-brand{grid-column:1 / -1;max-width:520px}
+}
+@media (max-width:600px){
+  .site-footer{padding:55px 0 20px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:38px 22px;padding-bottom:35px}
+  .footer-brand{grid-column:1 / -1}
+  .footer-description{max-width:100%;font-size:12px}
+  .footer-column h4{font-size:13px}
+  .footer-column ul{gap:12px}
+  .footer-column a{font-size:11px}
+  .footer-bottom{align-items:flex-start;flex-direction:column;gap:15px}
+  .copyright{font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .social a,.footer-column a,.back-to-top{transition:none}
+}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(4,12,28,.78);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:15px}
+.modal-overlay.show{display:flex}
+.modal{position:relative;width:min(850px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:20px}
+.close-modal{position:absolute;right:12px;top:12px;width:42px;height:42px;border-radius:50%;background:#edf1f8;font-size:23px;z-index:10}
+.close-modal:hover{background:var(--orange);color:#fff}
+.preview-content{display:grid;grid-template-columns:260px 1fr; margin-top:50px}
+.preview-left{background:linear-gradient(var(--navy),var(--navy2));color:#fff;padding:30px 20px;border-radius:20px 0 0 20px}
+.preview-left img{width:100%;border-radius:10px}
+.preview-right{padding:35px}
+.preview-right h2{font-size:27px;padding-right:35px}
+.preview-author{color:var(--muted);margin:5px 0 15px}
+.preview-text{background:#f5f8fd;border-left:4px solid var(--blue);border-radius:10px;padding:18px;margin-top:10px;font-family:Georgia,serif;color:#2a3a55}
+.preview-note{background:#fff4e9;color:#7a4a15;padding:12px;border-radius:10px;margin:15px 0;font-size:13px;font-weight:600}
+.purchase-options{display:grid;gap:10px;margin-top:15px}
+.purchase-option{border:1px solid var(--line);border-radius:12px;padding:14px}
+.purchase-option strong{display:block;margin-bottom:3px}
+.purchase-option small{display:block;color:var(--muted);margin-bottom:10px}
+
+/* CHECKOUT FORM */
+.checkout-box{padding:35px}
+.checkout-box h2{font-size:24px;padding-right:40px}
+.checkout-box .sub{color:var(--muted);font-size:14px;margin:6px 0 20px}
+.form-field{margin-bottom:14px}
+.form-field label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}
+.form-field input,.form-field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;background:#fff;color:var(--ink)}
+.form-field textarea{min-height:90px;resize:vertical}
+.form-field input:focus,.form-field textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,85,214,.12)}
+.checkout-total{display:flex;justify-content:space-between;align-items:center;margin:18px 0;padding:14px;background:#f5f8fd;border-radius:10px;font-weight:700}
+.checkout-box .btn{width:100%}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* TOAST */
+.toast{position:fixed;z-index:1000;left:50%;bottom:20px;transform:translate(-50%,120px);background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;border-left:4px solid var(--orange);transition:.3s}
+.toast.show{transform:translate(-50%,0)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .nav-links,.nav-actions{display:none}
+  .menu-btn{display:flex}
+  .book-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:850px){
+  .format-grid{grid-template-columns:1fr}
+  .featured{grid-template-columns:1fr;text-align:center}
+  .featured-description{margin-left:auto;margin-right:auto}
+  .featured-actions{justify-content:center}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .book-grid{grid-template-columns:repeat(2,1fr)}
+  .preview-content{grid-template-columns:1fr}
+  .preview-left{border-radius:20px 20px 0 0}
+}
+@media(max-width:650px){
+  .library-hero{padding-top:20px}
+  .hero-slide{grid-template-columns:1fr;gap:10px;padding:10px}
+  .hero-slide-image{height:320px}
+  .hero-slide-content{padding:12px 10px 15px}
+  .hero-slide-content h2{font-size:22px}
+  .hero-slide-content p{font-size:13px}
+  .slide-buttons{display:flex;flex-direction:column}
+  .slide-buttons .btn{width:100%}
+  .slider-arrow{width:38px;height:38px;font-size:20px}
+  .hero-content h1{font-size:2.25rem}
+  .categories{flex-wrap:nowrap;overflow-x:auto;padding-bottom:5px}
+  .category{white-space:nowrap}
+  .book-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .toolbar{flex-direction:column;align-items:stretch}
+  .sort{justify-content:space-between}
+  .sort select{flex:1}
+  .footer-grid{grid-template-columns:1fr}
+  .featured{padding:25px 18px}
+  .featured-actions{flex-direction:column}
+  .featured-actions .btn{width:100%}
+  .preview-right{padding:25px 18px}
+}
+@media(max-width:380px){
+  .hero-slide-image{height:270px}
+  .hero-content h1{font-size:2rem}
+}
+@media(hover:none){
+  .book-card:hover{transform:none}
+  .btn:hover{transform:none}
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body id="top">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <img src="./skilllogo.jpeg" alt="Skilled-Creatives International Logo" class="site-logo">
+      <span>Skilled-Creatives<small>INTERNATIONAL</small></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="sectors.html">Sectors</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="library.html" class="active">Library</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions" id="navActions">
+      <a href="auth.html?mode=login" class="btn btn-light">Login</a>
+      <a href="auth.html?mode=signup" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <strong>Explore</strong>
+      <button type="button" class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+    </div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="sectors.html">Sectors</a>
+    <a href="courses.html">Courses</a>
+    <a href="library.html">Library</a>
+    <a href="marketplace.html">Marketplace</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-menu-actions" id="mobileActions">
+      <a href="auth.html?mode=login" class="btn btn-light">Login</a>
+      <a href="auth.html?mode=signup" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="library-hero">
+  <div class="hero-orb hero-orb-one"></div>
+  <div class="hero-orb hero-orb-two"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container">
+    <a href="index.html" class="back"><span>←</span> Back to Home</a>
+
+    <div class="library-hero-layout">
+
+      <!-- BOOK SLIDER -->
+      <div class="hero-books">
+        <div class="hero-slider" id="heroSlider">
+
+          <div class="hero-slide">
+            <img class="hero-slide-image" src="ai-prompt-engineering.jpeg" alt="AI Prompt Engineering">
+            <div class="hero-slide-content">
+              <span class="slide-label">FEATURED EBOOK</span>
+              <h2>AI Prompt Engineering</h2>
+              <p>Learn how to communicate effectively with artificial intelligence and create powerful prompts for work, business and learning.</p>
+              <div class="slide-buttons">
+                <button type="button" class="btn btn-primary" onclick="slideBuy(1)">Buy Now</button>
+                <button type="button" class="btn btn-blue" onclick="slideRead()">Read Online</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <img class="hero-slide-image" src="essential-biology.jpeg" alt="Essential Biology for Cambridge IGCSE">
+            <div class="hero-slide-content">
+              <span class="slide-label">EDUCATION</span>
+              <h2>Essential Biology for Cambridge IGCSE</h2>
+              <p>A practical biology workbook designed to support students preparing for Cambridge IGCSE Biology examinations.</p>
+              <div class="slide-buttons">
+                <button type="button" class="btn btn-primary" onclick="slideBuy(2)">Buy Now</button>
+                <button type="button" class="btn btn-blue" onclick="slideRead()">Read Online</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image slide-cover" style="background:linear-gradient(145deg,#1555d6,#0a1a33)">Building Skills,<br>Building Freedom</div>
+            <div class="hero-slide-content">
+              <span class="slide-label">PERSONAL DEVELOPMENT</span>
+              <h2>Building Skills, Building Freedom</h2>
+              <p>Discover how valuable skills can create independence, confidence and new income opportunities.</p>
+              <div class="slide-buttons">
+                <button type="button" class="btn btn-primary" onclick="slideBuy(3)">Buy Now</button>
+                <button type="button" class="btn btn-blue" onclick="slideRead()">Read Online</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image slide-cover" style="background:linear-gradient(145deg,#f47c20,#0a1a33)">The Modern African<br>Entrepreneur</div>
+            <div class="hero-slide-content">
+              <span class="slide-label">ENTREPRENEURSHIP</span>
+              <h2>The Modern African Entrepreneur</h2>
+              <p>Learn how entrepreneurs identify real problems, start small and build sustainable businesses.</p>
+              <div class="slide-buttons">
+                <button type="button" class="btn btn-primary" onclick="slideBuy(4)">Buy Now</button>
+                <button type="button" class="btn btn-blue" onclick="slideRead()">Read Online</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <div class="hero-slide-image slide-cover" style="background:linear-gradient(145deg,#1555d6,#0f43ab)">Renewable Energy<br>Made Simple</div>
+            <div class="hero-slide-content">
+              <span class="slide-label">RENEWABLE ENERGY</span>
+              <h2>Renewable Energy Made Simple</h2>
+              <p>Understand solar panels, batteries and inverters in simple language for homes, businesses and technicians.</p>
+              <div class="slide-buttons">
+                <button type="button" class="btn btn-primary" onclick="slideBuy(5)">Buy Now</button>
+                <button type="button" class="btn btn-blue" onclick="slideRead()">Read Online</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="button" class="slider-arrow slider-prev" id="sliderPrev" aria-label="Previous book">‹</button>
+        <button type="button" class="slider-arrow slider-next" id="sliderNext" aria-label="Next book">›</button>
+
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+
+      <!-- HERO TEXT -->
+      <div class="hero-content">
+        <span class="hero-eyebrow"><span class="eyebrow-dot"></span>THE SKILLED-CREATIVES LIBRARY</span>
+
+        <h1>Knowledge That Builds <span>Skills, Businesses &amp; Futures.</span></h1>
+
+        <p class="hero-description">
+          Explore our collection of physical books and digital eBooks designed to educate, inspire and equip you with practical knowledge. Preview selected content before purchasing or continue reading online.
+        </p>
+
+        <form class="search" id="searchForm">
+          <span class="search-icon">⌕</span>
+          <input type="search" id="searchInput" placeholder="Search books, authors or topics...">
+          <button type="submit" aria-label="Search library">Search</button>
+        </form>
+
+        <div class="categories" id="categories"></div>
+
+        <div class="hero-trust">
+          <span>Curated learning resources</span>
+          <span class="trust-divider"></span>
+          <span>Learn at your own pace</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT FILTER -->
+<div class="format-filter">
+  <div class="container">
+    <div class="format-grid">
+      <button type="button" class="format-card active" data-format="all">
+        <h3>All Books</h3>
+        <p>Browse every book available in our library.</p>
+        <span>View All Books →</span>
+      </button>
+      <button type="button" class="format-card" data-format="physical">
+        <h3>Physical Books</h3>
+        <p>Printed books available for purchase.</p>
+        <span>View Physical Books →</span>
+      </button>
+      <button type="button" class="format-card" data-format="ebook">
+        <h3>eBooks</h3>
+        <p>Digital books available as PDF or online reading.</p>
+        <span>View eBooks →</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- FEATURED -->
+  <section>
+    <div class="container" id="featured"></div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section id="booksSection">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Browse the Collection</h2>
+        <p>Preview a book before deciding to purchase or continue reading online.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="book-count" id="bookCount">0 books found</div>
+        <div class="sort">
+          <label for="sortSelect">Sort:</label>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="az">A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="book-grid" id="bookGrid"></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="container">
+      <div class="section-heading"><h2>How Our Library Works</h2></div>
+      <div class="steps">
+        <div class="step"><div class="step-number">01</div><h3>Explore</h3><p>Browse physical books and eBooks in our library.</p></div>
+        <div class="step"><div class="step-number">02</div><h3>Preview</h3><p>Read a short introductory portion before buying.</p></div>
+        <div class="step"><div class="step-number">03</div><h3>Choose</h3><p>Buy the complete book or pay to continue reading online.</p></div>
+        <div class="step"><div class="step-number">04</div><h3>Learn</h3><p>Access your purchased digital content or receive your physical book.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section>
+    <div class="container">
+      <div class="info-box">
+        <h3>Digital Access</h3>
+        <p>Some books may be available as downloadable PDF files, while others may offer paid online reading. Availability depends on the individual book.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="ctaSection">
+    <div class="container">
+      <div class="cta">
+        <h2>Ready to Learn More?</h2>
+        <p>Create your Skilled-Creatives International account to purchase books, access your digital library and manage your reading history.</p>
+        <div class="cta-buttons">
+          <a href="auth.html?mode=signup" class="btn btn-primary">Create Account</a>
+          <a href="auth.html?mode=login" class="btn btn-light">Login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-glow"></div>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-logo">
+          <img src="./skilllogo.jpeg" alt="Skilled-Creatives Logo">
+          <span>Skilled-Creatives<small>INTERNATIONAL</small></span>
+        </a>
+        <p class="footer-description">
+          Building a Future Where Skills Create Freedom. Empowering individuals and communities through practical skills, innovation, education and enterprise.
+        </p>
+        <div class="social">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/2348073704830" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="sectors.html">Our Sectors</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Learning</h4>
+        <ul>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="library.html">Digital Library</a></li>
+          <li><a href="academy.html">Academy</a></li>
+          <li><a href="marketplace.html">Marketplace</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="help.html">Help Center</a></li>
+          <li><a href="faq.html">Frequently Asked Questions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 Skilled-Creatives International. All rights reserved.</p>
+      <a href="#top" class="back-to-top">Back to top <span>↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- Supabase JavaScript SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://aezepgnnykxqitzhhmen.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFlemVwZ25ueWt4cWl0emhobWVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2MDUwNTYsImV4cCI6MjEwMzE4MTA1Nn0.Ds9Vhp0ula5JxH5mZ-YVoEWQji2bNXuuzGYo_lInwDI";
+
+// FIX: the CDN defines window.supabase. Don't redeclare that name;
+// create the client under a different name and use it everywhere.
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
+
+<script>
+/* LIBRARY — SUPABASE INTEGRATION */
+
+let books = [];
+
+const state = { search: "", category: "All", format: "all", sort: "featured" };
+
+const $ = selector => document.querySelector(selector);
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[char]);
+}
+
+function money(amount) {
+  return "₦" + Number(amount || 0).toLocaleString("en-NG");
+}
+
+let toastTimer;
+function showToast(message) {
+  const toast = $("#toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+function startingPrice(book) {
+  const prices = [];
+  if (book.physical && book.physicalPrice != null) prices.push(book.physicalPrice);
+  if (book.pdf && book.pdfPrice != null) prices.push(book.pdfPrice);
+  if (book.online && book.onlinePrice != null) prices.push(book.onlinePrice);
+  return prices.length ? Math.min(...prices) : 0;
+}
+
+/* COVER IMAGE */
+function getCoverUrl(path) {
+  if (!path) return "";
+
+  // Preserve existing website image paths and full URLs.
+  if (
+    path.startsWith("http://") ||
+    path.startsWith("https://") ||
+    path.startsWith("/") ||
+    path.startsWith("./") ||
+    path.startsWith("assets/")
+  ) {
+    return path;
+  }
+
+  // Storage paths use the public library-covers bucket.
+  const { data } = supabaseClient.storage
+    .from("library-covers")
+    .getPublicUrl(path);
+
+  return data.publicUrl;
+}
+
+function bookImage(book) {
+  if (book.image) {
+    return `
+      <img src="${escapeHTML(book.image)}" alt="${escapeHTML(book.title)}" loading="lazy"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="cover-placeholder" style="display:none">${escapeHTML(book.title)}</div>
+    `;
+  }
+
+  return `<div class="cover-placeholder" style="display:flex">${escapeHTML(book.title)}</div>`;
+}
+
+/* LOAD BOOKS FROM SUPABASE */
+async function loadBooks() {
+  $("#bookGrid").innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:40px">Loading library books...</div>
+  `;
+
+  const { data, error } = await supabaseClient
+    .from("library_books")
+    .select(`
+      id, title, slug, author, category, description, preview, format,
+      physical_price, pdf_price, online_price, cover_path,
+      physical_available, pdf_available, online_available,
+      is_featured, publication_year
+    `)
+    .eq("is_published", true)
+    .order("publication_year", { ascending: false });
+
+  if (error) {
+    console.error("Library loading error:", error);
+
+    $("#bookGrid").innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:40px">
+        <h3>Unable to load books</h3>
+        <p>Please refresh the page and try again.</p>
+      </div>
+    `;
+
+    showToast("Could not load library books.");
+    return;
+  }
+
+  books = (data || []).map(row => ({
+    id: row.id,
+    slug: row.slug,
+    title: row.title || "",
+    author: row.author || "",
+    category: row.category || "General",
+    description: row.description || "",
+    preview: row.preview || "",
+    format: row.format || "both",
+
+    physicalPrice: row.physical_price == null ? null : Number(row.physical_price),
+    pdfPrice: row.pdf_price == null ? null : Number(row.pdf_price),
+    onlinePrice: row.online_price == null ? null : Number(row.online_price),
+
+    price: Number(row.physical_price ?? row.pdf_price ?? row.online_price ?? 0),
+
+    image: getCoverUrl(row.cover_path),
+
+    physical: row.physical_available === true,
+    pdf: row.pdf_available === true,
+    online: row.online_available === true,
+
+    featured: row.is_featured === true,
+    year: Number(row.publication_year || 0)
+  }));
+
+  renderCategories();
+  renderFeatured();
+  renderBooks();
+}
+
+/* CATEGORIES */
+const defaultCategories = [
+  "All", "Technology", "Education", "Business",
+  "Entrepreneurship", "Personal Development", "Renewable Energy"
+];
+
+function renderCategories() {
+  const databaseCategories = books.map(book => book.category);
+  const categories = [...new Set([...defaultCategories, ...databaseCategories])];
+
+  $("#categories").innerHTML = categories.map(category => `
+    <button type="button"
+      class="category ${state.category === category ? "active" : ""}"
+      data-category="${escapeHTML(category)}">
+      ${escapeHTML(category)}
+    </button>
+  `).join("");
+}
+
+document.addEventListener("click", function(e) {
+  const button = e.target.closest("[data-category]");
+  if (!button) return;
+
+  state.category = button.dataset.category;
+  renderCategories();
+  renderBooks();
+});
+
+/* FILTER AND SORT */
+function getFilteredBooks() {
+  const search = state.search.toLowerCase().trim();
+
+  const result = books.filter(book => {
+    const matchesSearch =
+      !search ||
+      book.title.toLowerCase().includes(search) ||
+      book.author.toLowerCase().includes(search) ||
+      book.category.toLowerCase().includes(search);
+
+    const matchesCategory = state.category === "All" || book.category === state.category;
+
+    const matchesFormat =
+      state.format === "all" ||
+      (state.format === "physical" && book.physical) ||
+      (state.format === "ebook" && (book.pdf || book.online));
+
+    return matchesSearch && matchesCategory && matchesFormat;
+  });
+
+  if (state.sort === "newest") result.sort((a, b) => b.year - a.year);
+  if (state.sort === "low") result.sort((a, b) => startingPrice(a) - startingPrice(b));
+  if (state.sort === "high") result.sort((a, b) => startingPrice(b) - startingPrice(a));
+  if (state.sort === "az") result.sort((a, b) => a.title.localeCompare(b.title));
+  if (state.sort === "featured") result.sort((a, b) => Number(b.featured) - Number(a.featured));
+
+  return result;
+}
+
+/* BOOK GRID */
+function renderBooks() {
+  const result = getFilteredBooks();
+
+  $("#bookCount").textContent =
+    `${result.length} ${result.length === 1 ? "book" : "books"} found`;
+
+  if (!result.length) {
+    $("#bookGrid").innerHTML = `
+      <div style="grid-column:1/-1;background:#fff;padding:50px;text-align:center;border-radius:16px;color:var(--muted);">
+        <h3>No books found</h3>
+        <p>Try another search or category.</p>
+      </div>
+    `;
+    return;
+  }
+
+  $("#bookGrid").innerHTML = result.map(book => {
+    const badge = book.format === "physical"
+      ? "PHYSICAL"
+      : book.format === "ebook" ? "EBOOK" : "PHYSICAL + EBOOK";
+
+    return `
+      <article class="book-card">
+        <div class="book-image">
+          <span class="badge">${badge}</span>
+          ${bookImage(book)}
+        </div>
+
+        <h3>${escapeHTML(book.title)}</h3>
+        <div class="book-author">${escapeHTML(book.author)}</div>
+        <span class="book-category">${escapeHTML(book.category)}</span>
+        <p class="book-description">${escapeHTML(book.description)}</p>
+        <div class="book-price">From ${money(startingPrice(book))}</div>
+
+        <div class="book-actions">
+          <button type="button" class="btn btn-outline" data-preview-id="${escapeHTML(book.id)}">Preview</button>
+          <button type="button" class="btn btn-blue" data-buy-id="${escapeHTML(book.id)}">Buy</button>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+/* FEATURED BOOK */
+function renderFeatured() {
+  const book = books.find(book => book.featured);
+
+  if (!book) {
+    $("#featured").innerHTML = "";
+    return;
+  }
+
+  const id = escapeHTML(book.id);
+
+  $("#featured").innerHTML = `
+    <div class="featured">
+      <div>
+        ${
+          book.image
+            ? `<img class="featured-cover" src="${escapeHTML(book.image)}" alt="${escapeHTML(book.title)}">`
+            : `<div class="featured-cover cover-placeholder" style="display:flex;font-size:24px">${escapeHTML(book.title)}</div>`
+        }
+      </div>
+
+      <div>
+        <span class="featured-label">Featured Book</span>
+        <h2>${escapeHTML(book.title)}</h2>
+        <div class="author">by ${escapeHTML(book.author)}</div>
+        <p class="featured-description">${escapeHTML(book.description)}</p>
+        <div class="featured-price">From ${money(startingPrice(book))}</div>
+
+        <div class="featured-actions">
+          <button type="button" class="btn btn-light" data-preview-id="${id}">Preview Book</button>
+          <button type="button" class="btn btn-primary" data-buy-id="${id}">Buy Complete Book</button>
+          <button type="button" class="btn btn-light" onclick="readBook()">Read More Online</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* PREVIEW MODAL */
+function openPreview(id) {
+  const book = books.find(book => book.id === id);
+  if (!book) return;
+
+  const bid = escapeHTML(book.id);
+  let options = "";
+
+  if (book.physical && book.physicalPrice != null) {
+    options += `
+      <div class="purchase-option">
+        <strong>Physical Book — ${money(book.physicalPrice)}</strong>
+        <small>Purchase the printed physical copy.</small>
+        <button type="button" class="btn btn-outline" onclick="requireAccount('${bid}','physical')">Buy Physical Book</button>
+      </div>
+    `;
+  }
+
+  if (book.pdf && book.pdfPrice != null) {
+    options += `
+      <div class="purchase-option">
+        <strong>Complete PDF — ${money(book.pdfPrice)}</strong>
+        <small>Purchase the complete downloadable digital book.</small>
+        <button type="button" class="btn btn-blue" onclick="requireAccount('${bid}','pdf')">Buy Complete PDF</button>
+      </div>
+    `;
+  }
+
+  if (book.online && book.onlinePrice != null) {
+    options += `
+      <div class="purchase-option">
+        <strong>Read Online — ${money(book.onlinePrice)}</strong>
+        <small>Pay to continue reading online.</small>
+        <button type="button" class="btn btn-primary" onclick="requireAccount('${bid}','read')">Pay &amp; Read Online</button>
+      </div>
+    `;
+  }
+
+  if (!options) options = "<p>Purchase options are currently unavailable.</p>";
+
+  $("#modal").innerHTML = `
+    <button type="button" class="close-modal" onclick="closeModal()" aria-label="Close preview">×</button>
+
+    <div class="preview-content">
+      <div class="preview-left">
+        ${
+          book.image
+            ? `<img src="${escapeHTML(book.image)}" alt="${escapeHTML(book.title)}">`
+            : `<div class="cover-placeholder" style="display:flex">${escapeHTML(book.title)}</div>`
+        }
+      </div>
+
+      <div class="preview-right">
+        <h2>${escapeHTML(book.title)}</h2>
+        <div class="preview-author">by ${escapeHTML(book.author)}</div>
+
+        <h4>Introduction</h4>
+        <p style="color:var(--muted);font-size:14px;margin-top:7px">${escapeHTML(book.description)}</p>
+
+        <h4 style="margin-top:20px">Sample from the Book</h4>
+        <div class="preview-text">${escapeHTML(book.preview)}</div>
+
+        <div class="preview-note">
+          ${currentUser
+            ? "This is only a short preview. Choose an option below to get the full book."
+            : "This is only a short preview. Create an account or log in to purchase the complete book or pay to continue reading online."}
+        </div>
+
+        <h4>Choose an Option</h4>
+        <div class="purchase-options">${options}</div>
+      </div>
+    </div>
+  `;
+
+  $("#modalOverlay").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  $("#modalOverlay").classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+$("#modalOverlay").addEventListener("click", function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+});
+
+/* AUTH STATE
+   Uses the session saved by auth.html (same Supabase project). */
+let currentUser = null;
+
+async function initAuth() {
+  try {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    currentUser = session?.user ?? null;
+  } catch (err) {
+    console.error("Could not read session:", err);
+    currentUser = null;
+  }
+
+  updateAuthUI();
+
+  supabaseClient.auth.onAuthStateChange((_event, session) => {
+    currentUser = session?.user ?? null;
+    updateAuthUI();
+  });
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  showToast("You have been logged out.");
+}
+
+function updateAuthUI() {
+  const loggedIn = !!currentUser;
+
+  const html = loggedIn
+    ? `<a href="dashboard.html" class="btn btn-light">My Account</a>
+       <button type="button" class="btn btn-primary" onclick="logout()">Logout</button>`
+    : `<a href="auth.html?mode=login" class="btn btn-light">Login</a>
+       <a href="auth.html?mode=signup" class="btn btn-primary">Get Started</a>`;
+
+  $("#navActions").innerHTML = html;
+  $("#mobileActions").innerHTML = html;
+
+  // Hide the "create an account" banner for signed-in users
+  $("#ctaSection").style.display = loggedIn ? "none" : "";
+}
+
+/* BOOK ACTIONS */
+function requireAccount(bookId, action) {
+  if (currentUser) {
+    // Generic "Buy" opens the preview so the user can pick a format.
+    if (action === "buy") {
+      openPreview(bookId);
+    } else {
+      startPurchase(bookId, action);
+    }
+    return;
+  }
+
+  showToast("Please log in or create an account to continue.");
+
+  setTimeout(() => {
+    window.location.href =
+      "auth.html?mode=login&book=" + encodeURIComponent(bookId) +
+      "&action=" + encodeURIComponent(action);
+  }, 700);
+}
+
+/* PAYSTACK CHECKOUT
+   The price is always read from the database by the paystack-init
+   Edge Function. The browser only says which book and which option. */
+let paying = false;
+
+function startPurchase(bookId, product) {
+  if (!["physical", "pdf", "read"].includes(product)) {
+    openPreview(bookId);
+    return;
+  }
+
+  // Physical books need delivery details first.
+  if (product === "physical") {
+    openDeliveryForm(bookId);
+    return;
+  }
+
+  payNow(bookId, product);
+}
+
+async function payNow(bookId, product, details = {}) {
+  if (paying) return false;
+  paying = true;
+  showToast("Preparing secure checkout...");
+
+  try {
+    const { data, error } = await supabaseClient.functions.invoke("paystack-init", {
+      body: { bookId, product, ...details }
+    });
+
+    if (error) {
+      let message = "Could not start payment. Please try again.";
+      try {
+        const body = await error.context.json();
+        if (body && body.error) message = body.error;
+      } catch (_) {}
+      throw new Error(message);
+    }
+
+    const url = data && data.authorization_url;
+    if (!url || !url.startsWith("https://checkout.paystack.com/")) {
+      throw new Error("Could not start payment. Please try again.");
+    }
+
+    window.location.href = url;
+    return true;
+  } catch (err) {
+    console.error("Checkout error:", err);
+    showToast(err.message || "Could not start payment.");
+    paying = false;
+    return false;
+  }
+}
+
+function openDeliveryForm(bookId) {
+  const book = books.find(b => b.id === bookId);
+  if (!book || book.physicalPrice == null) return;
+
+  const name = (currentUser && currentUser.user_metadata && currentUser.user_metadata.full_name) || "";
+
+  $("#modal").innerHTML = `
+    <button type="button" class="close-modal" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="checkout-box">
+      <h2>Delivery details</h2>
+      <p class="sub">${escapeHTML(book.title)} — physical copy</p>
+
+      <form id="deliveryForm">
+        <div class="form-field">
+          <label for="dlvName">Full name</label>
+          <input id="dlvName" type="text" required autocomplete="name" value="${escapeHTML(name)}">
+        </div>
+        <div class="form-field">
+          <label for="dlvPhone">Phone number</label>
+          <input id="dlvPhone" type="tel" required autocomplete="tel" placeholder="08012345678">
+        </div>
+        <div class="form-field">
+          <label for="dlvAddress">Delivery address</label>
+          <textarea id="dlvAddress" required autocomplete="street-address" placeholder="House number, street, city, state"></textarea>
+        </div>
+
+        <div class="checkout-total">
+          <span>Total</span>
+          <span>${money(book.physicalPrice)}</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="dlvSubmit">Continue to payment</button>
+      </form>
+    </div>
+  `;
+
+  $("#modalOverlay").classList.add("show");
+  document.body.style.overflow = "hidden";
+
+  $("#deliveryForm").addEventListener("submit", async e => {
+    e.preventDefault();
+
+    const buyerName = $("#dlvName").value.trim();
+    const buyerPhone = $("#dlvPhone").value.trim();
+    const buyerAddress = $("#dlvAddress").value.trim();
+
+    if (buyerPhone.replace(/\D/g, "").length < 10) {
+      showToast("Enter a valid phone number.");
+      return;
+    }
+    if (buyerAddress.length < 10) {
+      showToast("Enter your full delivery address.");
+      return;
+    }
+
+    const btn = $("#dlvSubmit");
+    btn.disabled = true;
+    btn.textContent = "Please wait...";
+
+    const ok = await payNow(bookId, "physical", { buyerName, buyerPhone, buyerAddress });
+
+    if (!ok) {
+      btn.disabled = false;
+      btn.textContent = "Continue to payment";
+    }
+  });
+}
+
+/* PAYMENT RETURN
+   Paystack sends the buyer back to library.html?reference=...
+   The webhook marks the order paid, so poll for a few seconds. */
+async function checkPaymentReturn() {
+  const params = new URLSearchParams(window.location.search);
+  const reference = params.get("reference") || params.get("trxref");
+
+  if (!reference || !currentUser) return;
+
+  history.replaceState(null, "", window.location.pathname);
+  showToast("Confirming your payment...");
+
+  for (let i = 0; i < 10; i++) {
+    const { data } = await supabaseClient
+      .from("library_orders")
+      .select("payment_status, book_title, product")
+      .eq("payment_reference", reference)
+      .maybeSingle();
+
+    if (data && data.payment_status === "paid") {
+      showPaymentSuccess(data);
+      return;
+    }
+
+    if (data && data.payment_status === "failed") {
+      showToast("Your payment was not completed.");
+      return;
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  }
+
+  showToast("We are still confirming your payment. Check My Account shortly.");
+}
+
+function showPaymentSuccess(order) {
+  const note = order.product === "physical"
+    ? "We will contact you on the phone number you gave to arrange delivery."
+    : "Your purchase has been saved to your account.";
+
+  $("#modal").innerHTML = `
+    <button type="button" class="close-modal" onclick="closeModal()" aria-label="Close">×</button>
+    <div class="checkout-box" style="text-align:center;padding:50px 30px">
+      <div style="font-size:48px;line-height:1">✅</div>
+      <h2 style="margin-top:14px;padding-right:0">Payment successful</h2>
+      <p class="sub">${escapeHTML(order.book_title)}</p>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:22px">${escapeHTML(note)}</p>
+      <a href="dashboard.html" class="btn btn-primary">Go to My Account</a>
+    </div>
+  `;
+
+  $("#modalOverlay").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+/* After login, auth.html sends the user back with ?book=...&action=...
+   Pick up where they left off, then clean the URL. */
+function handleReturnIntent() {
+  const params = new URLSearchParams(window.location.search);
+  const bookId = params.get("book");
+  const action = params.get("action");
+
+  if (!bookId || !currentUser) return;
+
+  history.replaceState(null, "", window.location.pathname);
+
+  if (!books.some(b => b.id === bookId)) return;
+
+  requireAccount(bookId, action || "buy");
+}
+
+// Clicks on dynamically rendered book cards and featured buttons.
+document.addEventListener("click", function(e) {
+  const previewButton = e.target.closest("[data-preview-id]");
+  const buyButton = e.target.closest("[data-buy-id]");
+
+  if (previewButton) openPreview(previewButton.dataset.previewId);
+  if (buyButton) requireAccount(buyButton.dataset.buyId, "buy");
+});
+
+/* HERO SLIDER */
+const heroSlider = document.getElementById("heroSlider");
+const sliderDots = document.getElementById("sliderDots");
+const sliderPrev = document.getElementById("sliderPrev");
+const sliderNext = document.getElementById("sliderNext");
+
+let currentSlide = 0;
+const totalSlides = document.querySelectorAll(".hero-slide").length;
+
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement("button");
+  dot.type = "button";
+  dot.className = "slider-dot" + (i === 0 ? " active" : "");
+  dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+  dot.addEventListener("click", () => goToSlide(i));
+  sliderDots.appendChild(dot);
+}
+
+function goToSlide(index) {
+  if (!totalSlides) return;
+
+  if (index < 0) index = totalSlides - 1;
+  if (index >= totalSlides) index = 0;
+
+  currentSlide = index;
+  heroSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+  document.querySelectorAll(".slider-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+sliderNext.addEventListener("click", () => goToSlide(currentSlide + 1));
+sliderPrev.addEventListener("click", () => goToSlide(currentSlide - 1));
+
+let sliderTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+const heroBooks = document.querySelector(".hero-books");
+
+heroBooks.addEventListener("mouseenter", () => clearInterval(sliderTimer));
+heroBooks.addEventListener("mouseleave", () => {
+  clearInterval(sliderTimer);
+  sliderTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
+});
+
+/* STATIC HERO SLIDE BUTTONS
+   Slide numbers map to database slugs. Make sure these match
+   the `slug` values in your library_books table exactly. */
+const heroBookSlugs = {
+  1: "ai-prompt-engineering",
+  2: "essential-biology-for-cambridge-igcse",
+  3: "building-skills-building-freedom",
+  4: "the-modern-african-entrepreneur",
+  5: "renewable-energy-made-simple"
+};
+
+function slideBuy(number) {
+  const slug = heroBookSlugs[number];
+  const book = books.find(item => item.slug === slug);
+
+  if (!book) {
+    showToast("This book is currently unavailable.");
+    return;
+  }
+
+  requireAccount(book.id, "buy");
+}
+
+/* READ ONLINE FILTER */
+function selectEbooks() {
+  state.format = "ebook";
+
+  document.querySelectorAll(".format-card").forEach(card => {
+    card.classList.toggle("active", card.dataset.format === "ebook");
+  });
+
+  renderBooks();
+
+  setTimeout(() => {
+    document.getElementById("booksSection").scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 100);
+}
+
+function slideRead() { selectEbooks(); }
+function readBook() { selectEbooks(); }
+
+/* SEARCH */
+$("#searchInput").addEventListener("input", function() {
+  state.search = this.value;
+  renderBooks();
+});
+
+$("#searchForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  state.search = $("#searchInput").value;
+  renderBooks();
+  document.getElementById("booksSection").scrollIntoView({ behavior: "smooth" });
+});
+
+/* FORMAT FILTER */
+document.addEventListener("click", function(e) {
+  const button = e.target.closest(".format-card");
+  if (!button) return;
+
+  state.format = button.dataset.format;
+
+  document.querySelectorAll(".format-card").forEach(card => {
+    card.classList.toggle("active", card === button);
+  });
+
+  renderBooks();
+});
+
+/* SORT */
+$("#sortSelect").addEventListener("change", function() {
+  state.sort = this.value;
+  renderBooks();
+});
+
+/* MOBILE MENU */
+$("#menuBtn").addEventListener("click", function() {
+  const menu = $("#mobileMenu");
+  menu.classList.toggle("open");
+  this.setAttribute("aria-expanded", menu.classList.contains("open") ? "true" : "false");
+});
+
+$("#closeMenu").addEventListener("click", function() {
+  $("#mobileMenu").classList.remove("open");
+  $("#menuBtn").setAttribute("aria-expanded", "false");
+});
+
+document.querySelectorAll("#mobileMenu a").forEach(link => {
+  link.addEventListener("click", function() {
+    $("#mobileMenu").classList.remove("open");
+    $("#menuBtn").setAttribute("aria-expanded", "false");
+  });
+});
+
+/* INITIALIZE */
+(async function init() {
+  await initAuth();
+  await loadBooks();
+  handleReturnIntent();
+  checkPaymentReturn();
+})();
+</script>
+</body>
+</html>
